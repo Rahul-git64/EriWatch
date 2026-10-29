@@ -1,5 +1,6 @@
 """Tests for the pilot tank registry (`packages/geo/src/eriwatch_geo/registry.py`)."""
 
+import json
 from pathlib import Path
 
 from eriwatch_geo.registry import (
@@ -10,14 +11,15 @@ from eriwatch_geo.registry import (
 )
 
 
-def test_registry_has_36_valid_pilot_tanks_with_unverified_labels() -> None:
-    """Verify 36 real pilot tanks with unverified health labels and real polygon geometries."""
+def test_registry_has_35_verified_pilot_tanks_with_unverified_labels() -> None:
+    """Verify 30-50 pilot tanks (35 after dropping TN-KPM-013 in R2.4) with real polygons and overlays."""
     records = build_tank_registry_records()
     assert 30 <= len(records) <= 50
-    assert len(records) == 36
+    assert len(records) == 35
 
     ids = {r.id for r in records}
-    assert len(ids) == 36
+    assert len(ids) == 35
+    assert "TN-KPM-013" not in ids, "TN-KPM-013 failed R2.3 NDWI overlay check and must be dropped"
 
     sources = {r.source for r in records}
     assert sources == {"osm", "derived"}
@@ -26,6 +28,11 @@ def test_registry_has_36_valid_pilot_tanks_with_unverified_labels() -> None:
     assert states == {"unverified"}, (
         "All tank health labels must be 'unverified' until Stage 2 water-spread measurements"
     )
+
+    overlay_summary = json.loads(
+        Path("docs/data/overlays/overlay_summary.json").read_text(encoding="utf-8")
+    )
+    overlay_by_id = {row["id"]: row for row in overlay_summary["tanks"]}
 
     for rec in records:
         ring = rec.polygon_coordinates[0]
@@ -42,6 +49,11 @@ def test_registry_has_36_valid_pilot_tanks_with_unverified_labels() -> None:
             assert rec.osm_id is not None
             assert rec.osm_type in ("way", "relation")
 
+        # Verify Sentinel-2 overlay PNG exists and passed water-body check
+        png_path = Path(f"docs/data/overlays/{rec.id}.png")
+        assert png_path.exists() and png_path.stat().st_size > 10_000
+        assert overlay_by_id[rec.id]["matches_real_water_body"] is True
+
 
 def test_registry_geojson_file_roundtrip() -> None:
     """Verify data/processed/tank_registry.geojson exists and round-trips cleanly."""
@@ -50,7 +62,7 @@ def test_registry_geojson_file_roundtrip() -> None:
     assert geojson_path.exists()
 
     loaded = load_tank_registry(geojson_path)
-    assert len(loaded) == 36
+    assert len(loaded) == 35
     assert loaded[0].id == "TN-KPM-001"
     assert loaded[-1].id == "TN-CGL-018"
     assert all(r.state_archetype == "unverified" for r in loaded)

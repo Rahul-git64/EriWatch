@@ -66,9 +66,9 @@
 | [x] | R1.6 | Spot-check 5 documents manually and record in review | `DONE` | `05d8139` | `docs/reviews/micro/R1-6.md` |
 | [x] | R2.1 | Audit & replace all 36 tank polygons with real OSM or satellite-traced polygons | `DONE` | `ebe822e` | `docs/reviews/micro/R2-1.md` |
 | [x] | R2.2 | Audit health labels and set unmeasured labels to `"unverified"` | `DONE` | `9b64979` | `docs/reviews/micro/R2-2.md` |
-| [x] | R2.3 | Build Sentinel-2 RGB + water-mask + polygon overlay check (`docs/data/overlays/*.png`) | `DONE` | `HEAD` | `docs/reviews/micro/R2-3.md` |
-| [ ] | R2.4 | Update `pilot_selection.md`, `tank_registry.geojson`, and tests to match | `IN_PROGRESS` | - | `docs/reviews/micro/R2-4.md` |
-| [ ] | R3.1 | Rewrite `feasibility_spike.py` to record real payload content (counts, dates, values, distances, vertices) | `PENDING` | - | `docs/reviews/micro/R3-1.md` |
+| [x] | R2.3 | Build Sentinel-2 RGB + water-mask + polygon overlay check (`docs/data/overlays/*.png`) | `DONE` | `5721c11` | `docs/reviews/micro/R2-3.md` |
+| [x] | R2.4 | Update `pilot_selection.md`, `tank_registry.geojson`, and tests to match | `DONE` | `HEAD` | `docs/reviews/micro/R2-4.md` |
+| [ ] | R3.1 | Rewrite `feasibility_spike.py` to record real payload content (counts, dates, values, distances, vertices) | `IN_PROGRESS` | - | `docs/reviews/micro/R3-1.md` |
 | [ ] | R3.2 | Re-run spike, commit `feasibility_spike.json`, update `docs/data/feasibility.md` honestly | `PENDING` | - | `docs/reviews/micro/R3-2.md` |
 | [ ] | R3.3 | Mark live network tests `@pytest.mark.network` and add `make test-network` | `PENDING` | - | `docs/reviews/micro/R3-3.md` |
 | [ ] | R4.1 | Query 2019–present STAC scenes for all pilot tanks, save `data/processed/cloud_stats.parquet` + chart | `PENDING` | - | `docs/reviews/micro/R4-1.md` |
