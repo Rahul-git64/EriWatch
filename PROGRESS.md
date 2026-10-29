@@ -7,8 +7,8 @@
 
 | Stage | Name | Status | Gate Report | Tag |
 |---|---|---|---|---|
-| 0 | Foundations and engineering scaffolding | `GATE_REVIEW` | [`docs/reviews/stage-0.md`](docs/reviews/stage-0.md) | - |
-| 1 | Data discovery and feasibility spike | `PENDING` | `docs/reviews/stage-1.md` | - |
+| 0 | Foundations and engineering scaffolding | `PASSED` | [`docs/reviews/stage-0.md`](docs/reviews/stage-0.md) | `stage-0-pass` |
+| 1 | Data discovery and feasibility spike | `IN_PROGRESS` | `docs/reviews/stage-1.md` | - |
 | 2 | Geospatial pipeline (water spread from satellites) | `PENDING` | `docs/reviews/stage-2.md` | - |
 | 3 | Database and data model | `PENDING` | `docs/reviews/stage-3.md` | - |
 | 4 | Exploratory data analysis and decision-focused analytics | `PENDING` | `docs/reviews/stage-4.md` | - |
@@ -232,4 +232,4 @@
 | ID | Stage.Step | Description | Severity | Status |
 |---|---|---|---|---|
 | R-001 | 0.4 | Next.js 14.2.x transitive npm audit advisories; evaluate minor patch/overrides in Stage 6/10 security gate | Low | `OPEN` |
-| R-002 | 0.6 | Docker Desktop engine daemon (`dockerDesktopLinuxEngine`) not started on host; verify daemon startup for compose `/health` check | Medium | `OPEN` |
+| R-002 | 0.6 | Docker Desktop engine daemon (`dockerDesktopLinuxEngine`) not started on host; verify daemon startup for compose `/health` check | Medium | `RESOLVED` |
