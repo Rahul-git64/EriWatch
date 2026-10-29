@@ -1,0 +1,87 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv/
+venv/
+ENV/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+.turbo/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+playwright-report/
+test-results/
+playwright/.cache/
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+
+# Data (ignore raw/interim/processed large files, keep manifests and small samples)
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/README.md
+!data/raw/legal/manifest.json
+!data/raw/samples/
+data/interim/*
+!data/interim/.gitkeep
+!data/interim/README.md
+data/processed/*
+!data/processed/.gitkeep
+!data/processed/README.md
+!data/processed/tank_registry.geojson
+!data/processed/samples/
+
+# Model artifacts (heavy binaries ignored; small metadata kept)
+*.pkl
+*.joblib
+*.pt
+*.pth
+*.onnx
+*.h5
+
+# Geospatial & Rasters
+*.tif
+*.tiff
+*.nc
+*.gpkg
+!tests/fixtures/*.tif
+
+# IDEs & OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
