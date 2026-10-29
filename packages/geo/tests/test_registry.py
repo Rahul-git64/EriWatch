@@ -3,10 +3,13 @@
 import json
 from pathlib import Path
 
+import pytest
+
 from eriwatch_geo.registry import (
     build_tank_registry_records,
     compute_geodesic_area_ha,
     export_tank_registry_geojson,
+    fetch_osm_polygon,
     load_tank_registry,
 )
 
@@ -66,3 +69,13 @@ def test_registry_geojson_file_roundtrip() -> None:
     assert loaded[0].id == "TN-KPM-001"
     assert loaded[-1].id == "TN-CGL-018"
     assert all(r.state_archetype == "unverified" for r in loaded)
+
+
+@pytest.mark.network
+def test_live_osm_way_polygon_extraction() -> None:
+    """Live network test verifying OpenStreetMap API v0.6 returns Chembarambakkam Lake way."""
+    ring, area_ha = fetch_osm_polygon("way", 25453624)
+    assert len(ring) == 218
+    assert ring[0] == ring[-1]
+    assert abs(area_ha - 1991.29) <= 0.5
+

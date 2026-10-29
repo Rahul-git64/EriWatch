@@ -1,4 +1,4 @@
-.PHONY: setup lint test run db-up db-reset
+.PHONY: setup lint test test-network run db-up db-reset
 
 setup:
 	uv sync
@@ -14,6 +14,9 @@ lint:
 test:
 	uv run pytest -m "not network"
 	npm --prefix apps/web run test
+
+test-network:
+	uv run pytest -m "network" -v
 
 run:
 	docker compose -f infra/docker/docker-compose.yml up -d --build
