@@ -35,8 +35,8 @@
 | [x] | 0.6 | `docker-compose.yml` with Postgres (PostGIS + pgvector), api, web, n8n + healthchecks | `DONE` | `88220a7` | [`docs/reviews/micro/0-6.md`](docs/reviews/micro/0-6.md) |
 | [x] | 0.7 | `Makefile` targets: `setup`, `lint`, `test`, `run`, `db-up`, `db-reset` | `DONE` | `27f854f` | [`docs/reviews/micro/0-7.md`](docs/reviews/micro/0-7.md) |
 | [x] | 0.8 | GitHub Actions CI: lint, type-check, tests for api and web on push | `DONE` | `b0b4779` | [`docs/reviews/micro/0-8.md`](docs/reviews/micro/0-8.md) |
-| [ ] | 0.9 | ADR-0001 (stack and architecture), ADR-0002 (monorepo and branching) | `IN_PROGRESS` | - | `docs/reviews/micro/0-9.md` |
-| [ ] | 0.10 | `PROGRESS.md` board finalize and review folder structure | `PENDING` | - | `docs/reviews/micro/0-10.md` |
+| [x] | 0.9 | ADR-0001 (stack and architecture), ADR-0002 (monorepo and branching) | `DONE` | `573ccc7` | [`docs/reviews/micro/0-9.md`](docs/reviews/micro/0-9.md) |
+| [ ] | 0.10 | `PROGRESS.md` board finalize and review folder structure | `IN_PROGRESS` | - | `docs/reviews/micro/0-10.md` |
 
 ---
 
