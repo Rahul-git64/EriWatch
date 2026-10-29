@@ -30,8 +30,8 @@
 | [x] | 0.1 | Initialise git, `.gitignore`, `README.md`, MIT licence | `DONE` | `5871c64` | [`docs/reviews/micro/0-1.md`](docs/reviews/micro/0-1.md) |
 | [x] | 0.2 | Create repository layout with placeholder READMEs | `DONE` | `4e140fc` | [`docs/reviews/micro/0-2.md`](docs/reviews/micro/0-2.md) |
 | [x] | 0.3 | Python tooling: `uv`, `ruff`, `mypy`, `pytest`, pre-commit hooks | `DONE` | `d4b62fe` | [`docs/reviews/micro/0-3.md`](docs/reviews/micro/0-3.md) |
-| [ ] | 0.4 | Web tooling: Next.js 14 TS app, ESLint, Prettier, Vitest, Playwright | `IN_PROGRESS` | - | `docs/reviews/micro/0-4.md` |
-| [ ] | 0.5 | FastAPI skeleton with `/health`, structured JSON logging, Pydantic settings, 1 test | `PENDING` | - | `docs/reviews/micro/0-5.md` |
+| [x] | 0.4 | Web tooling: Next.js 14 TS app, ESLint, Prettier, Vitest, Playwright | `DONE` | `59ad706` | [`docs/reviews/micro/0-4.md`](docs/reviews/micro/0-4.md) |
+| [ ] | 0.5 | FastAPI skeleton with `/health`, structured JSON logging, Pydantic settings, 1 test | `IN_PROGRESS` | - | `docs/reviews/micro/0-5.md` |
 | [ ] | 0.6 | `docker-compose.yml` with Postgres (PostGIS + pgvector), api, web, n8n + healthchecks | `PENDING` | - | `docs/reviews/micro/0-6.md` |
 | [ ] | 0.7 | `Makefile` targets: `setup`, `lint`, `test`, `run`, `db-up`, `db-reset` | `PENDING` | - | `docs/reviews/micro/0-7.md` |
 | [ ] | 0.8 | GitHub Actions CI: lint, type-check, tests for api and web on push | `PENDING` | - | `docs/reviews/micro/0-8.md` |
@@ -231,4 +231,4 @@
 
 | ID | Stage.Step | Description | Severity | Status |
 |---|---|---|---|---|
-| - | - | None yet | - | - |
+| R-001 | 0.4 | Next.js 14.2.x transitive npm audit advisories; evaluate minor patch/overrides in Stage 6/10 security gate | Low | `OPEN` |
