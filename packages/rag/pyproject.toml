@@ -1,0 +1,16 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "eriwatch-rag"
+version = "0.1.0"
+description = "EriWatch grounded legal RAG, complaint structuring, and cited petition engine"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.9.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/eriwatch_rag"]
