@@ -44,8 +44,8 @@
 
 | Done | Step | Description | Status | Commit | Micro-Review |
 |---|---|---|---|---|---|
-| [ ] | 1.1 | Spike external data sources and log in `docs/data/feasibility.md` | `PENDING` | - | `docs/reviews/micro/1-1.md` |
-| [ ] | 1.2 | Decide pilot: 30-50 tanks near Chengalpattu/Kancheepuram with selection criteria | `PENDING` | - | `docs/reviews/micro/1-2.md` |
+| [x] | 1.1 | Spike external data sources and log in `docs/data/feasibility.md` | `DONE` | `4338779` | [`docs/reviews/micro/1-1.md`](docs/reviews/micro/1-1.md) |
+| [ ] | 1.2 | Decide pilot: 30-50 tanks near Chengalpattu/Kancheepuram with selection criteria | `IN_PROGRESS` | - | `docs/reviews/micro/1-2.md` |
 | [ ] | 1.3 | Build tank registry file (id, name, district, block, centroid, polygon, source, confidence) | `PENDING` | - | `docs/reviews/micro/1-3.md` |
 | [ ] | 1.4 | Data dictionary (`docs/data/dictionary.md`) with units and licence | `PENDING` | - | `docs/reviews/micro/1-4.md` |
 | [ ] | 1.5 | Licence and ethics note: public sources and attribution | `PENDING` | - | `docs/reviews/micro/1-5.md` |
