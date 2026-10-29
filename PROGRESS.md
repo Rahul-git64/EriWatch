@@ -62,9 +62,9 @@
 | [x] | R1.2 | Delete every generated/placeholder document and manifest entry | `DONE` | `86598d7` | `docs/reviews/micro/R1-2.md` |
 | [x] | R1.3 | Re-collect real documents from official sources (`data/raw/legal/`) | `DONE` | `f10b668` | `docs/reviews/micro/R1-3.md` |
 | [x] | R1.4 | Rebuild `data/raw/legal/manifest.json` with required fields + URL/SHA-256 verification script | `DONE` | `eafca2e` | `docs/reviews/micro/R1-4.md` |
-| [ ] | R1.5 | Replace `test_corpus_manifest.py` with strict verification test | `IN_PROGRESS` | - | `docs/reviews/micro/R1-5.md` |
-| [ ] | R1.6 | Spot-check 5 documents manually and record in review | `PENDING` | - | `docs/reviews/micro/R1-6.md` |
-| [ ] | R2.1 | Audit & replace all 36 tank polygons with real OSM or satellite-traced polygons | `PENDING` | - | `docs/reviews/micro/R2-1.md` |
+| [x] | R1.5 | Replace `test_corpus_manifest.py` with strict verification test | `DONE` | `82f5552` | `docs/reviews/micro/R1-5.md` |
+| [x] | R1.6 | Spot-check 5 documents manually and record in review | `DONE` | `HEAD` | `docs/reviews/micro/R1-6.md` |
+| [ ] | R2.1 | Audit & replace all 36 tank polygons with real OSM or satellite-traced polygons | `IN_PROGRESS` | - | `docs/reviews/micro/R2-1.md` |
 | [ ] | R2.2 | Audit health labels and set unmeasured labels to `"unverified"` | `PENDING` | - | `docs/reviews/micro/R2-2.md` |
 | [ ] | R2.3 | Build Sentinel-2 RGB + water-mask + polygon overlay check (`docs/data/overlays/*.png`) | `PENDING` | - | `docs/reviews/micro/R2-3.md` |
 | [ ] | R2.4 | Update `pilot_selection.md`, `tank_registry.geojson`, and tests to match | `PENDING` | - | `docs/reviews/micro/R2-4.md` |

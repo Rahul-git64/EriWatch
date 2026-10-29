@@ -84,7 +84,7 @@ REAL_CORPUS_SOURCES: list[dict[str, str]] = [
         "title": "Tamil Nadu Protection of Tanks and Eviction of Encroachment Act, 2007 (Tamil Nadu Act 8 of 2007)",
         "issuer": "Legislative Assembly of Tamil Nadu (Law Department Gazette Notification)",
         "document_type": "State Act",
-        "date": "2007-05-24",
+        "date": "2007-05-22",
         "language": "en",
         "source_url": "https://prsindia.org/files/bills_acts/acts_states/tamil-nadu/2007/2007TN8.pdf",
         "licence_note": "Public statutory enactment under Section 52(1)(q) of the Indian Copyright Act, 1957.",
