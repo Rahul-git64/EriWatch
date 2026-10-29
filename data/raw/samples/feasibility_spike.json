@@ -1,0 +1,347 @@
+{
+  "executed_at": "2026-10-29T13:22:56.371675+00:00",
+  "pilot_sample_tanks": [
+    {
+      "id": "TN-KPM-001",
+      "name": "Chembarambakkam Tank",
+      "district": "Kancheepuram",
+      "block": "Kundrathur",
+      "lat": 13.0116,
+      "lon": 80.0592,
+      "bbox": [
+        80.025,
+        12.985,
+        80.088,
+        13.04
+      ]
+    },
+    {
+      "id": "TN-CGL-001",
+      "name": "Madurantakam Tank",
+      "district": "Chengalpattu",
+      "block": "Madurantakam",
+      "lat": 12.5133,
+      "lon": 79.8736,
+      "bbox": [
+        79.845,
+        12.49,
+        79.895,
+        12.545
+      ]
+    },
+    {
+      "id": "TN-KPM-002",
+      "name": "Thenneri Tank",
+      "district": "Kancheepuram",
+      "block": "Walajabad",
+      "lat": 12.8586,
+      "lon": 79.8825,
+      "bbox": [
+        79.865,
+        12.842,
+        79.902,
+        12.878
+      ]
+    },
+    {
+      "id": "TN-CGL-002",
+      "name": "Kolavai Lake (Chengalpattu)",
+      "district": "Chengalpattu",
+      "block": "Kattankolathur",
+      "lat": 12.7072,
+      "lon": 79.9856,
+      "bbox": [
+        79.97,
+        12.688,
+        80.002,
+        12.728
+      ]
+    }
+  ],
+  "spikes": {
+    "sentinel2_planetary_computer": {
+      "source": "Microsoft Planetary Computer STAC (sentinel-2-l2a)",
+      "status": "OK",
+      "tanks": [
+        {
+          "tank_id": "TN-KPM-001",
+          "tank_name": "Chembarambakkam Tank",
+          "status_code": 200,
+          "elapsed_ms": 1309.2,
+          "returned_scenes": 3,
+          "sample_scene_id": "S2A_MSIL2A_20241230T050221_R119_T44PMV_20241230T080646",
+          "sample_datetime": "2024-12-30T05:02:21.024000Z",
+          "cloud_cover_pct": 49.175584,
+          "has_required_bands": true
+        },
+        {
+          "tank_id": "TN-CGL-001",
+          "tank_name": "Madurantakam Tank",
+          "status_code": 200,
+          "elapsed_ms": 533.2,
+          "returned_scenes": 3,
+          "sample_scene_id": "S2A_MSIL2A_20241230T050221_R119_T44PLU_20241230T080646",
+          "sample_datetime": "2024-12-30T05:02:21.024000Z",
+          "cloud_cover_pct": 88.835013,
+          "has_required_bands": true
+        },
+        {
+          "tank_id": "TN-KPM-002",
+          "tank_name": "Thenneri Tank",
+          "status_code": 200,
+          "elapsed_ms": 338.1,
+          "returned_scenes": 3,
+          "sample_scene_id": "S2A_MSIL2A_20241230T050221_R119_T44PLV_20241230T080646",
+          "sample_datetime": "2024-12-30T05:02:21.024000Z",
+          "cloud_cover_pct": 87.063509,
+          "has_required_bands": true
+        },
+        {
+          "tank_id": "TN-CGL-002",
+          "tank_name": "Kolavai Lake (Chengalpattu)",
+          "status_code": 200,
+          "elapsed_ms": 282.0,
+          "returned_scenes": 3,
+          "sample_scene_id": "S2A_MSIL2A_20241230T050221_R119_T44PLV_20241230T080646",
+          "sample_datetime": "2024-12-30T05:02:21.024000Z",
+          "cloud_cover_pct": 87.063509,
+          "has_required_bands": true
+        }
+      ]
+    },
+    "sentinel2_copernicus_fallback": {
+      "source": "Copernicus Data Space OData + Element84 Earth Search STAC (Fallbacks)",
+      "status": "OK",
+      "tank_id": "TN-KPM-001",
+      "copernicus_odata": {
+        "status_code": 200,
+        "elapsed_ms": 13128.0,
+        "returned_products": 2,
+        "sample_product_name": "S2A_MSIL1C_20240105T050211_N0510_R119_T44PLV_20240105T064258.SAFE"
+      },
+      "element84_stac_cog": {
+        "status_code": 200,
+        "elapsed_ms": 811.3,
+        "returned_scenes": 2,
+        "sample_scene_id": "S2A_44PLV_20241230_0_L2A"
+      }
+    },
+    "jrc_global_surface_water": {
+      "source": "JRC Global Surface Water (jrc-gsw via STAC)",
+      "status": "OK",
+      "tanks": [
+        {
+          "tank_id": "TN-KPM-001",
+          "status_code": 200,
+          "elapsed_ms": 1775.1,
+          "tile_id": "80E_20Nv1_3_2020",
+          "assets": [
+            "change",
+            "extent",
+            "tilejson",
+            "occurrence",
+            "recurrence",
+            "seasonality",
+            "transitions",
+            "rendered_preview"
+          ]
+        },
+        {
+          "tank_id": "TN-CGL-001",
+          "status_code": 200,
+          "elapsed_ms": 211.3,
+          "tile_id": "70E_20Nv1_3_2020",
+          "assets": [
+            "change",
+            "extent",
+            "tilejson",
+            "occurrence",
+            "recurrence",
+            "seasonality",
+            "transitions",
+            "rendered_preview"
+          ]
+        },
+        {
+          "tank_id": "TN-KPM-002",
+          "status_code": 200,
+          "elapsed_ms": 204.3,
+          "tile_id": "70E_20Nv1_3_2020",
+          "assets": [
+            "change",
+            "extent",
+            "tilejson",
+            "occurrence",
+            "recurrence",
+            "seasonality",
+            "transitions",
+            "rendered_preview"
+          ]
+        },
+        {
+          "tank_id": "TN-CGL-002",
+          "status_code": 200,
+          "elapsed_ms": 247.5,
+          "tile_id": "80E_20Nv1_3_2020",
+          "assets": [
+            "change",
+            "extent",
+            "tilejson",
+            "occurrence",
+            "recurrence",
+            "seasonality",
+            "transitions",
+            "rendered_preview"
+          ]
+        }
+      ]
+    },
+    "nasa_power_rainfall": {
+      "source": "NASA POWER Agroclimatology API (PRECTOTCORR)",
+      "status": "OK",
+      "tanks": [
+        {
+          "tank_id": "TN-KPM-001",
+          "status_code": 200,
+          "elapsed_ms": 642.6,
+          "days_returned": 15,
+          "total_rain_mm_15d": 175.16,
+          "sample_values": {
+            "20241001": 0.1,
+            "20241002": 1.93,
+            "20241003": 7.28
+          }
+        },
+        {
+          "tank_id": "TN-CGL-001",
+          "status_code": 200,
+          "elapsed_ms": 803.0,
+          "days_returned": 15,
+          "total_rain_mm_15d": 156.76,
+          "sample_values": {
+            "20241001": 0.18,
+            "20241002": 2.45,
+            "20241003": 6.71
+          }
+        },
+        {
+          "tank_id": "TN-KPM-002",
+          "status_code": 200,
+          "elapsed_ms": 861.4,
+          "days_returned": 15,
+          "total_rain_mm_15d": 175.16,
+          "sample_values": {
+            "20241001": 0.1,
+            "20241002": 1.93,
+            "20241003": 7.28
+          }
+        },
+        {
+          "tank_id": "TN-CGL-002",
+          "status_code": 200,
+          "elapsed_ms": 918.9,
+          "days_returned": 15,
+          "total_rain_mm_15d": 156.76,
+          "sample_values": {
+            "20241001": 0.18,
+            "20241002": 2.45,
+            "20241003": 6.71
+          }
+        }
+      ]
+    },
+    "osm_overpass_water_bodies": {
+      "source": "OpenStreetMap (Nominatim GeoJSON Polygon API + Overpass API probe)",
+      "status": "OK",
+      "overpass_probe": {
+        "status": "TIMEOUT_ON_PUBLIC_ENDPOINT",
+        "error": "timed out"
+      },
+      "tanks": [
+        {
+          "tank_id": "TN-KPM-001",
+          "query": "Chembarambakkam Lake, Tamil Nadu",
+          "status_code": 200,
+          "elapsed_ms": 412.6,
+          "osm_type": "way",
+          "osm_id": 25453624,
+          "display_name": "Chembarambakkam Lake, Chettipedu, Chennai Metropolitan Area, Kundrathur, Kanchipuram, Thiruvallur, Tamil Nadu, India",
+          "geometry_type": "Polygon",
+          "has_polygon": true
+        },
+        {
+          "tank_id": "TN-CGL-001",
+          "query": "Madurantakam Lake, Tamil Nadu",
+          "status_code": 200,
+          "elapsed_ms": 557.9,
+          "osm_type": null,
+          "osm_id": null,
+          "display_name": null,
+          "geometry_type": null,
+          "has_polygon": false
+        },
+        {
+          "tank_id": "TN-KPM-002",
+          "query": "Thenneri Lake, Tamil Nadu",
+          "status_code": 200,
+          "elapsed_ms": 537.8,
+          "osm_type": "way",
+          "osm_id": 831047472,
+          "display_name": "Thenneri Lake, Athivakkam, Chennai Metropolitan Area, Kancheepuram, Kanchipuram, Tamil Nadu, India",
+          "geometry_type": "Polygon",
+          "has_polygon": true
+        },
+        {
+          "tank_id": "TN-CGL-002",
+          "query": "Kolavai Lake, Chengalpattu",
+          "status_code": 200,
+          "elapsed_ms": 555.9,
+          "osm_type": "way",
+          "osm_id": 24161888,
+          "display_name": "Kolavai Lake, Raj\u0101kulipettai, Chennai Metropolitan Area, Chengalpattu, Tamil Nadu, 603001, India",
+          "geometry_type": "Polygon",
+          "has_polygon": true
+        }
+      ]
+    },
+    "groundwater_wris_and_subsurface": {
+      "source": "India-WRIS / CGWB Groundwater & NASA POWER Profile Subsurface Wetness",
+      "india_wris_probe": {
+        "status_code": 200,
+        "elapsed_ms": 609.3,
+        "content_type": "application/json;charset=UTF-8",
+        "preview": "{\"statusCode\":200,\"message\":\"Data fetched successfully\",\"data\":[{\"stationCode\":\"TNGW0029\",\"stationName\":\"PUDUPATTINAM\",\"stationType\":\"Ground Water\",\"latitude\":12.5035,\"longitude\":80.1547,\"agencyName\":\"CGWB\",\"state\":\"Tamil Nadu\",\"district\":\"Kancheepur"
+      },
+      "nasa_power_subsurface_tanks": [
+        {
+          "tank_id": "TN-KPM-001",
+          "status_code": 200,
+          "elapsed_ms": 1148.4,
+          "days_returned": 10,
+          "mean_profile_wetness": 0.689
+        },
+        {
+          "tank_id": "TN-CGL-001",
+          "status_code": 200,
+          "elapsed_ms": 813.9,
+          "days_returned": 10,
+          "mean_profile_wetness": 0.578
+        },
+        {
+          "tank_id": "TN-KPM-002",
+          "status_code": 200,
+          "elapsed_ms": 787.6,
+          "days_returned": 10,
+          "mean_profile_wetness": 0.689
+        },
+        {
+          "tank_id": "TN-CGL-002",
+          "status_code": 200,
+          "elapsed_ms": 815.0,
+          "days_returned": 10,
+          "mean_profile_wetness": 0.578
+        }
+      ]
+    }
+  }
+}
