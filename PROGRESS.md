@@ -68,9 +68,9 @@
 | [x] | R2.2 | Audit health labels and set unmeasured labels to `"unverified"` | `DONE` | `9b64979` | `docs/reviews/micro/R2-2.md` |
 | [x] | R2.3 | Build Sentinel-2 RGB + water-mask + polygon overlay check (`docs/data/overlays/*.png`) | `DONE` | `5721c11` | `docs/reviews/micro/R2-3.md` |
 | [x] | R2.4 | Update `pilot_selection.md`, `tank_registry.geojson`, and tests to match | `DONE` | `8a09573` | `docs/reviews/micro/R2-4.md` |
-| [x] | R3.1 | Rewrite `feasibility_spike.py` to record real payload content (counts, dates, values, distances, vertices) | `DONE` | `HEAD` | `docs/reviews/micro/R3-1.md` |
-| [ ] | R3.2 | Re-run spike, commit `feasibility_spike.json`, update `docs/data/feasibility.md` honestly | `IN_PROGRESS` | - | `docs/reviews/micro/R3-2.md` |
-| [ ] | R3.3 | Mark live network tests `@pytest.mark.network` and add `make test-network` | `PENDING` | - | `docs/reviews/micro/R3-3.md` |
+| [x] | R3.1 | Rewrite `feasibility_spike.py` to record real payload content (counts, dates, values, distances, vertices) | `DONE` | `4458643` | `docs/reviews/micro/R3-1.md` |
+| [x] | R3.2 | Re-run spike, commit `feasibility_spike.json`, update `docs/data/feasibility.md` honestly | `DONE` | `HEAD` | `docs/reviews/micro/R3-2.md` |
+| [ ] | R3.3 | Mark live network tests `@pytest.mark.network` and add `make test-network` | `IN_PROGRESS` | - | `docs/reviews/micro/R3-3.md` |
 | [ ] | R4.1 | Query 2019–present STAC scenes for all pilot tanks, save `data/processed/cloud_stats.parquet` + chart | `PENDING` | - | `docs/reviews/micro/R4-1.md` |
 | [ ] | R4.2 | Update `R-003` in `PROGRESS.md` with Oct–Dec stats and write `ADR-0003` on cloud mitigation | `PENDING` | - | `docs/reviews/micro/R4-2.md` |
 | [ ] | R5.1 | Push to GitHub and verify green GitHub Actions run | `PENDING` | - | `docs/reviews/micro/R5-1.md` |

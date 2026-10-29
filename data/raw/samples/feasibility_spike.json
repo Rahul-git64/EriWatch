@@ -1,13 +1,15 @@
 {
-  "executed_at": "2026-10-29T13:22:56.371675+00:00",
+  "executed_at": "2026-10-29T17:53:46.138966+00:00",
   "pilot_sample_tanks": [
     {
       "id": "TN-KPM-001",
-      "name": "Chembarambakkam Tank",
+      "name": "Chembarambakkam Periya Eri",
       "district": "Kancheepuram",
       "block": "Kundrathur",
-      "lat": 13.0116,
-      "lon": 80.0592,
+      "lat": 13.00822,
+      "lon": 80.055489,
+      "osm_type": "way",
+      "osm_id": 25453624,
       "bbox": [
         80.025,
         12.985,
@@ -17,11 +19,13 @@
     },
     {
       "id": "TN-CGL-001",
-      "name": "Madurantakam Tank",
+      "name": "Madurantakam Periya Eri",
       "district": "Chengalpattu",
       "block": "Madurantakam",
-      "lat": 12.5133,
-      "lon": 79.8736,
+      "lat": 12.525171,
+      "lon": 79.875534,
+      "osm_type": "way",
+      "osm_id": 176519614,
       "bbox": [
         79.845,
         12.49,
@@ -31,11 +35,13 @@
     },
     {
       "id": "TN-KPM-002",
-      "name": "Thenneri Tank",
+      "name": "Thenneri Hissa Eri",
       "district": "Kancheepuram",
       "block": "Walajabad",
-      "lat": 12.8586,
-      "lon": 79.8825,
+      "lat": 12.8516,
+      "lon": 79.885503,
+      "osm_type": "way",
+      "osm_id": 34108738,
       "bbox": [
         79.865,
         12.842,
@@ -48,8 +54,10 @@
       "name": "Kolavai Lake (Chengalpattu)",
       "district": "Chengalpattu",
       "block": "Kattankolathur",
-      "lat": 12.7072,
-      "lon": 79.9856,
+      "lat": 12.707142,
+      "lon": 79.988345,
+      "osm_type": "way",
+      "osm_id": 24161888,
       "bbox": [
         79.97,
         12.688,
@@ -61,79 +69,233 @@
   "spikes": {
     "sentinel2_planetary_computer": {
       "source": "Microsoft Planetary Computer STAC (sentinel-2-l2a)",
-      "status": "OK",
+      "work_status": "WORKED_FULLY",
       "tanks": [
         {
           "tank_id": "TN-KPM-001",
-          "tank_name": "Chembarambakkam Tank",
+          "tank_name": "Chembarambakkam Periya Eri",
           "status_code": 200,
-          "elapsed_ms": 1309.2,
-          "returned_scenes": 3,
-          "sample_scene_id": "S2A_MSIL2A_20241230T050221_R119_T44PMV_20241230T080646",
-          "sample_datetime": "2024-12-30T05:02:21.024000Z",
-          "cloud_cover_pct": 49.175584,
-          "has_required_bands": true
+          "elapsed_ms": 1858.7,
+          "returned_scenes": 70,
+          "scenes_cloud_lt_20pct": 11,
+          "scenes_cloud_lt_40pct": 24,
+          "mean_cloud_cover_pct": 59.21,
+          "min_cloud_cover_pct": 0.001,
+          "max_cloud_cover_pct": 100.0,
+          "earliest_2024_date": "2024-01-05",
+          "latest_2024_date": "2024-12-30",
+          "has_required_bands": true,
+          "sample_scenes": [
+            {
+              "scene_id": "S2A_MSIL2A_20241230T050221_R119_T44PLV_20241230T080646",
+              "date": "2024-12-30",
+              "cloud_cover_pct": 87.06
+            },
+            {
+              "scene_id": "S2B_MSIL2A_20241225T050129_R119_T44PLV_20241225T074436",
+              "date": "2024-12-25",
+              "cloud_cover_pct": 98.82
+            },
+            {
+              "scene_id": "S2A_MSIL2A_20241220T050221_R119_T44PLV_20241220T081558",
+              "date": "2024-12-20",
+              "cloud_cover_pct": 99.29
+            },
+            {
+              "scene_id": "S2B_MSIL2A_20241215T050129_R119_T44PLV_20241215T074541",
+              "date": "2024-12-15",
+              "cloud_cover_pct": 47.54
+            },
+            {
+              "scene_id": "S2A_MSIL2A_20241210T050211_R119_T44PLV_20241210T074050",
+              "date": "2024-12-10",
+              "cloud_cover_pct": 99.72
+            }
+          ]
         },
         {
           "tank_id": "TN-CGL-001",
-          "tank_name": "Madurantakam Tank",
+          "tank_name": "Madurantakam Periya Eri",
           "status_code": 200,
-          "elapsed_ms": 533.2,
-          "returned_scenes": 3,
-          "sample_scene_id": "S2A_MSIL2A_20241230T050221_R119_T44PLU_20241230T080646",
-          "sample_datetime": "2024-12-30T05:02:21.024000Z",
-          "cloud_cover_pct": 88.835013,
-          "has_required_bands": true
+          "elapsed_ms": 581.0,
+          "returned_scenes": 70,
+          "scenes_cloud_lt_20pct": 11,
+          "scenes_cloud_lt_40pct": 22,
+          "mean_cloud_cover_pct": 58.9,
+          "min_cloud_cover_pct": 0.008,
+          "max_cloud_cover_pct": 100.0,
+          "earliest_2024_date": "2024-01-05",
+          "latest_2024_date": "2024-12-30",
+          "has_required_bands": true,
+          "sample_scenes": [
+            {
+              "scene_id": "S2A_MSIL2A_20241230T050221_R119_T44PLU_20241230T080646",
+              "date": "2024-12-30",
+              "cloud_cover_pct": 88.84
+            },
+            {
+              "scene_id": "S2B_MSIL2A_20241225T050129_R119_T44PLU_20241225T074436",
+              "date": "2024-12-25",
+              "cloud_cover_pct": 53.39
+            },
+            {
+              "scene_id": "S2A_MSIL2A_20241220T050221_R119_T44PLU_20241220T081558",
+              "date": "2024-12-20",
+              "cloud_cover_pct": 72.88
+            },
+            {
+              "scene_id": "S2B_MSIL2A_20241215T050129_R119_T44PLU_20241215T074541",
+              "date": "2024-12-15",
+              "cloud_cover_pct": 51.59
+            },
+            {
+              "scene_id": "S2A_MSIL2A_20241210T050211_R119_T44PLU_20241210T074050",
+              "date": "2024-12-10",
+              "cloud_cover_pct": 99.93
+            }
+          ]
         },
         {
           "tank_id": "TN-KPM-002",
-          "tank_name": "Thenneri Tank",
+          "tank_name": "Thenneri Hissa Eri",
           "status_code": 200,
-          "elapsed_ms": 338.1,
-          "returned_scenes": 3,
-          "sample_scene_id": "S2A_MSIL2A_20241230T050221_R119_T44PLV_20241230T080646",
-          "sample_datetime": "2024-12-30T05:02:21.024000Z",
-          "cloud_cover_pct": 87.063509,
-          "has_required_bands": true
+          "elapsed_ms": 618.5,
+          "returned_scenes": 71,
+          "scenes_cloud_lt_20pct": 11,
+          "scenes_cloud_lt_40pct": 24,
+          "mean_cloud_cover_pct": 59.65,
+          "min_cloud_cover_pct": 0.001,
+          "max_cloud_cover_pct": 100.0,
+          "earliest_2024_date": "2024-01-05",
+          "latest_2024_date": "2024-12-30",
+          "has_required_bands": true,
+          "sample_scenes": [
+            {
+              "scene_id": "S2A_MSIL2A_20241230T050221_R119_T44PLV_20241230T080646",
+              "date": "2024-12-30",
+              "cloud_cover_pct": 87.06
+            },
+            {
+              "scene_id": "S2B_MSIL2A_20241225T050129_R119_T44PLV_20241225T074436",
+              "date": "2024-12-25",
+              "cloud_cover_pct": 98.82
+            },
+            {
+              "scene_id": "S2A_MSIL2A_20241220T050221_R119_T44PLV_20241220T081558",
+              "date": "2024-12-20",
+              "cloud_cover_pct": 99.29
+            },
+            {
+              "scene_id": "S2B_MSIL2A_20241215T050129_R119_T44PLV_20241215T074541",
+              "date": "2024-12-15",
+              "cloud_cover_pct": 47.54
+            },
+            {
+              "scene_id": "S2A_MSIL2A_20241210T050211_R119_T44PLV_20241210T074050",
+              "date": "2024-12-10",
+              "cloud_cover_pct": 99.72
+            }
+          ]
         },
         {
           "tank_id": "TN-CGL-002",
           "tank_name": "Kolavai Lake (Chengalpattu)",
           "status_code": 200,
-          "elapsed_ms": 282.0,
-          "returned_scenes": 3,
-          "sample_scene_id": "S2A_MSIL2A_20241230T050221_R119_T44PLV_20241230T080646",
-          "sample_datetime": "2024-12-30T05:02:21.024000Z",
-          "cloud_cover_pct": 87.063509,
-          "has_required_bands": true
+          "elapsed_ms": 552.5,
+          "returned_scenes": 70,
+          "scenes_cloud_lt_20pct": 11,
+          "scenes_cloud_lt_40pct": 24,
+          "mean_cloud_cover_pct": 59.43,
+          "min_cloud_cover_pct": 0.001,
+          "max_cloud_cover_pct": 100.0,
+          "earliest_2024_date": "2024-01-05",
+          "latest_2024_date": "2024-12-30",
+          "has_required_bands": true,
+          "sample_scenes": [
+            {
+              "scene_id": "S2A_MSIL2A_20241230T050221_R119_T44PLV_20241230T080646",
+              "date": "2024-12-30",
+              "cloud_cover_pct": 87.06
+            },
+            {
+              "scene_id": "S2B_MSIL2A_20241225T050129_R119_T44PLV_20241225T074436",
+              "date": "2024-12-25",
+              "cloud_cover_pct": 98.82
+            },
+            {
+              "scene_id": "S2A_MSIL2A_20241220T050221_R119_T44PLV_20241220T081558",
+              "date": "2024-12-20",
+              "cloud_cover_pct": 99.29
+            },
+            {
+              "scene_id": "S2B_MSIL2A_20241215T050129_R119_T44PLV_20241215T074541",
+              "date": "2024-12-15",
+              "cloud_cover_pct": 47.54
+            },
+            {
+              "scene_id": "S2A_MSIL2A_20241210T050211_R119_T44PLV_20241210T074050",
+              "date": "2024-12-10",
+              "cloud_cover_pct": 99.72
+            }
+          ]
         }
       ]
     },
     "sentinel2_copernicus_fallback": {
-      "source": "Copernicus Data Space OData + Element84 Earth Search STAC (Fallbacks)",
-      "status": "OK",
+      "source": "Element84 Earth Search STAC + Copernicus Data Space OData (Fallbacks)",
+      "work_status": "WORKED_FULLY",
       "tank_id": "TN-KPM-001",
       "copernicus_odata": {
         "status_code": 200,
-        "elapsed_ms": 13128.0,
-        "returned_products": 2,
-        "sample_product_name": "S2A_MSIL1C_20240105T050211_N0510_R119_T44PLV_20240105T064258.SAFE"
+        "elapsed_ms": 5414.8,
+        "returned_products": 5,
+        "sample_products": [
+          {
+            "name": "S2A_MSIL1C_20240105T050211_N0510_R119_T44PLV_20240105T064258.SAFE",
+            "start_date": "2024-01-05"
+          },
+          {
+            "name": "S2A_MSIL2A_20240105T050211_N0510_R119_T44PLV_20240105T075552.SAFE",
+            "start_date": "2024-01-05"
+          },
+          {
+            "name": "S2B_MSIL1C_20240110T050159_N0510_R119_T44PLV_20240110T064641.SAFE",
+            "start_date": "2024-01-10"
+          }
+        ]
       },
       "element84_stac_cog": {
         "status_code": 200,
-        "elapsed_ms": 811.3,
-        "returned_scenes": 2,
-        "sample_scene_id": "S2A_44PLV_20241230_0_L2A"
+        "elapsed_ms": 1314.0,
+        "returned_2024_scenes": 72,
+        "sample_scenes": [
+          {
+            "scene_id": "S2A_44PLV_20241230_0_L2A",
+            "date": "2024-12-30",
+            "cloud_cover_pct": 87.06
+          },
+          {
+            "scene_id": "S2B_44PLV_20241225_0_L2A",
+            "date": "2024-12-25",
+            "cloud_cover_pct": 98.82
+          },
+          {
+            "scene_id": "S2A_44PLV_20241220_0_L2A",
+            "date": "2024-12-20",
+            "cloud_cover_pct": 99.29
+          }
+        ]
       }
     },
     "jrc_global_surface_water": {
-      "source": "JRC Global Surface Water (jrc-gsw via STAC)",
-      "status": "OK",
+      "source": "JRC Global Surface Water (jrc-gsw via Planetary Computer STAC + COG pixel sampling)",
+      "work_status": "WORKED_FULLY",
       "tanks": [
         {
           "tank_id": "TN-KPM-001",
+          "tank_name": "Chembarambakkam Periya Eri",
           "status_code": 200,
-          "elapsed_ms": 1775.1,
+          "elapsed_ms": 3938.8,
           "tile_id": "80E_20Nv1_3_2020",
           "assets": [
             "change",
@@ -144,12 +306,21 @@
             "seasonality",
             "transitions",
             "rendered_preview"
-          ]
+          ],
+          "centroid_lon_lat": [
+            80.055489,
+            13.00822
+          ],
+          "centroid_occurrence_pct": 77,
+          "patch_5x5_max_occurrence_pct": 78,
+          "centroid_max_extent_flag": 1,
+          "centroid_seasonality_months": 12
         },
         {
           "tank_id": "TN-CGL-001",
+          "tank_name": "Madurantakam Periya Eri",
           "status_code": 200,
-          "elapsed_ms": 211.3,
+          "elapsed_ms": 2465.0,
           "tile_id": "70E_20Nv1_3_2020",
           "assets": [
             "change",
@@ -160,12 +331,21 @@
             "seasonality",
             "transitions",
             "rendered_preview"
-          ]
+          ],
+          "centroid_lon_lat": [
+            79.875534,
+            12.525171
+          ],
+          "centroid_occurrence_pct": 48,
+          "patch_5x5_max_occurrence_pct": 50,
+          "centroid_max_extent_flag": 1,
+          "centroid_seasonality_months": 4
         },
         {
           "tank_id": "TN-KPM-002",
+          "tank_name": "Thenneri Hissa Eri",
           "status_code": 200,
-          "elapsed_ms": 204.3,
+          "elapsed_ms": 1844.0,
           "tile_id": "70E_20Nv1_3_2020",
           "assets": [
             "change",
@@ -176,13 +356,22 @@
             "seasonality",
             "transitions",
             "rendered_preview"
-          ]
+          ],
+          "centroid_lon_lat": [
+            79.885503,
+            12.8516
+          ],
+          "centroid_occurrence_pct": 60,
+          "patch_5x5_max_occurrence_pct": 62,
+          "centroid_max_extent_flag": 1,
+          "centroid_seasonality_months": 12
         },
         {
           "tank_id": "TN-CGL-002",
+          "tank_name": "Kolavai Lake (Chengalpattu)",
           "status_code": 200,
-          "elapsed_ms": 247.5,
-          "tile_id": "80E_20Nv1_3_2020",
+          "elapsed_ms": 792.8,
+          "tile_id": "70E_20Nv1_3_2020",
           "assets": [
             "change",
             "extent",
@@ -192,154 +381,633 @@
             "seasonality",
             "transitions",
             "rendered_preview"
-          ]
+          ],
+          "centroid_lon_lat": [
+            79.988345,
+            12.707142
+          ],
+          "centroid_occurrence_pct": 83,
+          "patch_5x5_max_occurrence_pct": 83,
+          "centroid_max_extent_flag": 1,
+          "centroid_seasonality_months": 12
         }
       ]
     },
     "nasa_power_rainfall": {
       "source": "NASA POWER Agroclimatology API (PRECTOTCORR)",
-      "status": "OK",
+      "work_status": "WORKED_FULLY",
       "tanks": [
         {
           "tank_id": "TN-KPM-001",
+          "tank_name": "Chembarambakkam Periya Eri",
           "status_code": 200,
-          "elapsed_ms": 642.6,
+          "elapsed_ms": 1118.1,
           "days_returned": 15,
           "total_rain_mm_15d": 175.16,
-          "sample_values": {
-            "20241001": 0.1,
-            "20241002": 1.93,
-            "20241003": 7.28
+          "peak_daily_rain_date": "2024-10-15",
+          "peak_daily_rain_mm": 69.18,
+          "daily_rainfall_mm": {
+            "2024-10-01": 0.1,
+            "2024-10-02": 1.93,
+            "2024-10-03": 7.28,
+            "2024-10-04": 4.02,
+            "2024-10-05": 4.03,
+            "2024-10-06": 1.16,
+            "2024-10-07": 2.79,
+            "2024-10-08": 5.44,
+            "2024-10-09": 7.55,
+            "2024-10-10": 7.17,
+            "2024-10-11": 8.53,
+            "2024-10-12": 6.25,
+            "2024-10-13": 5.78,
+            "2024-10-14": 43.95,
+            "2024-10-15": 69.18
           }
         },
         {
           "tank_id": "TN-CGL-001",
+          "tank_name": "Madurantakam Periya Eri",
           "status_code": 200,
-          "elapsed_ms": 803.0,
+          "elapsed_ms": 820.0,
           "days_returned": 15,
           "total_rain_mm_15d": 156.76,
-          "sample_values": {
-            "20241001": 0.18,
-            "20241002": 2.45,
-            "20241003": 6.71
+          "peak_daily_rain_date": "2024-10-15",
+          "peak_daily_rain_mm": 54.88,
+          "daily_rainfall_mm": {
+            "2024-10-01": 0.18,
+            "2024-10-02": 2.45,
+            "2024-10-03": 6.71,
+            "2024-10-04": 6.7,
+            "2024-10-05": 4.66,
+            "2024-10-06": 3.72,
+            "2024-10-07": 2.84,
+            "2024-10-08": 4.93,
+            "2024-10-09": 6.18,
+            "2024-10-10": 9.09,
+            "2024-10-11": 9.88,
+            "2024-10-12": 7.5,
+            "2024-10-13": 5.53,
+            "2024-10-14": 31.51,
+            "2024-10-15": 54.88
           }
         },
         {
           "tank_id": "TN-KPM-002",
+          "tank_name": "Thenneri Hissa Eri",
           "status_code": 200,
-          "elapsed_ms": 861.4,
+          "elapsed_ms": 805.4,
           "days_returned": 15,
           "total_rain_mm_15d": 175.16,
-          "sample_values": {
-            "20241001": 0.1,
-            "20241002": 1.93,
-            "20241003": 7.28
+          "peak_daily_rain_date": "2024-10-15",
+          "peak_daily_rain_mm": 69.18,
+          "daily_rainfall_mm": {
+            "2024-10-01": 0.1,
+            "2024-10-02": 1.93,
+            "2024-10-03": 7.28,
+            "2024-10-04": 4.02,
+            "2024-10-05": 4.03,
+            "2024-10-06": 1.16,
+            "2024-10-07": 2.79,
+            "2024-10-08": 5.44,
+            "2024-10-09": 7.55,
+            "2024-10-10": 7.17,
+            "2024-10-11": 8.53,
+            "2024-10-12": 6.25,
+            "2024-10-13": 5.78,
+            "2024-10-14": 43.95,
+            "2024-10-15": 69.18
           }
         },
         {
           "tank_id": "TN-CGL-002",
+          "tank_name": "Kolavai Lake (Chengalpattu)",
           "status_code": 200,
-          "elapsed_ms": 918.9,
+          "elapsed_ms": 784.4,
           "days_returned": 15,
           "total_rain_mm_15d": 156.76,
-          "sample_values": {
-            "20241001": 0.18,
-            "20241002": 2.45,
-            "20241003": 6.71
+          "peak_daily_rain_date": "2024-10-15",
+          "peak_daily_rain_mm": 54.88,
+          "daily_rainfall_mm": {
+            "2024-10-01": 0.18,
+            "2024-10-02": 2.45,
+            "2024-10-03": 6.71,
+            "2024-10-04": 6.7,
+            "2024-10-05": 4.66,
+            "2024-10-06": 3.72,
+            "2024-10-07": 2.84,
+            "2024-10-08": 4.93,
+            "2024-10-09": 6.18,
+            "2024-10-10": 9.09,
+            "2024-10-11": 9.88,
+            "2024-10-12": 7.5,
+            "2024-10-13": 5.53,
+            "2024-10-14": 31.51,
+            "2024-10-15": 54.88
           }
         }
       ]
     },
     "osm_overpass_water_bodies": {
-      "source": "OpenStreetMap (Nominatim GeoJSON Polygon API + Overpass API probe)",
-      "status": "OK",
-      "overpass_probe": {
-        "status": "TIMEOUT_ON_PUBLIC_ENDPOINT",
-        "error": "timed out"
-      },
+      "source": "OpenStreetMap (Nominatim GeoJSON + Direct OSM REST API v0.6)",
+      "work_status": "WORKED_PARTLY_NOMINATIM_FULLY_OSM_API",
       "tanks": [
         {
           "tank_id": "TN-KPM-001",
-          "query": "Chembarambakkam Lake, Tamil Nadu",
+          "tank_name": "Chembarambakkam Periya Eri",
+          "nominatim_query": "Chembarambakkam Lake, Tamil Nadu",
           "status_code": 200,
-          "elapsed_ms": 412.6,
-          "osm_type": "way",
-          "osm_id": 25453624,
-          "display_name": "Chembarambakkam Lake, Chettipedu, Chennai Metropolitan Area, Kundrathur, Kanchipuram, Thiruvallur, Tamil Nadu, India",
-          "geometry_type": "Polygon",
-          "has_polygon": true
+          "elapsed_ms": 378.5,
+          "nominatim_osm_type": "way",
+          "nominatim_osm_id": 25453624,
+          "nominatim_geometry_type": "Polygon",
+          "nominatim_vertex_count": 218,
+          "osm_api_v06_element": "way/25453624",
+          "osm_api_v06_vertex_count": 218,
+          "osm_api_v06_geodesic_area_ha": 1991.29
         },
         {
           "tank_id": "TN-CGL-001",
-          "query": "Madurantakam Lake, Tamil Nadu",
+          "tank_name": "Madurantakam Periya Eri",
+          "nominatim_query": "Lake Maduranthakam, Tamil Nadu",
           "status_code": 200,
-          "elapsed_ms": 557.9,
-          "osm_type": null,
-          "osm_id": null,
-          "display_name": null,
-          "geometry_type": null,
-          "has_polygon": false
+          "elapsed_ms": 657.2,
+          "nominatim_osm_type": "way",
+          "nominatim_osm_id": 176519614,
+          "nominatim_geometry_type": "Polygon",
+          "nominatim_vertex_count": 41,
+          "osm_api_v06_element": "way/176519614",
+          "osm_api_v06_vertex_count": 41,
+          "osm_api_v06_geodesic_area_ha": 690.57
         },
         {
           "tank_id": "TN-KPM-002",
-          "query": "Thenneri Lake, Tamil Nadu",
+          "tank_name": "Thenneri Hissa Eri",
+          "nominatim_query": "Thenneri, Walajabad, Tamil Nadu",
           "status_code": 200,
-          "elapsed_ms": 537.8,
-          "osm_type": "way",
-          "osm_id": 831047472,
-          "display_name": "Thenneri Lake, Athivakkam, Chennai Metropolitan Area, Kancheepuram, Kanchipuram, Tamil Nadu, India",
-          "geometry_type": "Polygon",
-          "has_polygon": true
+          "elapsed_ms": 275.2,
+          "nominatim_osm_type": "node",
+          "nominatim_osm_id": 14271507163,
+          "nominatim_geometry_type": "Point",
+          "nominatim_vertex_count": 1,
+          "osm_api_v06_element": "way/34108738",
+          "osm_api_v06_vertex_count": 45,
+          "osm_api_v06_geodesic_area_ha": 43.27
         },
         {
           "tank_id": "TN-CGL-002",
-          "query": "Kolavai Lake, Chengalpattu",
+          "tank_name": "Kolavai Lake (Chengalpattu)",
+          "nominatim_query": "Kolavai Lake, Chengalpattu",
           "status_code": 200,
-          "elapsed_ms": 555.9,
-          "osm_type": "way",
-          "osm_id": 24161888,
-          "display_name": "Kolavai Lake, Raj\u0101kulipettai, Chennai Metropolitan Area, Chengalpattu, Tamil Nadu, 603001, India",
-          "geometry_type": "Polygon",
-          "has_polygon": true
+          "elapsed_ms": 291.4,
+          "nominatim_osm_type": "way",
+          "nominatim_osm_id": 24161888,
+          "nominatim_geometry_type": "Polygon",
+          "nominatim_vertex_count": 486,
+          "osm_api_v06_element": "way/24161888",
+          "osm_api_v06_vertex_count": 486,
+          "osm_api_v06_geodesic_area_ha": 567.25
         }
       ]
     },
     "groundwater_wris_and_subsurface": {
-      "source": "India-WRIS / CGWB Groundwater & NASA POWER Profile Subsurface Wetness",
+      "source": "India-WRIS / CGWB Groundwater Stations + NASA POWER Profile Subsurface Wetness",
+      "work_status": "WORKED_PARTLY_SPARSE_STATIONS_MITIGATED_WITH_GWETPROF",
       "india_wris_probe": {
         "status_code": 200,
-        "elapsed_ms": 609.3,
-        "content_type": "application/json;charset=UTF-8",
-        "preview": "{\"statusCode\":200,\"message\":\"Data fetched successfully\",\"data\":[{\"stationCode\":\"TNGW0029\",\"stationName\":\"PUDUPATTINAM\",\"stationType\":\"Ground Water\",\"latitude\":12.5035,\"longitude\":80.1547,\"agencyName\":\"CGWB\",\"state\":\"Tamil Nadu\",\"district\":\"Kancheepur"
+        "elapsed_ms": 4672.4,
+        "records_returned": 500,
+        "unique_stations_parsed": 25,
+        "stations": [
+          {
+            "station_code": "KANC404",
+            "station_name": "Rettamangalam_1",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "-",
+            "lat": 12.6333,
+            "lon": 79.8333,
+            "water_level_m_bgl": -1.8,
+            "reading_time": "2024-01-05T18:00:00",
+            "well_type": "Bore Well",
+            "well_depth_m": 41.79
+          },
+          {
+            "station_code": "TNGW0029",
+            "station_name": "PUDUPATTINAM",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "-",
+            "lat": 12.5035,
+            "lon": 80.1547,
+            "water_level_m_bgl": -3.15,
+            "reading_time": "2024-01-05T18:00:00",
+            "well_type": null,
+            "well_depth_m": null
+          },
+          {
+            "station_code": "TNGW0033",
+            "station_name": "PANAIYUR_1",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "-",
+            "lat": 12.8956,
+            "lon": 80.25,
+            "water_level_m_bgl": -1.83,
+            "reading_time": "2024-01-05T18:00:00",
+            "well_type": null,
+            "well_depth_m": null
+          },
+          {
+            "station_code": "TNGW0017",
+            "station_name": "VAYAULUR",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "-",
+            "lat": 12.5014,
+            "lon": 80.0816,
+            "water_level_m_bgl": -4.99,
+            "reading_time": "2024-01-05T18:00:00",
+            "well_type": null,
+            "well_depth_m": null
+          },
+          {
+            "station_code": "KANC403",
+            "station_name": "Vadekkal (Palnallur)_1",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "-",
+            "lat": 12.9036,
+            "lon": 79.9139,
+            "water_level_m_bgl": -5.47,
+            "reading_time": "2024-01-05T18:00:00",
+            "well_type": "Bore Well",
+            "well_depth_m": 50.0
+          },
+          {
+            "station_code": "KANC46",
+            "station_name": "Uthukkadu pz",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "-",
+            "lat": 12.8292,
+            "lon": 79.83,
+            "water_level_m_bgl": -1.81,
+            "reading_time": "2024-01-04T00:00:00",
+            "well_type": null,
+            "well_depth_m": 199.4
+          },
+          {
+            "station_code": "TNGW0031",
+            "station_name": "INJAMBAKKAM_1",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "-",
+            "lat": 12.9263,
+            "lon": 80.2506,
+            "water_level_m_bgl": -1.65,
+            "reading_time": "2024-01-05T18:00:00",
+            "well_type": null,
+            "well_depth_m": null
+          },
+          {
+            "station_code": "KANC42",
+            "station_name": "Paddapai_1",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "-",
+            "lat": 12.9125,
+            "lon": 80.0125,
+            "water_level_m_bgl": -7.51,
+            "reading_time": "2024-01-05T18:00:00",
+            "well_type": null,
+            "well_depth_m": 36.25
+          },
+          {
+            "station_code": "KANC39",
+            "station_name": "Arasanimangalam_1",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "-",
+            "lat": 12.5689,
+            "lon": 79.7233,
+            "water_level_m_bgl": -2.29,
+            "reading_time": "2024-01-05T18:00:00",
+            "well_type": null,
+            "well_depth_m": 45.51
+          },
+          {
+            "station_code": "KANC41",
+            "station_name": "Maduranthakam_1",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "-",
+            "lat": 12.5083,
+            "lon": 79.8917,
+            "water_level_m_bgl": -0.52,
+            "reading_time": "2024-01-02T00:00:00",
+            "well_type": null,
+            "well_depth_m": 44.85
+          },
+          {
+            "station_code": "KANC38",
+            "station_name": "Chunambedu_2",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "-",
+            "lat": 12.2669,
+            "lon": 79.9844,
+            "water_level_m_bgl": -1.39,
+            "reading_time": "2024-01-05T18:00:00",
+            "well_type": null,
+            "well_depth_m": 40.7
+          },
+          {
+            "station_code": "TNGW0030",
+            "station_name": "NEMMILI",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "-",
+            "lat": 12.7206,
+            "lon": 80.2279,
+            "water_level_m_bgl": -3.62,
+            "reading_time": "2024-01-05T18:00:00",
+            "well_type": null,
+            "well_depth_m": null
+          },
+          {
+            "station_code": "KANC405",
+            "station_name": "Baluchettychatram(Muttavakkam)",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "Walajabad",
+            "lat": 12.88,
+            "lon": 79.62,
+            "water_level_m_bgl": -3.34,
+            "reading_time": "2024-01-05T00:00:00",
+            "well_type": "Bore Well",
+            "well_depth_m": 50.0
+          },
+          {
+            "station_code": "KANC43",
+            "station_name": "Vadakkupattu pz",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "-",
+            "lat": 12.8181,
+            "lon": 79.9367,
+            "water_level_m_bgl": -0.99,
+            "reading_time": "2024-01-05T18:00:00",
+            "well_type": null,
+            "well_depth_m": 117.45
+          },
+          {
+            "station_code": "KANC40",
+            "station_name": "Mannivakkam_1",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "-",
+            "lat": 12.8922,
+            "lon": 80.0689,
+            "water_level_m_bgl": -4.33,
+            "reading_time": "2024-01-04T00:00:00",
+            "well_type": null,
+            "well_depth_m": 200.0
+          },
+          {
+            "station_code": "KANC44",
+            "station_name": "Perungulathur_1",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "Tambaram",
+            "lat": 12.9167,
+            "lon": 80.1083,
+            "water_level_m_bgl": -1.84,
+            "reading_time": "2024-01-05T00:00:00",
+            "well_type": null,
+            "well_depth_m": 45.4
+          },
+          {
+            "station_code": "KANC45",
+            "station_name": "Thirumukkudal_1",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "-",
+            "lat": 12.7375,
+            "lon": 79.8417,
+            "water_level_m_bgl": -1.7,
+            "reading_time": "2024-01-05T18:00:00",
+            "well_type": null,
+            "well_depth_m": 61.6
+          },
+          {
+            "station_code": "KANC36",
+            "station_name": "Athur1_1",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "-",
+            "lat": 12.3478,
+            "lon": 79.8892,
+            "water_level_m_bgl": -4.24,
+            "reading_time": "2024-01-04T12:00:00",
+            "well_type": null,
+            "well_depth_m": 200.0
+          },
+          {
+            "station_code": "TNGW0024",
+            "station_name": "UTHANDI_1",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "-",
+            "lat": 12.8638,
+            "lon": 80.244,
+            "water_level_m_bgl": -1.4,
+            "reading_time": "2024-01-05T18:00:00",
+            "well_type": null,
+            "well_depth_m": null
+          },
+          {
+            "station_code": "TNGW0023",
+            "station_name": "THIRUVANMAIYOUR",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "-",
+            "lat": 12.9879,
+            "lon": 80.2678,
+            "water_level_m_bgl": -2.03,
+            "reading_time": "2024-01-05T18:00:00",
+            "well_type": null,
+            "well_depth_m": null
+          },
+          {
+            "station_code": "CGWBTN45",
+            "station_name": "Ponmar KATTANKOLATHUR Kancheepuram Tamil Nadu",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "-",
+            "lat": 12.8847,
+            "lon": 80.1136,
+            "water_level_m_bgl": -0.474,
+            "reading_time": "2024-01-05T18:00:00",
+            "well_type": "Bore Well",
+            "well_depth_m": null
+          },
+          {
+            "station_code": "CGWBTN46",
+            "station_name": "Nedunkundram KATTANKOLATHUR Kancheepur am Tamil Nadu",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "-",
+            "lat": 12.8847,
+            "lon": 80.1136,
+            "water_level_m_bgl": -1.436,
+            "reading_time": "2024-01-05T18:00:00",
+            "well_type": "Bore Well",
+            "well_depth_m": null
+          },
+          {
+            "station_code": "CGWBTN47",
+            "station_name": "Panruti Kandigai SRIPERUMBUDUR Kancheepur am Tamil Nadu",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "-",
+            "lat": 12.8506,
+            "lon": 79.9119,
+            "water_level_m_bgl": -2.654,
+            "reading_time": "2024-01-05T18:00:00",
+            "well_type": "Bore Well",
+            "well_depth_m": null
+          },
+          {
+            "station_code": "CGWBTN48",
+            "station_name": "Tiruporur THIRUPORUR Kancheepur am Tamil Nadu",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "-",
+            "lat": 12.7208,
+            "lon": 80.185,
+            "water_level_m_bgl": -2.112,
+            "reading_time": "2024-01-05T18:00:00",
+            "well_type": "Bore Well",
+            "well_depth_m": null
+          },
+          {
+            "station_code": "CGWBTN49",
+            "station_name": "Kunnattur Sriperumbudur Kancheepur am Tamil Nadu",
+            "district": "Kancheepuram",
+            "tehsil_or_block": "-",
+            "lat": 13.0027,
+            "lon": 80.0992,
+            "water_level_m_bgl": -5.122,
+            "reading_time": "2024-01-05T18:00:00",
+            "well_type": "Bore Well",
+            "well_depth_m": null
+          }
+        ]
       },
       "nasa_power_subsurface_tanks": [
         {
           "tank_id": "TN-KPM-001",
-          "status_code": 200,
-          "elapsed_ms": 1148.4,
-          "days_returned": 10,
-          "mean_profile_wetness": 0.689
+          "tank_name": "Chembarambakkam Periya Eri",
+          "nearest_cgwb_station": {
+            "station_code": "CGWBTN49",
+            "station_name": "Kunnattur Sriperumbudur Kancheepur am Tamil Nadu",
+            "station_lat": 13.0027,
+            "station_lon": 80.0992,
+            "distance_to_tank_km": 4.78,
+            "water_level_m_bgl": -5.122,
+            "reading_time": "2024-01-05T18:00:00",
+            "well_type": "Bore Well"
+          },
+          "nasa_power_gwetprof": {
+            "status_code": 200,
+            "elapsed_ms": 815.5,
+            "days_returned": 10,
+            "mean_profile_wetness": 0.689,
+            "daily_profile_wetness": {
+              "2024-10-01": 0.69,
+              "2024-10-02": 0.68,
+              "2024-10-03": 0.68,
+              "2024-10-04": 0.69,
+              "2024-10-05": 0.69,
+              "2024-10-06": 0.69,
+              "2024-10-07": 0.69,
+              "2024-10-08": 0.69,
+              "2024-10-09": 0.69,
+              "2024-10-10": 0.7
+            }
+          }
         },
         {
           "tank_id": "TN-CGL-001",
-          "status_code": 200,
-          "elapsed_ms": 813.9,
-          "days_returned": 10,
-          "mean_profile_wetness": 0.578
+          "tank_name": "Madurantakam Periya Eri",
+          "nearest_cgwb_station": {
+            "station_code": "KANC41",
+            "station_name": "Maduranthakam_1",
+            "station_lat": 12.5083,
+            "station_lon": 79.8917,
+            "distance_to_tank_km": 2.56,
+            "water_level_m_bgl": -0.52,
+            "reading_time": "2024-01-02T00:00:00",
+            "well_type": null
+          },
+          "nasa_power_gwetprof": {
+            "status_code": 200,
+            "elapsed_ms": 774.2,
+            "days_returned": 10,
+            "mean_profile_wetness": 0.578,
+            "daily_profile_wetness": {
+              "2024-10-01": 0.57,
+              "2024-10-02": 0.57,
+              "2024-10-03": 0.57,
+              "2024-10-04": 0.58,
+              "2024-10-05": 0.58,
+              "2024-10-06": 0.58,
+              "2024-10-07": 0.58,
+              "2024-10-08": 0.58,
+              "2024-10-09": 0.58,
+              "2024-10-10": 0.59
+            }
+          }
         },
         {
           "tank_id": "TN-KPM-002",
-          "status_code": 200,
-          "elapsed_ms": 787.6,
-          "days_returned": 10,
-          "mean_profile_wetness": 0.689
+          "tank_name": "Thenneri Hissa Eri",
+          "nearest_cgwb_station": {
+            "station_code": "CGWBTN47",
+            "station_name": "Panruti Kandigai SRIPERUMBUDUR Kancheepur am Tamil Nadu",
+            "station_lat": 12.8506,
+            "station_lon": 79.9119,
+            "distance_to_tank_km": 2.87,
+            "water_level_m_bgl": -2.654,
+            "reading_time": "2024-01-05T18:00:00",
+            "well_type": "Bore Well"
+          },
+          "nasa_power_gwetprof": {
+            "status_code": 200,
+            "elapsed_ms": 775.4,
+            "days_returned": 10,
+            "mean_profile_wetness": 0.689,
+            "daily_profile_wetness": {
+              "2024-10-01": 0.69,
+              "2024-10-02": 0.68,
+              "2024-10-03": 0.68,
+              "2024-10-04": 0.69,
+              "2024-10-05": 0.69,
+              "2024-10-06": 0.69,
+              "2024-10-07": 0.69,
+              "2024-10-08": 0.69,
+              "2024-10-09": 0.69,
+              "2024-10-10": 0.7
+            }
+          }
         },
         {
           "tank_id": "TN-CGL-002",
-          "status_code": 200,
-          "elapsed_ms": 815.0,
-          "days_returned": 10,
-          "mean_profile_wetness": 0.578
+          "tank_name": "Kolavai Lake (Chengalpattu)",
+          "nearest_cgwb_station": {
+            "station_code": "KANC43",
+            "station_name": "Vadakkupattu pz",
+            "station_lat": 12.8181,
+            "station_lon": 79.9367,
+            "distance_to_tank_km": 13.5,
+            "water_level_m_bgl": -0.99,
+            "reading_time": "2024-01-05T18:00:00",
+            "well_type": null
+          },
+          "nasa_power_gwetprof": {
+            "status_code": 200,
+            "elapsed_ms": 384.9,
+            "days_returned": 10,
+            "mean_profile_wetness": 0.578,
+            "daily_profile_wetness": {
+              "2024-10-01": 0.57,
+              "2024-10-02": 0.57,
+              "2024-10-03": 0.57,
+              "2024-10-04": 0.58,
+              "2024-10-05": 0.58,
+              "2024-10-06": 0.58,
+              "2024-10-07": 0.58,
+              "2024-10-08": 0.58,
+              "2024-10-09": 0.58,
+              "2024-10-10": 0.59
+            }
+          }
         }
       ]
     }

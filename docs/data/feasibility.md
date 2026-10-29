@@ -1,69 +1,71 @@
-# Stage 1 Feasibility Report: External Data Sources
+# Stage 1 / Stage R Feasibility Report: External Data Sources (`R3.1–R3.2`)
 
-- **Executed At:** `2026-10-29T13:13:29Z`
+- **Executed At:** `2026-10-29T17:50:49Z`
 - **Command:** `uv run python -m eriwatch_geo.feasibility_spike`
 - **Raw Evidence Artifact:** [`data/raw/samples/feasibility_spike.json`](../../data/raw/samples/feasibility_spike.json)
 
-## 1. Executive Summary
+---
 
-Every external data category required by EriWatch (Sentinel-2 L2A optical imagery, fallback STAC/OData catalogs, JRC Global Surface Water validation rasters, daily rainfall, groundwater/subsurface wetness, and OpenStreetMap tank boundaries) was tested with live HTTP calls across 4 pilot tanks in Kancheepuram and Chengalpattu districts:
+## 1. Honest Assessment: Which Sources Worked Fully, Partly, or Not at All
 
-1. `TN-KPM-001` — **Chembarambakkam Tank** (`13.0116, 80.0592`, Kundrathur Block, Kancheepuram)
-2. `TN-CGL-001` — **Madurantakam Tank** (`12.5133, 79.8736`, Madurantakam Block, Chengalpattu)
-3. `TN-KPM-002` — **Thenneri Tank** (`12.8586, 79.8825`, Walajabad Block, Kancheepuram)
-4. `TN-CGL-002` — **Kolavai Lake** (`12.7072, 79.9856`, Kattankolathur Block, Chengalpattu)
-
-| Data Category | Primary Endpoint | Fallback Endpoint | Live Status | Mean Latency | Tanks Verified |
-|---|---|---|---|---|---|
-| **Sentinel-2 L2A (10 m / 20 m COGs)** | Microsoft Planetary Computer STAC (`sentinel-2-l2a`) | Element84 Earth Search STAC (`sentinel-2-l2a`) + Copernicus Data Space OData | `PASS (200 OK)` | `402.8 ms` (PC) / `356.8 ms` (E84) | 4 / 4 |
-| **Historical Water Validation** | JRC Global Surface Water via Planetary Computer STAC (`jrc-gsw`) | JRC Google/EC direct tile archive | `PASS (200 OK)` | `331.2 ms` | 4 / 4 |
-| **Daily Rainfall (`PRECTOTCORR`)** | NASA POWER Agroclimatology Daily API | Open-Meteo Historical Weather API (ERA5/IMD-calibrated) | `PASS (200 OK)` | `874.4 ms` | 4 / 4 |
-| **Groundwater & Subsurface Wetness** | India-WRIS CGWB Groundwater Level API (`/Dataset/Ground Water Level`) | NASA POWER Root-Zone & Profile Soil Wetness (`GWETROOT`, `GWETPROF`) | `PASS (200 OK)` | `609.3 ms` (WRIS) / `891.2 ms` (POWER) | 4 / 4 |
-| **Water-Body Boundaries** | OpenStreetMap Nominatim GeoJSON Polygon API (`polygon_geojson=1`) | Satellite MNDWI/JRC-derived maximum extent polygon (`source=derived`) | `PASS (200 OK)` | `516.1 ms` | 3 / 4 OSM (`Polygon`), 1 / 4 (`derived` fallback) |
+| Data Source / Endpoint | Outcome (`FULL` / `PARTIAL` / `FAILED`) | Real Payload Evidence Measured | Failure Mode / Limitation Observed | Engineering Mitigation Adopted |
+|---|---|---|---|---|
+| **1. Microsoft Planetary Computer STAC (`sentinel-2-l2a`)** | **WORKED FULLY** | `70–71` scenes/tank in 2024 (`11` scenes `<20%` cloud, `22–24` scenes `<40%` cloud, mean cloud cover `58.9%–59.7%`); `B03`, `B08`, `B11`, `SCL` verified | Anonymous SAS signing (`/api/sas/v1/sign`) rate-limits (`HTTP 429`) if called per-band without caching the container SAS token | Cache container SAS token per collection/run; use **Element84 Earth Search STAC** (`s3://sentinel-cogs`) for unauthenticated direct COG reads |
+| **2. Element84 Earth Search AWS STAC (`sentinel-2-l2a`)** | **WORKED FULLY** | `72` scenes in 2024 for `TN-KPM-001`; unauthenticated direct `rasterio` windowed reads of 10 m COGs (`B02`, `B03`, `B04`, `B08`) | None observed; fastest unauthenticated COG endpoint | Used alongside Planetary Computer as co-primary STAC + COG provider |
+| **3. Copernicus Data Space Ecosystem (CDSE)** | **WORKED PARTLY** | OData endpoint (`/odata/v1/Products`) returned `5` `.SAFE` product bundles (`2024-01-05`, `2024-01-10`) in `6.94 s` | CDSE's experimental STAC endpoint (`stac.dataspace.copernicus.eu/v1`) does not index standard Sentinel-2 L2A COGs, and OData serves monolithic `.SAFE` archives requiring OAuth2 rather than windowed COG reads | Do not use CDSE OData for windowed pixel reads; use Planetary Computer STAC + Element84 Earth Search COGs |
+| **4. JRC Global Surface Water (`jrc-gsw` via Planetary Computer)** | **WORKED FULLY** | Sampled real 30 m pixel values at all 4 tank centroids via `rasterio`: `occurrence = 48%–83%`, `extent = 1`, `seasonality = 4–12 months` | Requires appending a Planetary Computer SAS query string (`?st=...&se=...&sig=...`) from `/api/sas/v1/sign` before opening COGs in `rasterio` | Cache the JRC container SAS token once per batch run and read 30 m windows via `rasterio` |
+| **5. NASA POWER Agroclimatology (`PRECTOTCORR`, `GWETROOT`, `GWETPROF`)** | **WORKED FULLY** | Returned complete 15-day daily rainfall series (`2024-10-01`..`2024-10-15`, peak `69.18 mm` on `2024-10-15`) and 10-day root/profile soil wetness (`0.57–0.70`) | Coarse spatial resolution (`0.5° × 0.625°` MERRA-2/GPM grid), so nearby tanks in the same district share grid cells | Combine grid rainfall with tank-specific historical water-spread lag and storage-capacity features in Stage 4/5 |
+| **6. Direct IMD Public Portal REST API** | **DID NOT WORK (NO JSON REST API)** | No unauthenticated per-coordinate JSON REST API exists on `imd.gov.in` / `imdpune.gov.in` (HTML session forms and binary `.grd` files only) | Cannot be queried per-tank via standard REST JSON in automated workflows | Use **NASA POWER `PRECTOTCORR`** (satellite + gauge-calibrated daily precipitation, `mm/day`) as primary daily rainfall source |
+| **7. India-WRIS / CGWB Groundwater API (`/Dataset/Ground Water Level`)** | **WORKED PARTLY** | Returned `500` telemetry rows across **25 unique CGWB piezometer stations** in Kancheepuram/Chengalpattu (`-0.47 m` to `-7.51 m bgl`; nearest stations `2.56 km` to `13.50 km` from our sample tanks) | 1) Pre-2019 district split means Chengalpattu stations are indexed under `districtName="Kancheepuram"`; 2) Wide date ranges (`>1 year`) return 200+ 6-hourly rows for a single station (`KANC38`) on page 0; 3) Station density is block-level (`2.5–13.5 km` to tanks) | Query `districtName="Kancheepuram"` over 5-day windows (`size=500`) to capture all 25 stations, map each tank to its nearest CGWB piezometer by WGS84 geodesic distance, and pair with continuous daily **NASA POWER `GWETPROF`** |
+| **8. OpenStreetMap Nominatim (`polygon_geojson=1`)** | **WORKED PARTLY (`3 / 4` Polygons)** | Returned full `Polygon` rings for `TN-KPM-001` (`218` vertices), `TN-CGL-001` (`41` vertices), and `TN-CGL-002` (`486` vertices) | For `TN-KPM-002` (`Thenneri, Walajabad`), Nominatim matched the village settlement `node/14271507163` (`Point`, `1` vertex) instead of the adjacent water body `way/34108738` | Do not rely on Nominatim text search alone: extract water polygons directly by `way/<id>` or `relation/<id>` via **OSM REST API v0.6** (`45` vertices for `way/34108738`), and trace unmapped rural tanks directly from **Sentinel-2 L2A NDWI** (`R2.1`) |
 
 ---
 
-## 2. Detailed Findings per Source
+## 2. Quantitative Payload Evidence per Source (`data/raw/samples/feasibility_spike.json`)
 
-### 2.1 Sentinel-2 L2A Optical Imagery
+### 2.1 Sentinel-2 L2A STAC Inventory & Cloud Cover (Full Year 2024)
 
-- **Primary (`https://planetarycomputer.microsoft.com/api/stac/v1/search`):**
-  - Returned HTTP `200 OK` across all 4 pilot tanks (`MGRS` tiles `44PMV`, `44PLV`, `44PLU`).
-  - Confirmed presence of required Cloud-Optimized GeoTIFF (COG) band assets on every scene: `B03` (Green, 10 m), `B08` (NIR, 10 m), `B11` (SWIR1, 20 m), and `SCL` (Scene Classification Layer, 20 m).
-  - Sample scenes verified:
-    - `TN-KPM-001`: `S2A_MSIL2A_20241230T050221_R119_T44PMV_20241230T080646` (`eo:cloud_cover = 49.18%`)
-    - `TN-CGL-001`: `S2A_MSIL2A_20241230T050221_R119_T44PLU_20241230T080646` (`eo:cloud_cover = 88.84%`)
-    - `TN-KPM-002` & `TN-CGL-002`: `S2A_MSIL2A_20241230T050221_R119_T44PLV_20241230T080646` (`eo:cloud_cover = 87.06%`)
-- **Fallbacks Verified:**
-  1. **Element84 Earth Search AWS STAC (`https://earth-search.aws.element84.com/v1/search`):** Returned HTTP `200 OK` in `356.8 ms` (`S2A_44PLV_20241230_0_L2A`) with unauthenticated COG band access.
-  2. **Copernicus Data Space Ecosystem OData (`https://catalogue.dataspace.copernicus.eu/odata/v1/Products`):** Returned HTTP `200 OK` (`S2A_MSIL1C_20240105T050211_N0510_R119_T44PLV_20240105T064258.SAFE`). Note that Copernicus's experimental STAC endpoint (`stac.dataspace.copernicus.eu/v1`) only indexes CCM commercial/contributing missions, whereas Sentinel-2 is served via OData on CDSE and via STAC COGs on Planetary Computer and Element84.
-- **Mitigation:** Configure `packages/geo` STAC client with **Planetary Computer STAC** as primary and **Element84 Earth Search STAC** as automatic anonymous COG fallback.
+| Tank ID | Tank Name | 2024 Total Scenes | Scenes `< 20%` Cloud | Scenes `< 40%` Cloud | Mean Cloud Cover (%) | Min / Max Cloud (%) | Date Range Verified | Required Bands (`B03`,`B08`,`B11`,`SCL`) |
+|---|---|---|---|---|---|---|---|---|
+| `TN-KPM-001` | Chembarambakkam Periya Eri | `70` | `11` | `24` | `59.21%` | `0.001%` / `100.0%` | `2024-01-05` .. `2024-12-30` | `true` |
+| `TN-CGL-001` | Madurantakam Periya Eri | `70` | `11` | `22` | `58.90%` | `0.008%` / `100.0%` | `2024-01-05` .. `2024-12-30` | `true` |
+| `TN-KPM-002` | Thenneri Hissa Eri | `71` | `11` | `24` | `59.65%` | `0.001%` / `100.0%` | `2024-01-05` .. `2024-12-30` | `true` |
+| `TN-CGL-002` | Kolavai Lake (Chengalpattu) | `70` | `11` | `24` | `59.43%` | `0.001%` / `100.0%` | `2024-01-05` .. `2024-12-30` | `true` |
 
-### 2.2 JRC Global Surface Water (`jrc-gsw`)
+### 2.2 JRC Global Surface Water (`jrc-gsw`) Pixel Values Sampled at Tank Centroids
 
-- **Endpoint:** `https://planetarycomputer.microsoft.com/api/stac/v1/search` (`collections=["jrc-gsw"]`).
-- **Result:** HTTP `200 OK` for all 4 tanks (`80E_20Nv1_3_2020` and `70E_20Nv1_3_2020`).
-- **Assets verified:** `occurrence`, `extent` (historical maximum water extent), `seasonality`, `recurrence`, `change`, and `transitions`.
-- **Usage in EriWatch:** `occurrence` and `extent` rasters will validate our Sentinel-2 NDWI/MNDWI water masks in Stage 2 (Step 2.6) and provide long-term baseline masks for encroachment/shrinkage detection in Stage 5 (Step 5.7).
+| Tank ID | Tank Name | JRC Tile ID | Centroid (`lon, lat`) | Centroid Occurrence (`0–100%`) | 5×5 Patch Max Occurrence (`%`) | Max Extent Flag (`0/1`) | Seasonality (`1–12` months/yr) |
+|---|---|---|---|---|---|---|---|
+| `TN-KPM-001` | Chembarambakkam Periya Eri | `80E_20Nv1_3_2020` | `80.055489, 13.008220` | **`77%`** | `78%` | `1` | `12` months |
+| `TN-CGL-001` | Madurantakam Periya Eri | `70E_20Nv1_3_2020` | `79.875534, 12.525171` | **`48%`** | `50%` | `1` | `4` months |
+| `TN-KPM-002` | Thenneri Hissa Eri | `70E_20Nv1_3_2020` | `79.885503, 12.851600` | **`60%`** | `62%` | `1` | `12` months |
+| `TN-CGL-002` | Kolavai Lake (Chengalpattu) | `70E_20Nv1_3_2020` | `79.988345, 12.707142` | **`83%`** | `83%` | `1` | `12` months |
 
-### 2.3 Daily Rainfall (`NASA POWER` / IMD Grid)
+### 2.3 NASA POWER Daily Rainfall (`PRECTOTCORR`, `2024-10-01` to `2024-10-15`)
 
-- **Endpoint:** `https://power.larc.nasa.gov/api/temporal/daily/point` (`parameters=PRECTOTCORR,T2M`, `community=AG`).
-- **Result:** HTTP `200 OK` across all 4 tanks (~`874 ms`).
-- **Sample Output (Oct 1–15, 2024 Northeast Monsoon onset):**
-  - `TN-KPM-001` & `TN-KPM-002`: `175.16 mm` over 15 days (`2024-10-03`: `7.28 mm`).
-  - `TN-CGL-001` & `TN-CGL-002`: `156.76 mm` over 15 days (`2024-10-03`: `6.71 mm`).
-- **Gap & Mitigation:** IMD's direct public web portal uses session-gated HTML forms/NetCDF binary downloads rather than a JSON REST API per coordinate. NASA POWER `PRECTOTCORR` (MERRA-2 / GPM gauge-calibrated daily precipitation in `mm/day`) provides a reliable, unauthenticated JSON REST API for any `(lat, lon)` coordinate from 1981 to near-real-time.
+| Tank ID | Days Returned | 15-Day Cumulative Rain (`mm`) | Peak Rain Date | Peak Daily Rain (`mm`) | Sample Daily Values (`mm`) |
+|---|---|---|---|---|---|
+| `TN-KPM-001` | `15` | `175.16 mm` | `2024-10-15` | `69.18 mm` | `10-03: 7.28`, `10-11: 8.53`, `10-14: 43.95`, `10-15: 69.18` |
+| `TN-CGL-001` | `15` | `156.76 mm` | `2024-10-15` | `54.88 mm` | `10-03: 6.71`, `10-11: 9.88`, `10-14: 31.51`, `10-15: 54.88` |
+| `TN-KPM-002` | `15` | `175.16 mm` | `2024-10-15` | `69.18 mm` | `10-03: 7.28`, `10-11: 8.53`, `10-14: 43.95`, `10-15: 69.18` |
+| `TN-CGL-002` | `15` | `156.76 mm` | `2024-10-15` | `54.88 mm` | `10-03: 6.71`, `10-11: 9.88`, `10-14: 31.51`, `10-15: 54.88` |
 
-### 2.4 Groundwater Level (`India-WRIS CGWB` + `NASA POWER Subsurface`)
+### 2.4 India-WRIS CGWB Groundwater Stations & Geodesic Distance to Each Tank
 
-- **India-WRIS Endpoint:** `POST https://indiawris.gov.in/Dataset/Ground%20Water%20Level`
-  - **Result:** HTTP `200 OK` (`609.3 ms`), returning official Central Ground Water Board (CGWB) station telemetry in Kancheepuram/Chengalpattu (`stationCode: "TNGW0029"`, `stationName: "PUDUPATTINAM"`, `latitude: 12.5035`, `longitude: 80.1547`, and `stationCode: "CGWBTN45"`, `stationName: "Ponmar KATTANKOLATHUR"`).
-- **Gap & Mitigation:** CGWB piezometer stations are sparse (block-level rather than one sensor inside every village tank) and occasionally have multi-week reporting lags. We pair nearest-station CGWB groundwater levels (`m bgl`) with continuous daily **NASA POWER Root-Zone & Profile Soil Wetness (`GWETROOT`, `GWETPROF`)** at each tank's exact centroid (`mean_profile_wetness = 0.689` in Kancheepuram, `0.578` in Chengalpattu) so ML features in Stage 5 never suffer from missing groundwater covariates.
+- **Total Unique CGWB Stations Parsed (`2024-01-01`..`2024-01-05`):** `25` stations (`KANC36`, `KANC38`..`KANC46`, `KANC403`..`KANC405`, `TNGW0017`, `TNGW0023`, `TNGW0024`, `TNGW0029`..`TNGW0031`, `CGWBTN45`..`CGWBTN49`).
 
-### 2.5 OpenStreetMap Water-Body Boundaries
+| Tank ID | Tank Name | Nearest CGWB Station Code | Nearest Station Name | Station (`lat, lon`) | Distance to Tank (`km`) | Reading (`m bgl`) | Reading Timestamp | NASA POWER `GWETPROF` (10-d mean) |
+|---|---|---|---|---|---|---|---|---|
+| `TN-KPM-001` | Chembarambakkam Periya Eri | `CGWBTN49` | Kunnattur Sriperumbudur | `13.0027, 80.0992` | **`4.78 km`** | `-5.122 m` | `2024-01-05T18:00:00` | `0.689` |
+| `TN-CGL-001` | Madurantakam Periya Eri | `KANC41` | Maduranthakam_1 | `12.5083, 79.8917` | **`2.56 km`** | `-0.520 m` | `2024-01-02T00:00:00` | `0.578` |
+| `TN-KPM-002` | Thenneri Hissa Eri | `CGWBTN47` | Panruti Kandigai Sriperumbudur | `12.8506, 79.9119` | **`2.87 km`** | `-2.654 m` | `2024-01-05T18:00:00` | `0.689` |
+| `TN-CGL-002` | Kolavai Lake (Chengalpattu) | `KANC43` | Vadakkupattu pz | `12.8181, 79.9367` | **`13.50 km`** | `-0.990 m` | `2024-01-05T18:00:00` | `0.578` |
 
-- **Findings:**
-  - Public Overpass interpreter instances (`overpass-api.de`, `overpass.kumi.systems`) experienced high load / read timeouts (`>15 s`) on bounding-box queries during testing.
-  - Conversely, **OpenStreetMap Nominatim GeoJSON API (`https://nominatim.openstreetmap.org/search?format=geojson&polygon_geojson=1`)** returned exact OSM `Polygon` geometries in `412–555 ms` for named tanks (`Chembarambakkam Lake` → `way/25453624`, `Thenneri Lake` → `way/831047472`, `Kolavai Lake` → `way/24161888`).
-  - For tanks where a specific spelling is not indexed in Nominatim (e.g., `Madurantakam Lake` vs `Maduranthakam Eri`) or where rural tanks lack a closed OSM way, we digitise/derive the boundary polygon from historical maximum water extent (`source: "derived"`) and commit the complete GeoJSON registry (`data/processed/tank_registry.geojson`) into git in Step 1.3 so downstream stages never depend on live Overpass uptime.
+### 2.5 OpenStreetMap Nominatim vs. Direct OSM REST API v0.6 Geometry Vertex Counts
+
+| Tank ID | Nominatim Query | Nominatim Geometry Type | Nominatim Vertex Count | Direct OSM API v0.6 Element | OSM API v0.6 Vertex Count | Geodesic Area (`ha`) |
+|---|---|---|---|---|---|---|
+| `TN-KPM-001` | `Chembarambakkam Lake, Tamil Nadu` | `Polygon` | `218` | `way/25453624` | **`218`** | `1991.29 ha` |
+| `TN-CGL-001` | `Lake Maduranthakam, Tamil Nadu` | `Polygon` | `41` | `way/176519614` | **`41`** | `690.57 ha` |
+| `TN-KPM-002` | `Thenneri, Walajabad, Tamil Nadu` | `Point` (village node) | `1` | `way/34108738` | **`45`** | `43.27 ha` |
+| `TN-CGL-002` | `Kolavai Lake, Chengalpattu` | `Polygon` | `486` | `way/24161888` | **`486`** | `567.25 ha` |
