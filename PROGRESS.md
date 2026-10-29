@@ -70,10 +70,10 @@
 | [x] | R2.4 | Update `pilot_selection.md`, `tank_registry.geojson`, and tests to match | `DONE` | `8a09573` | `docs/reviews/micro/R2-4.md` |
 | [x] | R3.1 | Rewrite `feasibility_spike.py` to record real payload content (counts, dates, values, distances, vertices) | `DONE` | `4458643` | `docs/reviews/micro/R3-1.md` |
 | [x] | R3.2 | Re-run spike, commit `feasibility_spike.json`, update `docs/data/feasibility.md` honestly | `DONE` | `d3eb90c` | `docs/reviews/micro/R3-2.md` |
-| [x] | R3.3 | Mark live network tests `@pytest.mark.network` and add `make test-network` | `DONE` | `HEAD` | `docs/reviews/micro/R3-3.md` |
-| [ ] | R4.1 | Query 2019–present STAC scenes for all pilot tanks, save `data/processed/cloud_stats.parquet` + chart | `IN_PROGRESS` | - | `docs/reviews/micro/R4-1.md` |
-| [ ] | R4.2 | Update `R-003` in `PROGRESS.md` with Oct–Dec stats and write `ADR-0003` on cloud mitigation | `PENDING` | - | `docs/reviews/micro/R4-2.md` |
-| [ ] | R5.1 | Push to GitHub and verify green GitHub Actions run | `PENDING` | - | `docs/reviews/micro/R5-1.md` |
+| [x] | R3.3 | Mark live network tests `@pytest.mark.network` and add `make test-network` | `DONE` | `145d1dc` | [`docs/reviews/micro/R3-3.md`](docs/reviews/micro/R3-3.md) |
+| [x] | R4.1 | Query 2019–present STAC scenes for all pilot tanks, save `data/processed/cloud_stats.parquet` + chart | `DONE` | `e86655e` | [`docs/reviews/micro/R4-1.md`](docs/reviews/micro/R4-1.md) |
+| [x] | R4.2 | Update `R-003` in `PROGRESS.md` with Oct–Dec stats and write `ADR-0003` on cloud mitigation | `DONE` | `HEAD` | [`docs/reviews/micro/R4-2.md`](docs/reviews/micro/R4-2.md) |
+| [ ] | R5.1 | Push to GitHub and verify green GitHub Actions run | `IN_PROGRESS` | - | `docs/reviews/micro/R5-1.md` |
 | [ ] | R5.2 | Clean-clone into temp directory and run `make setup`, `make test`, `make run` | `PENDING` | - | `docs/reviews/micro/R5-2.md` |
 | [ ] | R5.3 | Bring up full compose stack (`db`, `api`, `web`, `n8n`), verify all 4 healthy + HTTP responses | `PENDING` | - | `docs/reviews/micro/R5-3.md` |
 | [ ] | R5.4 | Add `pytest-cov` test coverage reporting and record coverage | `PENDING` | - | `docs/reviews/micro/R5-4.md` |
@@ -262,4 +262,4 @@
 |---|---|---|---|---|
 | R-001 | 0.4 | Next.js 14.2.x transitive npm audit advisories; evaluate minor patch/overrides in Stage 6/10 security gate | Low | `OPEN` |
 | R-002 | 0.6 | Docker Desktop engine daemon (`dockerDesktopLinuxEngine`) not started on host; verify daemon startup for compose `/health` check | Medium | `RESOLVED` |
-| R-003 | 1.1 | High monsoon cloud cover (`>80%`) observed on Dec 2024 Sentinel-2 passes; requires SCL pixel masking + `valid_fraction` flags in Stage 2 | Medium | `OPEN` |
+| R-003 | R4.1 / R4.2 | Quantified across 27,330 tank-scenes (2019–2026) in `data/processed/cloud_stats.parquet`: during Northeast Monsoon (Oct–Dec), mean `eo:cloud_cover` is `58.15%`, with only `18.27%` of passes `< 20%` cloud (`1.62` passes/tank/mo; `12%` in Nov) and `35.58%` `< 40%` cloud (`3.15` passes/tank/mo), compared to `43.40%` `< 20%` (`3.71`/mo) in Dry Season (Jan–May). Mitigated via polygon-clipped `SCL` valid-fraction gating (Stage 2), `days_since_last_valid_pass` + NASA POWER daily rainfall covariates + widened intervals (Stage 5), and n8n cloudy-pass fallback + retry (Stage 9) per [`ADR-0003`](docs/adr/0003-cloud-cover-and-forecast-design.md) | High | `MITIGATED` |
