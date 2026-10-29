@@ -7,7 +7,7 @@
 
 | Stage | Name | Status | Gate Report | Tag |
 |---|---|---|---|---|
-| 0 | Foundations and engineering scaffolding | `IN_PROGRESS` | `docs/reviews/stage-0.md` | - |
+| 0 | Foundations and engineering scaffolding | `GATE_REVIEW` | [`docs/reviews/stage-0.md`](docs/reviews/stage-0.md) | - |
 | 1 | Data discovery and feasibility spike | `PENDING` | `docs/reviews/stage-1.md` | - |
 | 2 | Geospatial pipeline (water spread from satellites) | `PENDING` | `docs/reviews/stage-2.md` | - |
 | 3 | Database and data model | `PENDING` | `docs/reviews/stage-3.md` | - |
