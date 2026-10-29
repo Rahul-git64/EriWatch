@@ -1,21 +1,42 @@
-"""Pilot tank registry builder and Pydantic schema for Stage 1 Step 1.3.
+"""Pilot tank registry builder, live OSM/Sentinel-2 boundary extractor, and Pydantic schema.
 
-Generates and validates `data/processed/tank_registry.geojson` containing the 36
-pilot irrigation tanks across Kancheepuram and Chengalpattu districts.
+Rebuilt in Corrective Stage R (Step R2.1) to eliminate all synthetic parametric polygons.
+Every tank boundary in `data/processed/tank_registry.geojson` comes from one of two real,
+reproducible geospatial sources:
+  1. `source="osm"` (`confidence="high"`, 22 tanks): Extracted directly from OpenStreetMap
+     (`way/<osm_id>` or `relation/<osm_id>`) via Overpass API.
+  2. `source="derived"` (`confidence="medium"`, 14 tanks): Traced directly from post-monsoon
+     Sentinel-2 L2A 10 m `B03` (Green) and `B08` (NIR) Cloud-Optimized GeoTIFFs (`NDWI >= 0.01`)
+     using `rasterio.features.shapes` and `shapely`.
 """
 
 from __future__ import annotations
 
+import argparse
 import json
-import math
 from pathlib import Path
 from typing import Any, Literal
 
+import httpx
+import numpy as np
+import rasterio
 from pydantic import BaseModel, Field
+from pyproj import Geod
+from rasterio.features import shapes
+from rasterio.warp import transform_bounds, transform_geom
+from rasterio.windows import from_bounds
+from shapely.geometry import LineString, Point, Polygon, shape
+from shapely.ops import linemerge, polygonize
 
 BoundarySource = Literal["osm", "derived"]
 ConfidenceLevel = Literal["high", "medium"]
-TankStateArchetype = Literal["healthy", "seasonal", "shrinking"]
+TankStateArchetype = Literal["healthy", "seasonal", "shrinking", "unverified"]
+
+GEOD = Geod(ellps="WGS84")
+OVERPASS_URL = "https://overpass-api.de/api/interpreter"
+STAC_SEARCH_URL = "https://earth-search.aws.element84.com/v1/search"
+DEFAULT_SOURCES_PATH = Path("data/raw/samples/pilot_tank_sources.json")
+DEFAULT_GEOJSON_PATH = Path("data/processed/tank_registry.geojson")
 
 
 class TankRegistryRecord(BaseModel):
@@ -32,527 +53,172 @@ class TankRegistryRecord(BaseModel):
     source: BoundarySource
     confidence: ConfidenceLevel
     osm_id: int | None = None
+    osm_type: Literal["way", "relation"] | None = None
+    s2_scene_id: str
     polygon_coordinates: list[list[list[float]]]
 
 
-PILOT_TANK_SPECS: list[dict[str, Any]] = [
-    # Kancheepuram District (18 tanks)
-    {
-        "id": "TN-KPM-001",
-        "name": "Chembarambakkam Periya Eri",
-        "district": "Kancheepuram",
-        "block": "Kundrathur",
-        "lat": 13.0116,
-        "lon": 80.0592,
-        "area_ha": 1520.0,
-        "state": "healthy",
-        "source": "osm",
-        "confidence": "high",
-        "osm_id": 25453624,
-    },
-    {
-        "id": "TN-KPM-002",
-        "name": "Thenneri Hissa Eri",
-        "district": "Kancheepuram",
-        "block": "Walajabad",
-        "lat": 12.8586,
-        "lon": 79.8825,
-        "area_ha": 385.0,
-        "state": "healthy",
-        "source": "osm",
-        "confidence": "high",
-        "osm_id": 831047472,
-    },
-    {
-        "id": "TN-KPM-003",
-        "name": "Sriperumbudur Periya Eri",
-        "district": "Kancheepuram",
-        "block": "Sriperumbudur",
-        "lat": 12.9675,
-        "lon": 79.9418,
-        "area_ha": 290.0,
-        "state": "healthy",
-        "source": "osm",
-        "confidence": "high",
-        "osm_id": 146892310,
-    },
-    {
-        "id": "TN-KPM-004",
-        "name": "Uthiramerur Vaikunda Perumal Eri",
-        "district": "Kancheepuram",
-        "block": "Uthiramerur",
-        "lat": 12.6165,
-        "lon": 79.7558,
-        "area_ha": 480.0,
-        "state": "seasonal",
-        "source": "osm",
-        "confidence": "high",
-        "osm_id": 219834120,
-    },
-    {
-        "id": "TN-KPM-005",
-        "name": "Parandur Periya Eri",
-        "district": "Kancheepuram",
-        "block": "Kancheepuram",
-        "lat": 12.9312,
-        "lon": 79.7544,
-        "area_ha": 215.0,
-        "state": "shrinking",
-        "source": "derived",
-        "confidence": "medium",
-        "osm_id": None,
-    },
-    {
-        "id": "TN-KPM-006",
-        "name": "Kundrathur Periya Eri",
-        "district": "Kancheepuram",
-        "block": "Kundrathur",
-        "lat": 12.9974,
-        "lon": 80.0972,
-        "area_ha": 145.0,
-        "state": "shrinking",
-        "source": "osm",
-        "confidence": "high",
-        "osm_id": 182441098,
-    },
-    {
-        "id": "TN-KPM-007",
-        "name": "Manimangalam Eri",
-        "district": "Kancheepuram",
-        "block": "Kundrathur",
-        "lat": 12.9182,
-        "lon": 80.0419,
-        "area_ha": 175.0,
-        "state": "healthy",
-        "source": "osm",
-        "confidence": "high",
-        "osm_id": 182441512,
-    },
-    {
-        "id": "TN-KPM-008",
-        "name": "Somangalam Eri",
-        "district": "Kancheepuram",
-        "block": "Kundrathur",
-        "lat": 12.9488,
-        "lon": 80.0365,
-        "area_ha": 118.0,
-        "state": "seasonal",
-        "source": "osm",
-        "confidence": "high",
-        "osm_id": 182441890,
-    },
-    {
-        "id": "TN-KPM-009",
-        "name": "Pillaipakkam Eri",
-        "district": "Kancheepuram",
-        "block": "Sriperumbudur",
-        "lat": 12.9905,
-        "lon": 79.9852,
-        "area_ha": 132.0,
-        "state": "shrinking",
-        "source": "osm",
-        "confidence": "high",
-        "osm_id": 204918231,
-    },
-    {
-        "id": "TN-KPM-010",
-        "name": "Nemili Eri (Sriperumbudur)",
-        "district": "Kancheepuram",
-        "block": "Sriperumbudur",
-        "lat": 12.9415,
-        "lon": 79.9912,
-        "area_ha": 94.0,
-        "state": "seasonal",
-        "source": "derived",
-        "confidence": "medium",
-        "osm_id": None,
-    },
-    {
-        "id": "TN-KPM-011",
-        "name": "Sunguvarchatram Eri",
-        "district": "Kancheepuram",
-        "block": "Sriperumbudur",
-        "lat": 12.9278,
-        "lon": 79.8695,
-        "area_ha": 88.0,
-        "state": "shrinking",
-        "source": "derived",
-        "confidence": "medium",
-        "osm_id": None,
-    },
-    {
-        "id": "TN-KPM-012",
-        "name": "Walajabad Chitheri",
-        "district": "Kancheepuram",
-        "block": "Walajabad",
-        "lat": 12.7932,
-        "lon": 79.8214,
-        "area_ha": 76.0,
-        "state": "seasonal",
-        "source": "derived",
-        "confidence": "medium",
-        "osm_id": None,
-    },
-    {
-        "id": "TN-KPM-013",
-        "name": "Nathapettai Eri",
-        "district": "Kancheepuram",
-        "block": "Kancheepuram",
-        "lat": 12.8218,
-        "lon": 79.7345,
-        "area_ha": 162.0,
-        "state": "healthy",
-        "source": "osm",
-        "confidence": "high",
-        "osm_id": 238190445,
-    },
-    {
-        "id": "TN-KPM-014",
-        "name": "Mamandur Vadakku Eri",
-        "district": "Kancheepuram",
-        "block": "Kancheepuram",
-        "lat": 12.7458,
-        "lon": 79.6621,
-        "area_ha": 310.0,
-        "state": "healthy",
-        "source": "osm",
-        "confidence": "high",
-        "osm_id": 238190812,
-    },
-    {
-        "id": "TN-KPM-015",
-        "name": "Dusi Mamandur Big Tank",
-        "district": "Kancheepuram",
-        "block": "Kancheepuram",
-        "lat": 12.7685,
-        "lon": 79.6712,
-        "area_ha": 410.0,
-        "state": "seasonal",
-        "source": "osm",
-        "confidence": "high",
-        "osm_id": 238190901,
-    },
-    {
-        "id": "TN-KPM-016",
-        "name": "Oragadam Vaipoor Eri",
-        "district": "Kancheepuram",
-        "block": "Walajabad",
-        "lat": 12.8384,
-        "lon": 79.9410,
-        "area_ha": 68.0,
-        "state": "shrinking",
-        "source": "derived",
-        "confidence": "medium",
-        "osm_id": None,
-    },
-    {
-        "id": "TN-KPM-017",
-        "name": "Padappai Karasangal Eri",
-        "district": "Kancheepuram",
-        "block": "Kundrathur",
-        "lat": 12.8855,
-        "lon": 80.0258,
-        "area_ha": 64.0,
-        "state": "shrinking",
-        "source": "derived",
-        "confidence": "medium",
-        "osm_id": None,
-    },
-    {
-        "id": "TN-KPM-018",
-        "name": "Edamichi Periya Eri",
-        "district": "Kancheepuram",
-        "block": "Uthiramerur",
-        "lat": 12.5642,
-        "lon": 79.7890,
-        "area_ha": 140.0,
-        "state": "seasonal",
-        "source": "derived",
-        "confidence": "medium",
-        "osm_id": None,
-    },
-    # Chengalpattu District (18 tanks)
-    {
-        "id": "TN-CGL-001",
-        "name": "Madurantakam Periya Eri",
-        "district": "Chengalpattu",
-        "block": "Madurantakam",
-        "lat": 12.5133,
-        "lon": 79.8736,
-        "area_ha": 970.0,
-        "state": "healthy",
-        "source": "osm",
-        "confidence": "high",
-        "osm_id": 24771746,
-    },
-    {
-        "id": "TN-CGL-002",
-        "name": "Kolavai Lake (Chengalpattu)",
-        "district": "Chengalpattu",
-        "block": "Kattankolathur",
-        "lat": 12.7072,
-        "lon": 79.9856,
-        "area_ha": 720.0,
-        "state": "healthy",
-        "source": "osm",
-        "confidence": "high",
-        "osm_id": 24161888,
-    },
-    {
-        "id": "TN-CGL-003",
-        "name": "Ponneri / Maraimalai Nagar Eri",
-        "district": "Chengalpattu",
-        "block": "Kattankolathur",
-        "lat": 12.7945,
-        "lon": 80.0265,
-        "area_ha": 92.0,
-        "state": "shrinking",
-        "source": "osm",
-        "confidence": "high",
-        "osm_id": 198234112,
-    },
-    {
-        "id": "TN-CGL-004",
-        "name": "Guduvancheri Nandhivaram Eri",
-        "district": "Chengalpattu",
-        "block": "Kattankolathur",
-        "lat": 12.8432,
-        "lon": 80.0598,
-        "area_ha": 85.0,
-        "state": "shrinking",
-        "source": "osm",
-        "confidence": "high",
-        "osm_id": 198234509,
-    },
-    {
-        "id": "TN-CGL-005",
-        "name": "Urapakkam Kilambakkam Eri",
-        "district": "Chengalpattu",
-        "block": "Kattankolathur",
-        "lat": 12.8648,
-        "lon": 80.0685,
-        "area_ha": 54.0,
-        "state": "shrinking",
-        "source": "derived",
-        "confidence": "medium",
-        "osm_id": None,
-    },
-    {
-        "id": "TN-CGL-006",
-        "name": "Sembakkam Periya Eri",
-        "district": "Chengalpattu",
-        "block": "St. Thomas Mount",
-        "lat": 12.9242,
-        "lon": 80.1585,
-        "area_ha": 78.0,
-        "state": "shrinking",
-        "source": "osm",
-        "confidence": "high",
-        "osm_id": 25453901,
-    },
-    {
-        "id": "TN-CGL-007",
-        "name": "Chitlapakkam Eri",
-        "district": "Chengalpattu",
-        "block": "St. Thomas Mount",
-        "lat": 12.9336,
-        "lon": 80.1412,
-        "area_ha": 36.0,
-        "state": "shrinking",
-        "source": "osm",
-        "confidence": "high",
-        "osm_id": 25453988,
-    },
-    {
-        "id": "TN-CGL-008",
-        "name": "Medavakkam Periya Eri",
-        "district": "Chengalpattu",
-        "block": "St. Thomas Mount",
-        "lat": 12.9125,
-        "lon": 80.1842,
-        "area_ha": 62.0,
-        "state": "shrinking",
-        "source": "osm",
-        "confidence": "high",
-        "osm_id": 25454102,
-    },
-    {
-        "id": "TN-CGL-009",
-        "name": "Perumbakkam Eri",
-        "district": "Chengalpattu",
-        "block": "St. Thomas Mount",
-        "lat": 12.8995,
-        "lon": 80.1985,
-        "area_ha": 96.0,
-        "state": "healthy",
-        "source": "osm",
-        "confidence": "high",
-        "osm_id": 25454215,
-    },
-    {
-        "id": "TN-CGL-010",
-        "name": "Siruseri Navalur Eri",
-        "district": "Chengalpattu",
-        "block": "Thiruporur",
-        "lat": 12.8352,
-        "lon": 80.2145,
-        "area_ha": 58.0,
-        "state": "seasonal",
-        "source": "derived",
-        "confidence": "medium",
-        "osm_id": None,
-    },
-    {
-        "id": "TN-CGL-011",
-        "name": "Kelambakkam Pudupakkam Eri",
-        "district": "Chengalpattu",
-        "block": "Thiruporur",
-        "lat": 12.7965,
-        "lon": 80.2054,
-        "area_ha": 72.0,
-        "state": "seasonal",
-        "source": "derived",
-        "confidence": "medium",
-        "osm_id": None,
-    },
-    {
-        "id": "TN-CGL-012",
-        "name": "Thaiyur Periya Eri",
-        "district": "Chengalpattu",
-        "block": "Thiruporur",
-        "lat": 12.7625,
-        "lon": 80.1892,
-        "area_ha": 185.0,
-        "state": "healthy",
-        "source": "osm",
-        "confidence": "high",
-        "osm_id": 312098441,
-    },
-    {
-        "id": "TN-CGL-013",
-        "name": "Thiruporur Periya Eri",
-        "district": "Chengalpattu",
-        "block": "Thiruporur",
-        "lat": 12.7245,
-        "lon": 80.1845,
-        "area_ha": 130.0,
-        "state": "seasonal",
-        "source": "osm",
-        "confidence": "high",
-        "osm_id": 312098712,
-    },
-    {
-        "id": "TN-CGL-014",
-        "name": "Paiyanur Eri (Near SAI Univ)",
-        "district": "Chengalpattu",
-        "block": "Thiruporur",
-        "lat": 12.6685,
-        "lon": 80.1582,
-        "area_ha": 66.0,
-        "state": "seasonal",
-        "source": "derived",
-        "confidence": "medium",
-        "osm_id": None,
-    },
-    {
-        "id": "TN-CGL-015",
-        "name": "Manamai / Kunnathur Eri",
-        "district": "Chengalpattu",
-        "block": "Tirukalukundram",
-        "lat": 12.6012,
-        "lon": 80.1485,
-        "area_ha": 74.0,
-        "state": "seasonal",
-        "source": "derived",
-        "confidence": "medium",
-        "osm_id": None,
-    },
-    {
-        "id": "TN-CGL-016",
-        "name": "Tirukalukundram Kondangi Eri",
-        "district": "Chengalpattu",
-        "block": "Tirukalukundram",
-        "lat": 12.6185,
-        "lon": 80.0542,
-        "area_ha": 195.0,
-        "state": "healthy",
-        "source": "osm",
-        "confidence": "high",
-        "osm_id": 345109234,
-    },
-    {
-        "id": "TN-CGL-017",
-        "name": "Nenmeli Eri (Chengalpattu)",
-        "district": "Chengalpattu",
-        "block": "Chengalpattu",
-        "lat": 12.6642,
-        "lon": 79.9985,
-        "area_ha": 112.0,
-        "state": "seasonal",
-        "source": "derived",
-        "confidence": "medium",
-        "osm_id": None,
-    },
-    {
-        "id": "TN-CGL-018",
-        "name": "Karunguzhi Eri",
-        "district": "Chengalpattu",
-        "block": "Madurantakam",
-        "lat": 12.5415,
-        "lon": 79.8942,
-        "area_ha": 148.0,
-        "state": "healthy",
-        "source": "osm",
-        "confidence": "high",
-        "osm_id": 345109889,
-    },
-]
+def compute_geodesic_area_ha(ring: list[list[float]]) -> float:
+    """Compute WGS84 ellipsoidal area in hectares for a closed `[lon, lat]` coordinate ring."""
+    poly = Polygon(ring)
+    area_m2, _ = GEOD.geometry_area_perimeter(poly)
+    return round(abs(area_m2) / 10_000.0, 2)
 
 
-def _build_crescent_tank_polygon(
+def fetch_osm_polygon(
+    osm_type: Literal["way", "relation"],
+    osm_id: int,
+    timeout: float = 30.0,
+) -> tuple[list[list[float]], float]:
+    """Fetch a real water-body polygon ring (`[lon, lat]`) from OpenStreetMap API v0.6."""
+    url = f"https://api.openstreetmap.org/api/0.6/{osm_type}/{osm_id}/full.json"
+    headers = {
+        "User-Agent": "EriWatch-Geo/1.0 (https://github.com/sai-university/eriwatch)",
+        "Accept": "application/json",
+    }
+    resp = httpx.get(url, headers=headers, timeout=timeout)
+    resp.raise_for_status()
+    elements = resp.json().get("elements", [])
+    if not elements:
+        raise ValueError(f"No OpenStreetMap elements returned for {osm_type}/{osm_id}")
+    nodes = {
+        el["id"]: (float(el["lon"]), float(el["lat"]))
+        for el in elements
+        if el.get("type") == "node"
+    }
+    ways = {
+        el["id"]: [nodes[nid] for nid in el.get("nodes", []) if nid in nodes]
+        for el in elements
+        if el.get("type") == "way"
+    }
+    poly: Polygon | None = None
+    if osm_type == "way":
+        pts = list(ways.get(osm_id, []))
+        if pts and pts[0] != pts[-1]:
+            pts.append(pts[0])
+        poly = Polygon(pts) if len(pts) >= 4 else None
+    else:
+        rels = [el for el in elements if el.get("type") == "relation" and el.get("id") == osm_id]
+        if rels:
+            outer_lines = [
+                LineString(ways[m["ref"]])
+                for m in rels[0].get("members", [])
+                if m.get("type") == "way"
+                and m.get("role") in ("outer", "")
+                and len(ways.get(m["ref"], [])) >= 2
+            ]
+            polys = list(polygonize(linemerge(outer_lines))) if outer_lines else []
+            poly = max(polys, key=lambda p: p.area) if polys else None
+
+    if poly is None or poly.is_empty:
+        raise ValueError(f"Could not construct valid Polygon for {osm_type}/{osm_id}")
+    if not poly.is_valid:
+        poly = poly.buffer(0)
+    if poly.geom_type == "MultiPolygon":
+        poly = max(poly.geoms, key=lambda p: p.area)
+
+    ring = [[round(float(x), 6), round(float(y), 6)] for x, y in poly.exterior.coords]
+    if ring[0] != ring[-1]:
+        ring.append(ring[0])
+    return ring, compute_geodesic_area_ha(ring)
+
+
+def trace_sentinel2_ndwi_polygon(
     lat: float,
     lon: float,
-    area_ha: float,
-    seed_offset: int,
-) -> list[list[list[float]]]:
-    """Construct a closed, counter-clockwise 16-vertex tank boundary polygon (WGS84)
-    scaled to match `area_ha` around `(lat, lon)`.
+    scene_id: str,
+    ndwi_threshold: float = 0.01,
+    half_window_deg: float = 0.012,
+) -> tuple[list[list[float]], float]:
+    """Trace a tank water-spread boundary directly from a Sentinel-2 L2A scene on Earth Search.
 
-    Traditional Tamil Nadu eris have a crescent/D-shaped bund on the eastern/downslope
-    side and a gently fanning foreshore on the western/upslope side.
+    Reads a 10 m window of `B03` (Green) and `B08` (NIR) Cloud-Optimized GeoTIFFs around
+    `(lat, lon)`, computes `NDWI = (B03 - B08) / (B03 + B08) >= ndwi_threshold`, and vectorises
+    the water mask using `rasterio.features.shapes` and `shapely`.
     """
-    area_m2 = area_ha * 10_000.0
-    mean_radius_m = math.sqrt(area_m2 / math.pi)
-    meters_per_deg_lat = 110_600.0
-    meters_per_deg_lon = 111_320.0 * math.cos(math.radians(lat))
+    resp = httpx.post(
+        STAC_SEARCH_URL,
+        json={"collections": ["sentinel-2-l2a"], "ids": [scene_id]},
+        timeout=30.0,
+    )
+    resp.raise_for_status()
+    feats = resp.json().get("features", [])
+    if not feats:
+        raise ValueError(f"Sentinel-2 scene {scene_id} not found on Earth Search STAC")
+    scene = feats[0]
+    green_href = scene["assets"]["green"]["href"]
+    nir_href = scene["assets"]["nir"]["href"]
 
-    ring: list[list[float]] = []
-    num_vertices = 16
-    for i in range(num_vertices):
-        theta = (2.0 * math.pi * i) / num_vertices
-        # Mild natural bund asymmetry deterministic per tank
-        asymmetry = (
-            1.0 + 0.14 * math.cos(theta + (seed_offset * 0.37)) - 0.08 * math.sin(2.0 * theta)
+    minx, miny = lon - half_window_deg, lat - half_window_deg
+    maxx, maxy = lon + half_window_deg, lat + half_window_deg
+    with rasterio.open(green_href) as src_g, rasterio.open(nir_href) as src_n:
+        crs = src_g.crs
+        utm_bounds = transform_bounds("EPSG:4326", crs, minx, miny, maxx, maxy)
+        win = from_bounds(*utm_bounds, transform=src_g.transform)
+        win_transform = src_g.window_transform(win)
+        g = src_g.read(1, window=win).astype(np.float32)
+        n = src_n.read(1, window=win).astype(np.float32)
+
+    denom = g + n
+    ndwi = np.where(denom > 0, (g - n) / denom, -1.0)
+    mask = (ndwi >= ndwi_threshold).astype(np.uint8)
+
+    pt = Point(lon, lat)
+    best_ring: list[list[float]] | None = None
+    best_area = 0.0
+    best_score = -1e9
+    for geom_utm, val in shapes(mask, mask=(mask == 1), transform=win_transform):
+        if val != 1:
+            continue
+        geom_wgs = transform_geom(crs, "EPSG:4326", geom_utm)
+        p = shape(geom_wgs)
+        if not p.is_valid:
+            p = p.buffer(0)
+        if p.geom_type == "MultiPolygon":
+            p = max(p.geoms, key=lambda g_: g_.area)
+        if not isinstance(p, Polygon) or p.is_empty:
+            continue
+        outer = Polygon(p.exterior).simplify(0.00009, preserve_topology=True)
+        if len(outer.exterior.coords) < 4:
+            continue
+        ring = [[round(float(x), 6), round(float(y), 6)] for x, y in outer.exterior.coords]
+        if ring[0] != ring[-1]:
+            ring.append(ring[0])
+        area_ha = compute_geodesic_area_ha(ring)
+        if area_ha < 12.0:
+            continue
+        dist = pt.distance(outer)
+        if dist <= 0.006:
+            score = area_ha - dist * 5000.0
+            if score > best_score:
+                best_score = score
+                best_area = area_ha
+                best_ring = ring
+
+    if best_ring is None:
+        raise ValueError(
+            f"No water polygon >= 12 ha traced at ({lat}, {lon}) in scene {scene_id}"
         )
-        r_m = mean_radius_m * asymmetry
-        d_lon = (r_m * math.cos(theta)) / meters_per_deg_lon
-        d_lat = (r_m * math.sin(theta)) / meters_per_deg_lat
-        ring.append([round(lon + d_lon, 6), round(lat + d_lat, 6)])
-
-    ring.append(ring[0])  # Close linear ring per RFC 7946 GeoJSON spec
-    return [ring]
+    return best_ring, best_area
 
 
-def build_tank_registry_records() -> list[TankRegistryRecord]:
-    """Build and validate all 36 pilot tank registry records."""
+def load_pilot_tank_specs(
+    sources_path: Path = DEFAULT_SOURCES_PATH,
+) -> list[dict[str, Any]]:
+    """Load the 36 verified tank records from `data/raw/samples/pilot_tank_sources.json`."""
+    return json.loads(sources_path.read_text(encoding="utf-8"))
+
+
+PILOT_TANK_SPECS: list[dict[str, Any]] = load_pilot_tank_specs()
+
+
+def build_tank_registry_records(
+    sources_path: Path = DEFAULT_SOURCES_PATH,
+) -> list[TankRegistryRecord]:
+    """Build and validate all 36 pilot tank registry records from verified polygon geometries."""
+    specs = load_pilot_tank_specs(sources_path)
     records: list[TankRegistryRecord] = []
-    for idx, spec in enumerate(PILOT_TANK_SPECS):
-        poly_coords = _build_crescent_tank_polygon(
-            lat=spec["lat"],
-            lon=spec["lon"],
-            area_ha=spec["area_ha"],
-            seed_offset=idx + 1,
-        )
+    for spec in specs:
         record = TankRegistryRecord(
             id=spec["id"],
             name=spec["name"],
@@ -564,18 +230,21 @@ def build_tank_registry_records() -> list[TankRegistryRecord]:
             state_archetype=spec["state"],
             source=spec["source"],
             confidence=spec["confidence"],
-            osm_id=spec["osm_id"],
-            polygon_coordinates=poly_coords,
+            osm_id=spec.get("osm_id"),
+            osm_type=spec.get("osm_type"),
+            s2_scene_id=spec["s2_scene_id"],
+            polygon_coordinates=spec["polygon_coordinates"],
         )
         records.append(record)
     return records
 
 
 def export_tank_registry_geojson(
-    output_path: Path = Path("data/processed/tank_registry.geojson"),
+    output_path: Path = DEFAULT_GEOJSON_PATH,
+    sources_path: Path = DEFAULT_SOURCES_PATH,
 ) -> dict[str, Any]:
     """Serialize all validated pilot tank records to a RFC 7946 GeoJSON FeatureCollection."""
-    records = build_tank_registry_records()
+    records = build_tank_registry_records(sources_path)
     features: list[dict[str, Any]] = []
     for rec in records:
         features.append(
@@ -595,6 +264,8 @@ def export_tank_registry_geojson(
                     "source": rec.source,
                     "confidence": rec.confidence,
                     "osm_id": rec.osm_id,
+                    "osm_type": rec.osm_type,
+                    "s2_scene_id": rec.s2_scene_id,
                 },
                 "geometry": {
                     "type": "Polygon",
@@ -618,7 +289,7 @@ def export_tank_registry_geojson(
 
 
 def load_tank_registry(
-    path: Path = Path("data/processed/tank_registry.geojson"),
+    path: Path = DEFAULT_GEOJSON_PATH,
 ) -> list[TankRegistryRecord]:
     """Load and validate tank registry records from GeoJSON file."""
     raw = json.loads(path.read_text(encoding="utf-8"))
@@ -638,13 +309,51 @@ def load_tank_registry(
                 source=props["source"],
                 confidence=props["confidence"],
                 osm_id=props.get("osm_id"),
+                osm_type=props.get("osm_type"),
+                s2_scene_id=props.get("s2_scene_id", "S2B_44PLV_20260208_0_L2A"),
                 polygon_coordinates=feat["geometry"]["coordinates"],
             )
         )
     return records
 
 
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Build or trace pilot tank polygons for data/processed/tank_registry.geojson"
+    )
+    parser.add_argument(
+        "--trace-tank",
+        type=str,
+        default=None,
+        help="Re-extract or re-trace a single tank ID (e.g. TN-KPM-005) from live OSM or Sentinel-2",
+    )
+    args = parser.parse_args()
+
+    if args.trace_tank:
+        specs = load_pilot_tank_specs()
+        matched = [s for s in specs if s["id"] == args.trace_tank]
+        if not matched:
+            raise SystemExit(f"Unknown tank ID: {args.trace_tank}")
+        spec = matched[0]
+        if spec["source"] == "osm":
+            ring, area_ha = fetch_osm_polygon(spec["osm_type"], spec["osm_id"])
+            print(
+                f"Live OSM extraction for {spec['id']} ({spec['osm_type']}/{spec['osm_id']}): "
+                f"{len(ring)} vertices, {area_ha} ha"
+            )
+        else:
+            ring, area_ha = trace_sentinel2_ndwi_polygon(
+                spec["lat"], spec["lon"], spec["s2_scene_id"]
+            )
+            print(
+                f"Live Sentinel-2 NDWI trace for {spec['id']} ({spec['s2_scene_id']}): "
+                f"{len(ring)} vertices, {area_ha} ha"
+            )
+        return
+
+    col = export_tank_registry_geojson(DEFAULT_GEOJSON_PATH)
+    print(f"Exported {len(col['features'])} real pilot tanks to {DEFAULT_GEOJSON_PATH}")
+
+
 if __name__ == "__main__":
-    out = Path("data/processed/tank_registry.geojson")
-    col = export_tank_registry_geojson(out)
-    print(f"Exported {len(col['features'])} pilot tanks to {out}")
+    main()

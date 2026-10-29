@@ -1,71 +1,97 @@
-# Pilot Tank Selection Criteria & Cohort (Chengalpattu & Kancheepuram Districts)
+# Pilot Tank Selection Criteria & Polygon Provenance (`R2.1`)
 
 ## 1. Regional Rationale
 
-EriWatch focuses its pilot cohort on **36 irrigation tanks (*eris*)** across **Kancheepuram** (18 tanks) and **Chengalpattu** (18 tanks) districts in northern Tamil Nadu (`12.35°N – 13.06°N, 79.60°E – 80.23°E`). This region was selected for four reasons:
+EriWatch focuses its pilot cohort on **36 irrigation tanks (*eris*)** across **Kancheepuram** (18 tanks) and **Chengalpattu** (18 tanks) districts in northern Tamil Nadu (`12.52°N – 13.02°N, 79.64°E – 80.22°E`). This region was selected for four reasons:
 
-1. **Hydrological & Flood Criticality:** The Adyar, Palar, and Ongur river sub-basins contain dense cascading tank chains (*system* and *non-system* tanks) that directly buffer Northeast Monsoon floodwaters entering the southern Chennai Metropolitan Area while irrigating *Samba* and *Navarai* paddy crops.
-2. **Ground-Truth Accessibility:** Located within 15–75 km of SAI University (Paiyanur / OMR, Chengalpattu District), allowing direct physical verification of tank bunds, sluices, and encroachment patterns.
-3. **Sentinel-2 Tile Efficiency:** All 36 tanks fall within just two adjacent Sentinel-2 MGRS tiles (`44PLV` and `44PLU`, plus the southern edge of `44PMV`), minimizing STAC metadata queries while maximizing temporal revisit consistency (5-day revisit with Sentinel-2A/2B/2C).
-4. **Diversity of Urbanisation & Hydrological Stress:** Spans peri-urban IT-corridor tanks facing severe real-estate encroachment (e.g., *Pallikaranai*, *Perumbakkam*, *Medavakkam*, *Chitlapakkam*, *Sembakkam*, *Thaiyur*) alongside large rural agricultural system tanks facing siltation and canal-inflow volatility (e.g., *Madurantakam*, *Thenneri*, *Uthiramerur*, *Parandur*, *Sriperumbudur*).
-
-## 2. Quantitative Selection Criteria
-
-Every tank in the 36-tank pilot cohort satisfies all four engineering criteria:
-
-1. **Minimum Spatial Resolution Threshold ($\ge 12\text{ ha}$ historical maximum area):**
-   - At Sentinel-2's 10 m native resolution (`B03` Green, `B08` NIR), 1 pixel equals $100\text{ m}^2 = 0.01\text{ ha}$, and at 20 m (`B11` SWIR1, `SCL`), 1 pixel equals $400\text{ m}^2 = 0.04\text{ ha}$.
-   - Requiring a historical maximum extent of $\ge 12\text{ ha}$ ensures at least **1,200 pixels at 10 m** (300 pixels at 20 m) per tank, preventing mixed-pixel boundary noise from dominating the water-spread time series.
-2. **Stratified Hydrological State Distribution:**
-   - **`healthy` (12 tanks):** Perennial or well-maintained major system tanks with stable monsoon fill and $\le 10\%$ long-term footprint loss.
-   - **`seasonal` (13 tanks):** Rainfed (*non-system*) agricultural tanks that fill sharply during the October–December Northeast Monsoon and draw down below 15% capacity by May–July.
-   - **`shrinking` (11 tanks):** Peri-urban or silted tanks exhibiting documented boundary loss, weed infestation (*Eichhornia crassipes* / *Prosopis juliflora*), or residential encroachment against their historical maximum footprint.
-3. **Administrative Coverage:**
-   - **Kancheepuram District (18 tanks across 5 blocks):** Kundrathur, Sriperumbudur, Walajabad, Kancheepuram, and Uthiramerur.
-   - **Chengalpattu District (18 tanks across 6 blocks):** St. Thomas Mount, Thiruporur, Kattankolathur, Chengalpattu, Tirukalukundram, and Madurantakam.
-4. **Boundary Provenance Transparency:**
-   - Polygons sourced from OpenStreetMap (`osm`) carry `confidence = "high"` when verified against JRC Global Surface Water extent.
-   - Where OSM ways are incomplete or unclosed for rural tanks, boundaries are digitised/derived from historical maximum water extent (`derived`) and explicitly flagged so downstream analytics and users know the provenance.
+1. **Hydrological & Flood Criticality:** The Adyar, Palar, and Ongur river sub-basins contain dense cascading tank chains (*system* and *non-system* tanks) that buffer Northeast Monsoon floodwaters entering the southern Chennai Metropolitan Area while irrigating *Samba* and *Navarai* paddy crops.
+2. **Ground-Truth Accessibility:** Located within 10–75 km of SAI University (Paiyanur / OMR, Chengalpattu District), allowing direct physical verification of tank bunds, sluices, and encroachment patterns.
+3. **Sentinel-2 Tile Efficiency:** All 36 tanks fall within three adjacent Sentinel-2 MGRS tiles (`44PLV`, `44PLU`, and `44PMV`), minimizing STAC metadata queries while maximizing temporal revisit consistency (5-day revisit with Sentinel-2A/2B/2C).
+4. **Diversity of Urbanisation & Hydrological Stress:** Spans peri-urban IT-corridor and suburban tanks facing real-estate pressure alongside large rural agricultural system tanks.
 
 ---
 
-## 3. Pilot Cohort Table (36 Tanks)
+## 2. Stage R Polygon Provenance Audit (`R2.1`)
 
-| ID | Tank Name | District | Block | Centroid (`lat, lon`) | Nominal Max Area (ha) | State Archetype | Boundary Source |
+### 2.1 Audit of Stage 1 Commit `9b8e68c` (What Was Wrong)
+In Stage 1 commit `9b8e68c`, `packages/geo/src/eriwatch_geo/registry.py` defined a synthetic parametric function `_build_crescent_tank_polygon(lat, lon, area_ha, seed_offset)` that generated a 16-vertex geometric curve around each tank's nominal `(lat, lon)` coordinate. **All 36 polygons in commit `9b8e68c`—both the 22 marked `"osm"` and the 14 marked `"derived"`—were generated by that parametric formula rather than extracted from OpenStreetMap or traced from satellite imagery.**
+
+### 2.2 Corrective Replacement (`R2.1`)
+`_build_crescent_tank_polygon()` has been **deleted** from `packages/geo/src/eriwatch_geo/registry.py`. Every single tank polygon (`36 / 36`) in `data/processed/tank_registry.geojson` (`data/raw/samples/pilot_tank_sources.json`) is now a real polygon obtained from one of two verifiable geospatial sources:
+
+1. **OpenStreetMap Extraction (`source = "osm"`, `confidence = "high"`, 22 tanks):**
+   - Extracted directly from the OpenStreetMap Overpass API (`https://overpass-api.de/api/interpreter`) using each water body's real `way/<osm_id>` or `relation/<osm_id>` outer ring.
+   - Geodesic area (`nominal_max_area_ha`) is computed on the WGS84 ellipsoid via `pyproj.Geod(ellps="WGS84").geometry_area_perimeter(poly)`.
+   - Reproducible command for any OSM tank:
+     ```bash
+     uv run python -m eriwatch_geo.registry --trace-tank TN-KPM-001
+     ```
+
+2. **Sentinel-2 L2A NDWI Water-Mask Tracing (`source = "derived"`, `confidence = "medium"`, 14 tanks):**
+   - Traced directly from post-monsoon Sentinel-2 L2A scenes (`2026-02-08`, `< 1.5%` cloud cover across tiles `44PLV`, `44PLU`, `44PMV`) hosted on AWS Element84 Earth Search (`https://earth-search.aws.element84.com/v1`).
+   - Method (`trace_sentinel2_ndwi_polygon()` in `packages/geo/src/eriwatch_geo/registry.py`):
+     1. Read a windowed bounding box (`±0.012°`) around the tank center from the 10 m `B03` (Green) and `B08` (NIR) Cloud-Optimized GeoTIFFs via `rasterio.windows.from_bounds`.
+     2. Compute `NDWI = (B03 - B08) / (B03 + B08)` and threshold at `NDWI >= 0.01`.
+     3. Vectorise connected water-body components in `EPSG:32644` (`UTM Zone 44N`) using `rasterio.features.shapes`, reproject to `EPSG:4326` (`WGS84`), extract the exterior ring (`Polygon(poly.exterior).simplify(0.00009, preserve_topology=True)`), and compute WGS84 ellipsoidal area in hectares (`>= 12.0 ha`).
+   - Flagged honestly with `source = "derived"`, `confidence = "medium"`, and `osm_id = null`.
+
+### 2.3 Reproducible Method & Command for All 14 `"derived"` Tanks
+
+| ID | Tank Name | Sentinel-2 Scene ID | Tracing Method | Vertices | Geodesic Area | Confidence | Reproducible Command |
 |---|---|---|---|---|---|---|---|
-| `TN-KPM-001` | Chembarambakkam Periya Eri | Kancheepuram | Kundrathur | `13.0116, 80.0592` | 1520.0 | `healthy` | `osm` |
-| `TN-KPM-002` | Thenneri Hissa Eri | Kancheepuram | Walajabad | `12.8586, 79.8825` | 385.0 | `healthy` | `osm` |
-| `TN-KPM-003` | Sriperumbudur Periya Eri | Kancheepuram | Sriperumbudur | `12.9675, 79.9418` | 290.0 | `healthy` | `osm` |
-| `TN-KPM-004` | Uthiramerur Vaikunda Perumal Eri | Kancheepuram | Uthiramerur | `12.6165, 79.7558` | 480.0 | `seasonal` | `osm` |
-| `TN-KPM-005` | Parandur Periya Eri | Kancheepuram | Kancheepuram | `12.9312, 79.7544` | 215.0 | `shrinking` | `derived` |
-| `TN-KPM-006` | Kundrathur Periya Eri | Kancheepuram | Kundrathur | `12.9974, 80.0972` | 145.0 | `shrinking` | `osm` |
-| `TN-KPM-007` | Manimangalam Eri | Kancheepuram | Kundrathur | `12.9182, 80.0419` | 175.0 | `healthy` | `osm` |
-| `TN-KPM-008` | Somangalam Eri | Kancheepuram | Kundrathur | `12.9488, 80.0365` | 118.0 | `seasonal` | `osm` |
-| `TN-KPM-009` | Pillaipakkam Eri | Kancheepuram | Sriperumbudur | `12.9905, 79.9852` | 132.0 | `shrinking` | `osm` |
-| `TN-KPM-010` | Nemili Eri (Sriperumbudur) | Kancheepuram | Sriperumbudur | `12.9415, 79.9912` | 94.0 | `seasonal` | `derived` |
-| `TN-KPM-011` | Sunguvarchatram Eri | Kancheepuram | Sriperumbudur | `12.9278, 79.8695` | 88.0 | `shrinking` | `derived` |
-| `TN-KPM-012` | Walajabad Chitheri | Kancheepuram | Walajabad | `12.7932, 79.8214` | 76.0 | `seasonal` | `derived` |
-| `TN-KPM-013` | Nathapettai Eri | Kancheepuram | Kancheepuram | `12.8218, 79.7345` | 162.0 | `healthy` | `osm` |
-| `TN-KPM-014` | Mamandur Vadakku Eri | Kancheepuram | Kancheepuram | `12.7458, 79.6621` | 310.0 | `healthy` | `osm` |
-| `TN-KPM-015` | Dusi Mamandur Big Tank | Kancheepuram | Kancheepuram | `12.7685, 79.6712` | 410.0 | `seasonal` | `osm` |
-| `TN-KPM-016` | Oragadam Vaipoor Eri | Kancheepuram | Walajabad | `12.8384, 79.9410` | 68.0 | `shrinking` | `derived` |
-| `TN-KPM-017` |Padappai Karasangal Eri | Kancheepuram | Kundrathur | `12.8855, 80.0258` | 64.0 | `shrinking` | `derived` |
-| `TN-KPM-018` |Edamichi Periya Eri | Kancheepuram | Uthiramerur | `12.5642, 79.7890` | 140.0 | `seasonal` | `derived` |
-| `TN-CGL-001` | Madurantakam Periya Eri | Chengalpattu | Madurantakam | `12.5133, 79.8736` | 970.0 | `healthy` | `osm` |
-| `TN-CGL-002` | Kolavai Lake (Chengalpattu) | Chengalpattu | Kattankolathur | `12.7072, 79.9856` | 720.0 | `healthy` | `osm` |
-| `TN-CGL-003` | Ponneri /Maraimalai Nagar Eri | Chengalpattu | Kattankolathur | `12.7945, 80.0265` | 92.0 | `shrinking` | `osm` |
-| `TN-CGL-004` | Guduvancheri Nandhivaram Eri | Chengalpattu | Kattankolathur | `12.8432, 80.0598` | 85.0 | `shrinking` | `osm` |
-| `TN-CGL-005` | Urapakkam Kilambakkam Eri | Chengalpattu | Kattankolathur | `12.8648, 80.0685` | 54.0 | `shrinking` | `derived` |
-| `TN-CGL-006` | Sembakkam Periya Eri | Chengalpattu | St. Thomas Mount | `12.9242, 80.1585` | 78.0 | `shrinking` | `osm` |
-| `TN-CGL-007` | Chitlapakkam Eri | Chengalpattu | St. Thomas Mount | `12.9336, 80.1412` | 36.0 | `shrinking` | `osm` |
-| `TN-CGL-008` | Medavakkam Periya Eri | Chengalpattu | St. Thomas Mount | `12.9125, 80.1842` | 62.0 | `shrinking` | `osm` |
-| `TN-CGL-009` | Perumbakkam Eri | Chengalpattu | St. Thomas Mount | `12.8995, 80.1985` | 96.0 | `healthy` | `osm` |
-| `TN-CGL-010` | Siruseri Navalur Eri | Chengalpattu | Thiruporur | `12.8352, 80.2145` | 58.0 | `seasonal` | `derived` |
-| `TN-CGL-011` | Kelambakkam Pudupakkam Eri | Chengalpattu | Thiruporur | `12.7965, 80.2054` | 72.0 | `seasonal` | `derived` |
-| `TN-CGL-012` | Thaiyur Periya Eri | Chengalpattu | Thiruporur | `12.7625, 80.1892` | 185.0 | `healthy` | `osm` |
-| `TN-CGL-013` | Thiruporur Periya Eri | Chengalpattu | Thiruporur | `12.7245, 80.1845` | 130.0 | `seasonal` | `osm` |
-| `TN-CGL-014` | Paiyanur Eri (Near SAI Univ) | Chengalpattu | Thiruporur | `12.6685, 80.1582` | 66.0 | `seasonal` | `derived` |
-| `TN-CGL-015` | Manamai / Kunnathur Eri | Chengalpattu | Tirukalukundram | `12.6012, 80.1485` | 74.0 | `seasonal` | `derived` |
-| `TN-CGL-016` | Tirukalukundram Kondangi Eri | Chengalpattu | Tirukalukundram | `12.6185, 80.0542` | 195.0 | `healthy` | `osm` |
-| `TN-CGL-017` | Nenmeli Eri (Chengalpattu) | Chengalpattu | Chengalpattu | `12.6642, 79.9985` | 112.0 | `seasonal` | `derived` |
-| `TN-CGL-018` | Karunguzhi Eri | Chengalpattu | Madurantakam | `12.5415, 79.8942` | 148.0 | `healthy` | `osm` |
+| `TN-KPM-005` | Parandur Periya Eri | `S2B_44PLV_20260208_0_L2A` | `NDWI >= 0.01` (`B03`,`B08` 10 m COG) | 105 | 41.10 ha | `medium` | `uv run python -m eriwatch_geo.registry --trace-tank TN-KPM-005` |
+| `TN-KPM-010` | Nemili / Navalur Eri (Sriperumbudur) | `S2B_44PLV_20260208_0_L2A` | `NDWI >= 0.01` (`B03`,`B08` 10 m COG) | 94 | 55.95 ha | `medium` | `uv run python -m eriwatch_geo.registry --trace-tank TN-KPM-010` |
+| `TN-KPM-011` | Sunguvarchatram Molachur Eri | `S2B_44PLV_20260208_0_L2A` | `NDWI >= 0.01` (`B03`,`B08` 10 m COG) | 59 | 14.41 ha | `medium` | `uv run python -m eriwatch_geo.registry --trace-tank TN-KPM-011` |
+| `TN-KPM-012` | Vaiyavoor Chitheri | `S2B_44PLV_20260208_0_L2A` | `NDWI >= 0.01` (`B03`,`B08` 10 m COG) | 66 | 41.10 ha | `medium` | `uv run python -m eriwatch_geo.registry --trace-tank TN-KPM-012` |
+| `TN-KPM-016` | Oragadam Vaipoor Eri | `S2B_44PLV_20260208_0_L2A` | `NDWI >= 0.01` (`B03`,`B08` 10 m COG) | 54 | 21.23 ha | `medium` | `uv run python -m eriwatch_geo.registry --trace-tank TN-KPM-016` |
+| `TN-KPM-017` | Padappai Karasangal Eri | `S2B_44PLV_20260208_0_L2A` | `NDWI >= 0.01` (`B03`,`B08` 10 m COG) | 69 | 41.13 ha | `medium` | `uv run python -m eriwatch_geo.registry --trace-tank TN-KPM-017` |
+| `TN-KPM-018` | Edamichi Periya Eri | `S2B_44PLU_20260208_0_L2A` | `NDWI >= 0.01` (`B03`,`B08` 10 m COG) | 119 | 23.51 ha | `medium` | `uv run python -m eriwatch_geo.registry --trace-tank TN-KPM-018` |
+| `TN-CGL-005` | Manivakkam / Urapakkam Eri | `S2B_44PLV_20260208_0_L2A` | `NDWI >= 0.01` (`B03`,`B08` 10 m COG) | 65 | 26.29 ha | `medium` | `uv run python -m eriwatch_geo.registry --trace-tank TN-CGL-005` |
+| `TN-CGL-010` | Siruseri Navalur Eri | `S2B_44PMV_20260208_0_L2A` | `NDWI >= 0.01` (`B03`,`B08` 10 m COG) | 54 | 24.99 ha | `medium` | `uv run python -m eriwatch_geo.registry --trace-tank TN-CGL-010` |
+| `TN-CGL-011` | Kelambakkam Padur Eri | `S2B_44PMV_20260208_0_L2A` | `NDWI >= 0.01` (`B03`,`B08` 10 m COG) | 65 | 22.14 ha | `medium` | `uv run python -m eriwatch_geo.registry --trace-tank TN-CGL-011` |
+| `TN-CGL-014` | Paiyanur Eri (Near SAI Univ) | `S2B_44PLV_20260208_0_L2A` | `NDWI >= 0.01` (`B03`,`B08` 10 m COG) | 151 | 74.60 ha | `medium` | `uv run python -m eriwatch_geo.registry --trace-tank TN-CGL-014` |
+| `TN-CGL-015` | Manamai / Kunnathur Eri | `S2B_44PLV_20260208_0_L2A` | `NDWI >= 0.01` (`B03`,`B08` 10 m COG) | 117 | 27.40 ha | `medium` | `uv run python -m eriwatch_geo.registry --trace-tank TN-CGL-015` |
+| `TN-CGL-017` | Kuzhipanthandalam Eri | `S2B_44PLV_20260208_0_L2A` | `NDWI >= 0.01` (`B03`,`B08` 10 m COG) | 143 | 77.63 ha | `medium` | `uv run python -m eriwatch_geo.registry --trace-tank TN-CGL-017` |
+
+---
+
+## 3. Full Pilot Cohort Table (36 Real Tanks)
+
+| ID | Tank Name | District | Block | Centroid (`lat, lon`) | Area (ha) | State Archetype | Source | Confidence | OSM Element | Sentinel-2 Scene | Vertices |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| `TN-KPM-001` | Chembarambakkam Periya Eri | Kancheepuram | Kundrathur | `13.008220, 80.055489` | 1991.29 | `healthy` | `osm` | `high` | `way/25453624` | `S2B_44PLV_20260208_0_L2A` | 218 |
+| `TN-KPM-002` | Thenneri Hissa Eri | Kancheepuram | Walajabad | `12.851600, 79.885503` | 43.27 | `healthy` | `osm` | `high` | `way/34108738` | `S2B_44PLV_20260208_0_L2A` | 45 |
+| `TN-KPM-003` | Sriperumbudur Periya Eri | Kancheepuram | Sriperumbudur | `12.967178, 79.934356` | 278.94 | `healthy` | `osm` | `high` | `way/34108765` | `S2B_44PLV_20260208_0_L2A` | 101 |
+| `TN-KPM-004` | Uthiramerur Vaikunda Perumal Eri | Kancheepuram | Uthiramerur | `12.623749, 79.736060` | 100.44 | `seasonal` | `osm` | `high` | `way/117698592` | `S2B_44PLV_20260208_0_L2A` | 35 |
+| `TN-KPM-005` | Parandur Periya Eri | Kancheepuram | Kancheepuram | `12.930752, 79.760544` | 41.10 | `shrinking` | `derived` | `medium` | `—` | `S2B_44PLV_20260208_0_L2A` | 105 |
+| `TN-KPM-006` | Kundrathur Periya Eri | Kancheepuram | Kundrathur | `13.012842, 80.097520` | 58.73 | `shrinking` | `osm` | `high` | `way/178751060` | `S2B_44PLV_20260208_0_L2A` | 23 |
+| `TN-KPM-007` | Manimangalam Eri | Kancheepuram | Kundrathur | `12.903737, 80.037853` | 122.84 | `healthy` | `osm` | `high` | `way/26188360` | `S2B_44PLV_20260208_0_L2A` | 88 |
+| `TN-KPM-008` | Somangalam Eri | Kancheepuram | Kundrathur | `12.946344, 80.040718` | 25.45 | `seasonal` | `osm` | `high` | `way/383852845` | `S2B_44PLV_20260208_0_L2A` | 40 |
+| `TN-KPM-009` | Pillaipakkam Eri | Kancheepuram | Sriperumbudur | `12.993620, 79.979867` | 21.19 | `shrinking` | `osm` | `high` | `way/38424012` | `S2B_44PLV_20260208_0_L2A` | 29 |
+| `TN-KPM-010` | Nemili / Navalur Eri (Sriperumbudur) | Kancheepuram | Sriperumbudur | `12.945761, 79.993448` | 55.95 | `seasonal` | `derived` | `medium` | `—` | `S2B_44PLV_20260208_0_L2A` | 94 |
+| `TN-KPM-011` | Sunguvarchatram Molachur Eri | Kancheepuram | Sriperumbudur | `12.877923, 79.869874` | 14.41 | `shrinking` | `derived` | `medium` | `—` | `S2B_44PLV_20260208_0_L2A` | 59 |
+| `TN-KPM-012` | Vaiyavoor Chitheri | Kancheepuram | Kancheepuram | `12.840291, 79.738863` | 41.10 | `seasonal` | `derived` | `medium` | `—` | `S2B_44PLV_20260208_0_L2A` | 66 |
+| `TN-KPM-013` | Nathapettai Eri | Kancheepuram | Kancheepuram | `12.829933, 79.737730` | 111.44 | `healthy` | `osm` | `high` | `way/34108726` | `S2B_44PLV_20260208_0_L2A` | 50 |
+| `TN-KPM-014` | Mamandur Vadakku Eri | Kancheepuram | Kancheepuram | `12.751576, 79.647382` | 1291.20 | `healthy` | `osm` | `high` | `relation/16179862` | `S2B_44PLV_20260208_0_L2A` | 211 |
+| `TN-KPM-015` | Damal Periya Eri | Kancheepuram | Kancheepuram | `12.905823, 79.750763` | 29.15 | `seasonal` | `osm` | `high` | `way/34108732` | `S2B_44PLV_20260208_0_L2A` | 21 |
+| `TN-KPM-016` | Oragadam Vaipoor Eri | Kancheepuram | Walajabad | `12.849977, 79.948756` | 21.23 | `shrinking` | `derived` | `medium` | `—` | `S2B_44PLV_20260208_0_L2A` | 54 |
+| `TN-KPM-017` | Padappai Karasangal Eri | Kancheepuram | Kundrathur | `12.875214, 80.026177` | 41.13 | `shrinking` | `derived` | `medium` | `—` | `S2B_44PLV_20260208_0_L2A` | 69 |
+| `TN-KPM-018` | Edamichi Periya Eri | Kancheepuram | Uthiramerur | `12.566679, 79.784082` | 23.51 | `seasonal` | `derived` | `medium` | `—` | `S2B_44PLU_20260208_0_L2A` | 119 |
+| `TN-CGL-001` | Madurantakam Periya Eri | Chengalpattu | Madurantakam | `12.525171, 79.875534` | 690.59 | `healthy` | `osm` | `high` | `way/176519614` | `S2B_44PLU_20260208_0_L2A` | 41 |
+| `TN-CGL-002` | Kolavai Lake (Chengalpattu) | Chengalpattu | Kattankolathur | `12.707142, 79.988345` | 567.25 | `healthy` | `osm` | `high` | `way/24161888` | `S2B_44PLV_20260208_0_L2A` | 486 |
+| `TN-CGL-003` | Ponneri / Maraimalai Nagar Eri | Chengalpattu | Kattankolathur | `12.795929, 80.032283` | 41.04 | `shrinking` | `osm` | `high` | `way/102309331` | `S2B_44PLV_20260208_0_L2A` | 21 |
+| `TN-CGL-004` | Guduvancheri Nandhivaram Eri | Chengalpattu | Kattankolathur | `12.833654, 80.077605` | 84.02 | `shrinking` | `osm` | `high` | `way/384854734` | `S2B_44PLV_20260208_0_L2A` | 18 |
+| `TN-CGL-005` | Manivakkam / Urapakkam Eri | Chengalpattu | Kattankolathur | `12.879729, 80.058771` | 26.29 | `shrinking` | `derived` | `medium` | `—` | `S2B_44PLV_20260208_0_L2A` | 65 |
+| `TN-CGL-006` | Madambakkam / Sembakkam Eri | Chengalpattu | St. Thomas Mount | `12.910336, 80.165300` | 36.56 | `shrinking` | `osm` | `high` | `relation/17972561` | `S2B_44PMV_20260208_0_L2A` | 52 |
+| `TN-CGL-007` | Chitlapakkam Eri | Chengalpattu | St. Thomas Mount | `12.934286, 80.136295` | 20.11 | `shrinking` | `osm` | `high` | `way/23648229` | `S2B_44PLV_20260208_0_L2A` | 87 |
+| `TN-CGL-008` | Perumbakkam / Medavakkam West Eri | Chengalpattu | St. Thomas Mount | `12.896961, 80.189026` | 66.45 | `shrinking` | `osm` | `high` | `way/30424450` | `S2B_44PMV_20260208_0_L2A` | 43 |
+| `TN-CGL-009` | Sholinganallur / Perumbakkam East Eri | Chengalpattu | St. Thomas Mount | `12.909513, 80.216759` | 19.56 | `healthy` | `osm` | `high` | `way/595615732` | `S2B_44PMV_20260208_0_L2A` | 45 |
+| `TN-CGL-010` | Siruseri Navalur Eri | Chengalpattu | Thiruporur | `12.837270, 80.198221` | 24.99 | `seasonal` | `derived` | `medium` | `—` | `S2B_44PMV_20260208_0_L2A` | 54 |
+| `TN-CGL-011` | Kelambakkam Padur Eri | Chengalpattu | Thiruporur | `12.802095, 80.212621` | 22.14 | `seasonal` | `derived` | `medium` | `—` | `S2B_44PMV_20260208_0_L2A` | 65 |
+| `TN-CGL-012` | Thaiyur Periya Eri | Chengalpattu | Thiruporur | `12.778009, 80.183445` | 163.02 | `healthy` | `osm` | `high` | `way/30425446` | `S2B_44PMV_20260208_0_L2A` | 36 |
+| `TN-CGL-013` | Thiruporur Periya Eri | Chengalpattu | Thiruporur | `12.728084, 80.159807` | 44.08 | `seasonal` | `osm` | `high` | `way/641992830` | `S2B_44PMV_20260208_0_L2A` | 25 |
+| `TN-CGL-014` | Paiyanur Eri (Near SAI Univ) | Chengalpattu | Thiruporur | `12.682833, 80.146665` | 74.60 | `seasonal` | `derived` | `medium` | `—` | `S2B_44PLV_20260208_0_L2A` | 151 |
+| `TN-CGL-015` | Manamai / Kunnathur Eri | Chengalpattu | Tirukalukundram | `12.597532, 80.141838` | 27.40 | `seasonal` | `derived` | `medium` | `—` | `S2B_44PLV_20260208_0_L2A` | 117 |
+| `TN-CGL-016` | Tirukalukundram Kondangi Eri | Chengalpattu | Tirukalukundram | `12.641407, 80.056329` | 38.06 | `healthy` | `osm` | `high` | `way/642028874` | `S2B_44PLV_20260208_0_L2A` | 44 |
+| `TN-CGL-017` | Kuzhipanthandalam Eri | Chengalpattu | Tirukalukundram | `12.662268, 80.139658` | 77.63 | `seasonal` | `derived` | `medium` | `—` | `S2B_44PLV_20260208_0_L2A` | 143 |
+| `TN-CGL-018` | Karunguzhi Eri | Chengalpattu | Madurantakam | `12.537374, 79.899018` | 30.77 | `healthy` | `osm` | `high` | `way/117698722` | `S2B_44PLU_20260208_0_L2A` | 45 |
