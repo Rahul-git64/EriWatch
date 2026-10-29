@@ -27,8 +27,8 @@
 
 | Done | Step | Description | Status | Commit | Micro-Review |
 |---|---|---|---|---|---|
-| [ ] | 0.1 | Initialise git, `.gitignore`, `README.md`, MIT licence | `IN_PROGRESS` | - | `docs/reviews/micro/0-1.md` |
-| [ ] | 0.2 | Create repository layout with placeholder READMEs | `PENDING` | - | `docs/reviews/micro/0-2.md` |
+| [x] | 0.1 | Initialise git, `.gitignore`, `README.md`, MIT licence | `DONE` | `5871c64` | [`docs/reviews/micro/0-1.md`](docs/reviews/micro/0-1.md) |
+| [ ] | 0.2 | Create repository layout with placeholder READMEs | `IN_PROGRESS` | - | `docs/reviews/micro/0-2.md` |
 | [ ] | 0.3 | Python tooling: `uv`, `ruff`, `mypy`, `pytest`, pre-commit hooks | `PENDING` | - | `docs/reviews/micro/0-3.md` |
 | [ ] | 0.4 | Web tooling: Next.js 14 TS app, ESLint, Prettier, Vitest, Playwright | `PENDING` | - | `docs/reviews/micro/0-4.md` |
 | [ ] | 0.5 | FastAPI skeleton with `/health`, structured JSON logging, Pydantic settings, 1 test | `PENDING` | - | `docs/reviews/micro/0-5.md` |
