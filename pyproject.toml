@@ -57,7 +57,7 @@ src = [
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP", "N", "SIM", "RUF"]
-ignore = []
+ignore = ["E501", "RUF001"]
 
 [tool.mypy]
 python_version = "3.11"
@@ -73,6 +73,17 @@ mypy_path = [
 ]
 explicit_package_bases = true
 namespace_packages = true
+
+[[tool.mypy.overrides]]
+module = [
+    "rasterio",
+    "rasterio.*",
+    "shapely",
+    "shapely.*",
+    "pyarrow",
+    "pyarrow.*",
+]
+ignore_missing_imports = true
 
 [tool.pytest.ini_options]
 minversion = "8.0"

@@ -196,17 +196,16 @@ def trace_sentinel2_ndwi_polygon(
                 best_ring = ring
 
     if best_ring is None:
-        raise ValueError(
-            f"No water polygon >= 12 ha traced at ({lat}, {lon}) in scene {scene_id}"
-        )
+        raise ValueError(f"No water polygon >= 12 ha traced at ({lat}, {lon}) in scene {scene_id}")
     return best_ring, best_area
 
 
 def load_pilot_tank_specs(
     sources_path: Path = DEFAULT_SOURCES_PATH,
 ) -> list[dict[str, Any]]:
-    """Load the 36 verified tank records from `data/raw/samples/pilot_tank_sources.json`."""
-    return json.loads(sources_path.read_text(encoding="utf-8"))
+    """Load the 35 verified tank records from `data/raw/samples/pilot_tank_sources.json`."""
+    data: list[dict[str, Any]] = json.loads(sources_path.read_text(encoding="utf-8"))
+    return data
 
 
 PILOT_TANK_SPECS: list[dict[str, Any]] = load_pilot_tank_specs()
@@ -325,7 +324,7 @@ def main() -> None:
         "--trace-tank",
         type=str,
         default=None,
-        help="Re-extract or re-trace a single tank ID (e.g. TN-KPM-005) from live OSM or Sentinel-2",
+        help="Re-extract or re-trace a single tank ID (e.g. TN-KPM-005) from OSM or Sentinel-2",
     )
     args = parser.parse_args()
 

@@ -9,13 +9,14 @@ overlaid, saves `docs/data/overlays/<TANK_ID>.png`, and writes quantitative matc
 
 from __future__ import annotations
 
-from concurrent.futures import ThreadPoolExecutor
 import json
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any
 
 import httpx
 import matplotlib
+
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
@@ -76,7 +77,7 @@ def _stretch_rgb(r: np.ndarray, g: np.ndarray, b: np.ndarray) -> np.ndarray:
 def generate_all_tank_overlays(
     overlays_dir: Path = DEFAULT_OVERLAYS_DIR,
 ) -> dict[str, Any]:
-    """Generate `docs/data/overlays/<TANK_ID>.png` and `overlay_summary.json` for all pilot tanks."""
+    """Generate `docs/data/overlays/<TANK_ID>.png` and summary JSON for all pilot tanks."""
     records = load_tank_registry()
     overlays_dir.mkdir(parents=True, exist_ok=True)
 
@@ -161,7 +162,8 @@ def generate_all_tank_overlays(
             fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11, 5), dpi=120)
             fig.suptitle(
                 f"{rec.id}: {rec.name} ({rec.district} / {rec.block})\n"
-                f"Source: {rec.source} (confidence={rec.confidence}) | Nominal Area: {rec.nominal_max_area_ha:.2f} ha | "
+                f"Source: {rec.source} (confidence={rec.confidence}) | "
+                f"Nominal Area: {rec.nominal_max_area_ha:.2f} ha | "
                 f"Scene: {scene_id} ({dt_str}, cloud={cloud_pct}%)",
                 fontsize=10.5,
                 fontweight="bold",
@@ -242,7 +244,6 @@ def generate_all_tank_overlays(
 
 if __name__ == "__main__":
     res = generate_all_tank_overlays()
-    print(
-        f"Generated {res['total_tanks_checked']} overlay PNGs: "
-        f"{res['matched_water_body_count']}/{res['total_tanks_checked']} visibly match a real water body"
-    )
+    matched = res["matched_water_body_count"]
+    total = res["total_tanks_checked"]
+    print(f"Generated {total} overlay PNGs: {matched}/{total} visibly match a real water body")

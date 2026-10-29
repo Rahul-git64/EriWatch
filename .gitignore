@@ -63,6 +63,7 @@ data/processed/*
 !data/processed/.gitkeep
 !data/processed/README.md
 !data/processed/tank_registry.geojson
+!data/processed/cloud_stats.parquet
 !data/processed/samples/
 
 # Model artifacts (heavy binaries ignored; small metadata kept)

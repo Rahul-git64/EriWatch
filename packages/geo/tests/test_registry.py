@@ -15,7 +15,7 @@ from eriwatch_geo.registry import (
 
 
 def test_registry_has_35_verified_pilot_tanks_with_unverified_labels() -> None:
-    """Verify 30-50 pilot tanks (35 after dropping TN-KPM-013 in R2.4) with real polygons and overlays."""
+    """Verify 30-50 pilot tanks (35 after R2.4) with real polygons and overlays."""
     records = build_tank_registry_records()
     assert 30 <= len(records) <= 50
     assert len(records) == 35
@@ -78,4 +78,3 @@ def test_live_osm_way_polygon_extraction() -> None:
     assert len(ring) == 218
     assert ring[0] == ring[-1]
     assert abs(area_ha - 1991.29) <= 0.5
-

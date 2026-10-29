@@ -25,7 +25,7 @@ def test_pilot_sample_tanks_has_at_least_three_tanks() -> None:
 
 
 def test_feasibility_spike_artifact_contains_real_payload_metrics() -> None:
-    """Verify feasibility_spike.json contains real payload counts, raster values, distances, and vertices."""
+    """Verify feasibility_spike.json contains real counts, raster values, distances, vertices."""
     artifact = Path("data/raw/samples/feasibility_spike.json")
     assert artifact.exists(), "feasibility_spike.json must exist"
     payload = json.loads(artifact.read_text(encoding="utf-8"))

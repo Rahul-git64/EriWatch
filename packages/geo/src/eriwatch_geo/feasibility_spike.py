@@ -14,16 +14,16 @@ across Kancheepuram and Chengalpattu districts and records real payload measurem
 
 from __future__ import annotations
 
-from datetime import UTC, datetime
 import json
 import time
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
 import httpx
 import numpy as np
-from pyproj import Geod
 import rasterio
+from pyproj import Geod
 from rasterio.windows import Window
 
 from eriwatch_geo.registry import fetch_osm_polygon
@@ -80,7 +80,7 @@ PILOT_SAMPLE_TANKS: list[dict[str, Any]] = [
 
 def _geodesic_distance_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
     _, _, dist_m = GEOD.inv(lon1, lat1, lon2, lat2)
-    return round(abs(dist_m) / 1000.0, 2)
+    return float(round(abs(float(dist_m)) / 1000.0, 2))
 
 
 def _count_geojson_vertices(geom: dict[str, Any]) -> int:
@@ -147,11 +147,17 @@ def spike_planetary_computer_stac(client: httpx.Client) -> dict[str, Any]:
                 "returned_scenes": len(features),
                 "scenes_cloud_lt_20pct": len(clear_lt_20),
                 "scenes_cloud_lt_40pct": len(clear_lt_40),
-                "mean_cloud_cover_pct": round(float(np.mean(cloud_vals)), 2) if cloud_vals else None,
+                "mean_cloud_cover_pct": round(float(np.mean(cloud_vals)), 2)
+                if cloud_vals
+                else None,
                 "min_cloud_cover_pct": round(float(np.min(cloud_vals)), 3) if cloud_vals else None,
                 "max_cloud_cover_pct": round(float(np.max(cloud_vals)), 2) if cloud_vals else None,
-                "earliest_2024_date": features[-1]["properties"]["datetime"][:10] if features else None,
-                "latest_2024_date": features[0]["properties"]["datetime"][:10] if features else None,
+                "earliest_2024_date": features[-1]["properties"]["datetime"][:10]
+                if features
+                else None,
+                "latest_2024_date": features[0]["properties"]["datetime"][:10]
+                if features
+                else None,
                 "has_required_bands": all(b in assets for b in ["B03", "B08", "B11", "SCL"]),
                 "sample_scenes": sample_scenes,
             }
@@ -241,7 +247,7 @@ def _get_jrc_sas_query(client: httpx.Client, sample_href: str) -> str:
 
 
 def spike_jrc_global_surface_water(client: httpx.Client) -> dict[str, Any]:
-    """Query JRC Global Surface Water via Planetary Computer STAC and sample real pixel values at tank centroids."""
+    """Query JRC Global Surface Water via Planetary Computer STAC and sample centroid pixels."""
     search_url = "https://planetarycomputer.microsoft.com/api/stac/v1/search"
     sas_query: str | None = None
 
@@ -304,14 +310,16 @@ def spike_jrc_global_surface_water(client: httpx.Client) -> dict[str, Any]:
             }
         )
     return {
-        "source": "JRC Global Surface Water (jrc-gsw via Planetary Computer STAC + COG pixel sampling)",
+        "source": (
+            "JRC Global Surface Water (jrc-gsw via Planetary Computer STAC + COG pixel sampling)"
+        ),
         "work_status": "WORKED_FULLY",
         "tanks": results,
     }
 
 
 def spike_nasa_power_rainfall(client: httpx.Client) -> dict[str, Any]:
-    """Query NASA POWER Daily Agroclimatology API (PRECTOTCORR) and record full date-value series."""
+    """Query NASA POWER Daily Agroclimatology API (PRECTOTCORR) and record date-value series."""
     url = "https://power.larc.nasa.gov/api/temporal/daily/point"
     results: list[dict[str, Any]] = []
     for tank in PILOT_SAMPLE_TANKS:
@@ -359,8 +367,10 @@ def spike_nasa_power_rainfall(client: httpx.Client) -> dict[str, Any]:
 
 
 def spike_osm_overpass(client: httpx.Client) -> dict[str, Any]:
-    """Query OpenStreetMap Nominatim GeoJSON polygon API and Direct OSM REST API v0.6 for vertex counts."""
-    headers = {"User-Agent": "EriWatch-SAIU-Capstone/1.0 (https://github.com/sai-university/eriwatch)"}
+    """Query OpenStreetMap Nominatim GeoJSON API and Direct OSM REST API v0.6 for vertex counts."""
+    headers = {
+        "User-Agent": "EriWatch-SAIU-Capstone/1.0 (https://github.com/sai-university/eriwatch)"
+    }
     search_queries = {
         "TN-KPM-001": "Chembarambakkam Lake, Tamil Nadu",
         "TN-CGL-001": "Lake Maduranthakam, Tamil Nadu",
@@ -414,7 +424,7 @@ def spike_osm_overpass(client: httpx.Client) -> dict[str, Any]:
 
 
 def spike_groundwater_and_soil_moisture(client: httpx.Client) -> dict[str, Any]:
-    """Query India-WRIS CGWB Groundwater stations, parse station readings & distances, and query NASA POWER GWETPROF."""
+    """Query India-WRIS CGWB Groundwater stations, distances, and NASA POWER GWETPROF."""
     wris_url = "https://indiawris.gov.in/Dataset/Ground%20Water%20Level"
     t0 = time.perf_counter()
     r = client.post(

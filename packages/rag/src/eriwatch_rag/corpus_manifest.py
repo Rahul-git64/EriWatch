@@ -1,5 +1,4 @@
-# ruff: noqa: E501
-"""Legal corpus downloader, manifest builder, and verification script for Stage R (`packages/rag`).
+"""Legal corpus downloader, manifest builder, and verification script (`packages/rag`).
 
 Every document in `data/raw/legal/` is a real original PDF downloaded verbatim from an
 official government, statutory, or judicial URL. Synthetic or agent-generated PDFs
@@ -569,9 +568,15 @@ def verify_legal_corpus(
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Download or verify the EriWatch legal corpus.")
-    parser.add_argument("--download", action="store_true", help="Download real PDFs and rebuild manifest.json")
-    parser.add_argument("--verify", action="store_true", help="Verify local SHA-256 and page counts")
-    parser.add_argument("--check-urls", action="store_true", help="Also verify live HTTP status of each source_url")
+    parser.add_argument(
+        "--download", action="store_true", help="Download real PDFs and rebuild manifest.json"
+    )
+    parser.add_argument(
+        "--verify", action="store_true", help="Verify local SHA-256 and page counts"
+    )
+    parser.add_argument(
+        "--check-urls", action="store_true", help="Also verify live HTTP status of each source_url"
+    )
     args = parser.parse_args()
 
     if args.download:

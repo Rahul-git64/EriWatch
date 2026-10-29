@@ -1,4 +1,4 @@
-"""Strict verification tests for the real legal corpus (`packages/rag/tests/test_corpus_manifest.py`).
+"""Strict verification tests for the real legal corpus (`test_corpus_manifest.py`).
 
 Tests Step R1.5 requirements:
 1. At least 25 real documents in `data/raw/legal/manifest.json`.
