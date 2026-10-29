@@ -8,7 +8,7 @@
 | Stage | Name | Status | Gate Report | Tag |
 |---|---|---|---|---|
 | 0 | Foundations and engineering scaffolding | `PASSED` | [`docs/reviews/stage-0.md`](docs/reviews/stage-0.md) | `stage-0-pass` |
-| 1 | Data discovery and feasibility spike | `IN_PROGRESS` | `docs/reviews/stage-1.md` | - |
+| 1 | Data discovery and feasibility spike | `PASSED` | [`docs/reviews/stage-1.md`](docs/reviews/stage-1.md) | `stage-1-pass` |
 | 2 | Geospatial pipeline (water spread from satellites) | `PENDING` | `docs/reviews/stage-2.md` | - |
 | 3 | Database and data model | `PENDING` | `docs/reviews/stage-3.md` | - |
 | 4 | Exploratory data analysis and decision-focused analytics | `PENDING` | `docs/reviews/stage-4.md` | - |
@@ -49,7 +49,7 @@
 | [x] | 1.3 | Build tank registry file (id, name, district, block, centroid, polygon, source, confidence) | `DONE` | `9b8e68c` | [`docs/reviews/micro/1-3.md`](docs/reviews/micro/1-3.md) |
 | [x] | 1.4 | Data dictionary (`docs/data/dictionary.md`) with units and licence | `DONE` | `c3d88d2` | [`docs/reviews/micro/1-4.md`](docs/reviews/micro/1-4.md) |
 | [x] | 1.5 | Licence and ethics note: public sources and attribution | `DONE` | `f5cc634` | [`docs/reviews/micro/1-5.md`](docs/reviews/micro/1-5.md) |
-| [ ] | 1.6 | Collect >=25 government/court order PDFs into `data/raw/legal/` with manifest | `IN_PROGRESS` | - | `docs/reviews/micro/1-6.md` |
+| [x] | 1.6 | Collect >=25 government/court order PDFs into `data/raw/legal/` with manifest | `DONE` | `859c32a` | [`docs/reviews/micro/1-6.md`](docs/reviews/micro/1-6.md) |
 
 ---
 
@@ -233,3 +233,4 @@
 |---|---|---|---|---|
 | R-001 | 0.4 | Next.js 14.2.x transitive npm audit advisories; evaluate minor patch/overrides in Stage 6/10 security gate | Low | `OPEN` |
 | R-002 | 0.6 | Docker Desktop engine daemon (`dockerDesktopLinuxEngine`) not started on host; verify daemon startup for compose `/health` check | Medium | `RESOLVED` |
+| R-003 | 1.1 | High monsoon cloud cover (`>80%`) observed on Dec 2024 Sentinel-2 passes; requires SCL pixel masking + `valid_fraction` flags in Stage 2 | Medium | `OPEN` |
