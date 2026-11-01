@@ -55,6 +55,8 @@ data/raw/*
 !data/raw/.gitkeep
 !data/raw/README.md
 !data/raw/legal/
+data/raw/legal/*.pdf
+!data/raw/legal/manifest.json
 !data/raw/samples/
 data/interim/*
 !data/interim/.gitkeep
