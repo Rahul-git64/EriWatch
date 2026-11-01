@@ -1,19 +1,22 @@
 .PHONY: setup lint test test-network run db-up db-reset
 
+# NOTE (R5.2): `npm --prefix apps/web install` resolves package.json from the repo root on
+# Windows, which broke `make setup` on a clean clone. Always `cd` into apps/web instead.
+
 setup:
 	uv sync
-	npm --prefix apps/web install
+	cd apps/web && npm ci
 
 lint:
 	uv run ruff check .
 	uv run mypy apps/api/src packages/geo/src packages/ml/src packages/rag/src
-	npm --prefix apps/web run lint
-	npm --prefix apps/web run typecheck
-	npm --prefix apps/web run format:check
+	cd apps/web && npm run lint
+	cd apps/web && npm run typecheck
+	cd apps/web && npm run format:check
 
 test:
 	uv run pytest -m "not network"
-	npm --prefix apps/web run test
+	cd apps/web && npm run test
 
 test-network:
 	uv run pytest -m "network" -v
