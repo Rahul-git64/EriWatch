@@ -46,11 +46,48 @@ During the Stage R audit, four structural concerns were identified across EriWat
   2. **Independent Manual Sample**: A curated benchmark dataset of at least 10 tanks (`docs/data/manual_validation/`) with pixel-level ground truth manually annotated from high-resolution satellite imagery on dates and scenes completely distinct from the scenes used for registry tracing.
 
 ### 4. Historical Maximum Extent Methodology (A5)
-- **Shrinkage Baseline**: Historical maximum extent for each tank is established using:
-  1. The **JRC Global Surface Water Maximum Water Extent** raster layer (representing 1984–2021 maximum surface water extent).
-  2. A multi-year composite of the wettest clean Sentinel-2 passes (the 95th percentile NDWI surface over 2019–2024 post-monsoon passes).
-  3. Manual boundary review of 10 pilot tanks comparing cadastral revenue survey boundaries against satellite maximum water spread.
-- **Permanent Shrinkage Metric**: Calculated as the percentage area deficit between the verified historical maximum extent and the rolling 3-year peak post-monsoon water spread.
+
+#### 4.1 Rationale & Problem Statement
+A single-date traced polygon reflects only the instantaneous water surface on that specific satellite overpass date. Depending on whether that pass occurred in a drought year, mid-monsoon, or post-monsoon, the traced area may represent as little as 30% or as much as 100% of the true hydrological water-spread capacity. Using instantaneous polygons as the benchmark for shrinkage or encroachment would yield severe false-positive or false-negative alarms. Therefore, an objective, multi-year historical maximum extent must be established for each tank.
+
+#### 4.2 Multi-Year Percentile Composite Method
+The baseline historical maximum extent is computed through a dual-source remote sensing fusion:
+1. **Sentinel-2 Multi-Year $P_{95}$ NDWI Composite**:
+   - **Temporal Scope**: 2019–2024 post-monsoon observation windows (October 15 through January 31 of each water year).
+   - **Quality Filtering**: Only Sentinel-2 L2A scenes with SCL cloud/shadow mask $< 15\%$ across the tank bounding box + 500 m buffer are admitted.
+   - **Spectral Index**: Green/NIR Normalized Difference Water Index:
+     $$\text{NDWI} = \frac{\text{B03} - \text{B08}}{\text{B03} + \text{B08}}$$
+   - **Temporal Aggregation**: For each 10 m pixel within the buffered bounding box, the 95th percentile ($P_{95}$) NDWI value across all admitted scenes is computed. Taking $P_{95}$ rather than the maximum ($P_{100}$) eliminates residual cloud edge artifacts, sun glint, and single-pass sensor anomalies while capturing peak flood/monsoon water levels.
+   - **Segmentation**: An Otsu adaptive threshold is applied to the $P_{95}$ raster (clamped to $[0.0, 0.2]$) to generate the empirical maximum water mask.
+2. **JRC Global Surface Water (GSW) Maximum Water Extent Layer**:
+   - The JRC GSW Maximum Water Extent raster (representing 38 years of surface water detection from 1984 to 2021 at 30 m resolution) is clipped to each tank's buffered catchment.
+   - The fused historical maximum extent polygon is the union of the JRC GSW Maximum Extent and the Sentinel-2 $P_{95}$ water mask, regularized using morphological opening (radius 1 pixel) to eliminate spurious isolated pixels.
+
+#### 4.3 Ten-Tank Manual Review Protocol
+To ground-truth and calibrate the automated maximum-extent methodology, an explicit manual audit is conducted on 10 representative pilot tanks:
+- **Kancheepuram District (5 major irrigation tanks)**:
+  1. `TN-KPM-001` — Madurantakam Eri (largest tank in the district, 988.7 ha)
+  2. `TN-KPM-002` — Uthiramerur Eri (major historical system tank, 442.2 ha)
+  3. `TN-KPM-003` — Tenneri Eri (385.1 ha)
+  4. `TN-KPM-005` — Damal Eri (231.5 ha)
+  5. `TN-KPM-010` — Walajabad Eri (115.4 ha)
+- **Chengalpattu District (5 peri-urban and urban-interface tanks)**:
+  6. `TN-CGL-001` — Perumbakkam Lake (peri-urban wetland interface, 102.3 ha)
+  7. `TN-CGL-002` — Nanmangalam Lake (forest-adjacent peri-urban tank, 68.4 ha)
+  8. `TN-CGL-005` — Sembakkam Lake (dense urban fringe, 45.2 ha)
+  9. `TN-CGL-008` — Keelkattalai Lake (flood-moderating wetland, 52.8 ha)
+  10. `TN-CGL-011` — Thiruporur Periya Eri (historical coastal temple tank, 84.6 ha)
+
+**Protocol Steps**:
+1. For each of the 10 tanks, overlay the fused $P_{95}$ / JRC maximum extent against high-resolution optical imagery (Sentinel-2 10 m RGB, Google/Bing aerial basemaps) and available Tamil Nadu Survey & Settlement / FMB (Field Measurement Book) Full Tank Level (FTL) revenue boundaries.
+2. Measure discrepancy between nominal registry area and fused maximum extent. If discrepancy exceeds $\pm 15\%$, identify whether the difference stems from bund expansion, foreshore siltation, or upstream seasonal marshes.
+3. Record visual inspection notes, before/after boundary plots, and verified FTL coordinates in `docs/data/manual_validation/max_extent_review.md`.
+4. Surface any proposed polygon adjustments to the user for explicit approval before modifying the production registry.
+
+#### 4.4 Shrinkage and Encroachment Metric
+Permanent loss is formally decoupled from seasonal dry-downs:
+$$\text{Permanent Loss (\%)} = \frac{\text{Historical Maximum Extent (ha)} - \text{Peak Area}_{3\text{-yr rolling post-monsoon (ha)}}}{\text{Historical Maximum Extent (ha)}} \times 100\%$$
+- **Shrinking Flag**: Triggered only when $\text{Permanent Loss} > 20\%$ for 3 consecutive post-monsoon seasons (November–January), confirming irreversible hydrological capacity reduction or bund encroachment rather than weather-driven drought.
 
 ---
 
