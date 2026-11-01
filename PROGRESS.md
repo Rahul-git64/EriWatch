@@ -7,9 +7,9 @@
 
 | Stage | Name | Status | Gate Report | Tag |
 |---|---|---|---|---|
-| 0 | Foundations and engineering scaffolding | `REOPENED` | [`docs/reviews/stage-0.md`](docs/reviews/stage-0.md) | - |
-| 1 | Data discovery and feasibility spike | `REOPENED` | [`docs/reviews/stage-1.md`](docs/reviews/stage-1.md) | - |
-| R | Corrective Stage R (Reopen & Audit Stage 0 and Stage 1) | `IN_PROGRESS` | `docs/reviews/stage-R.md` | - |
+| 0 | Foundations and engineering scaffolding | `PASSED (v2)` | [`docs/reviews/stage-0.md`](docs/reviews/stage-0.md) | - |
+| 1 | Data discovery and feasibility spike | `PASSED (v2)` | [`docs/reviews/stage-1.md`](docs/reviews/stage-1.md) | - |
+| R | Corrective Stage R (Reopen & Audit Stage 0 and Stage 1) | `AWAITING USER VERIFICATION` | [`docs/reviews/stage-R.md`](docs/reviews/stage-R.md) | - |
 | 2 | Geospatial pipeline (water spread from satellites) | `PENDING` | `docs/reviews/stage-2.md` | - |
 | 3 | Database and data model | `PENDING` | `docs/reviews/stage-3.md` | - |
 | 4 | Exploratory data analysis and decision-focused analytics | `PENDING` | `docs/reviews/stage-4.md` | - |
@@ -74,11 +74,11 @@
 | [x] | R4.1 | Query 2019–present STAC scenes for all pilot tanks, save `data/processed/cloud_stats.parquet` + chart | `DONE` | `e86655e` | [`docs/reviews/micro/R4-1.md`](docs/reviews/micro/R4-1.md) |
 | [x] | R4.2 | Update `R-003` in `PROGRESS.md` with Oct–Dec stats and write `ADR-0003` on cloud mitigation | `DONE` | `75cc317` | [`docs/reviews/micro/R4-2.md`](docs/reviews/micro/R4-2.md) |
 | [x] | R5.1 | Push to GitHub and verify green GitHub Actions run | `DONE` | `d211ea9` | [`docs/reviews/micro/R5-1.md`](docs/reviews/micro/R5-1.md) |
-| [ ] | R5.2 | Clean-clone into temp directory and run `make setup`, `make test`, `make run` | `IN_PROGRESS` | - | `docs/reviews/micro/R5-2.md` |
-| [ ] | R5.3 | Bring up full compose stack (`db`, `api`, `web`, `n8n`), verify all 4 healthy + HTTP responses | `PENDING` | - | `docs/reviews/micro/R5-3.md` |
-| [ ] | R5.4 | Add `pytest-cov` test coverage reporting and record coverage | `PENDING` | - | `docs/reviews/micro/R5-4.md` |
-| [ ] | R6.1 | Rewrite `docs/reviews/stage-0.md` and `docs/reviews/stage-1.md` with "Corrections made" section | `PENDING` | - | `docs/reviews/micro/R6-1.md` |
-| [ ] | R6.2 | Update `PROGRESS.md`, replace tags with `stage-0-pass-v2` and `stage-1-pass-v2`, write `docs/reviews/stage-R.md` | `PENDING` | - | `docs/reviews/micro/R6-2.md` |
+| [x] | R5.2 | Clean-clone into temp directory and run `make setup`, `make test`, `make run` | `DONE` | `90c209c` | [`docs/reviews/micro/R5-2.md`](docs/reviews/micro/R5-2.md) |
+| [x] | R5.3 | Bring up full compose stack (`db`, `api`, `web`, `n8n`), verify all 4 healthy + HTTP responses | `DONE` | `88220a7` | [`docs/reviews/micro/R5-3.md`](docs/reviews/micro/R5-3.md) |
+| [x] | R5.4 | Add `pytest-cov` test coverage reporting and record coverage | `DONE` | `HEAD` | [`docs/reviews/micro/R5-4.md`](docs/reviews/micro/R5-4.md) |
+| [x] | R6.1 | Rewrite `docs/reviews/stage-0.md` and `docs/reviews/stage-1.md` with "Corrections made" section | `DONE` | `HEAD` | [`docs/reviews/micro/R6-1.md`](docs/reviews/micro/R6-1.md) |
+| [x] | R6.2 | Update `PROGRESS.md`, replace tags with `stage-0-pass-v2` and `stage-1-pass-v2`, write `docs/reviews/stage-R.md` | `DONE` | `HEAD` | [`docs/reviews/stage-R.md`](docs/reviews/stage-R.md) |
 
 ---
 
