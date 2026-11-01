@@ -72,9 +72,9 @@
 | [x] | R3.2 | Re-run spike, commit `feasibility_spike.json`, update `docs/data/feasibility.md` honestly | `DONE` | `d3eb90c` | `docs/reviews/micro/R3-2.md` |
 | [x] | R3.3 | Mark live network tests `@pytest.mark.network` and add `make test-network` | `DONE` | `145d1dc` | [`docs/reviews/micro/R3-3.md`](docs/reviews/micro/R3-3.md) |
 | [x] | R4.1 | Query 2019–present STAC scenes for all pilot tanks, save `data/processed/cloud_stats.parquet` + chart | `DONE` | `e86655e` | [`docs/reviews/micro/R4-1.md`](docs/reviews/micro/R4-1.md) |
-| [x] | R4.2 | Update `R-003` in `PROGRESS.md` with Oct–Dec stats and write `ADR-0003` on cloud mitigation | `DONE` | `HEAD` | [`docs/reviews/micro/R4-2.md`](docs/reviews/micro/R4-2.md) |
-| [ ] | R5.1 | Push to GitHub and verify green GitHub Actions run | `IN_PROGRESS` | - | `docs/reviews/micro/R5-1.md` |
-| [ ] | R5.2 | Clean-clone into temp directory and run `make setup`, `make test`, `make run` | `PENDING` | - | `docs/reviews/micro/R5-2.md` |
+| [x] | R4.2 | Update `R-003` in `PROGRESS.md` with Oct–Dec stats and write `ADR-0003` on cloud mitigation | `DONE` | `75cc317` | [`docs/reviews/micro/R4-2.md`](docs/reviews/micro/R4-2.md) |
+| [x] | R5.1 | Push to GitHub and verify green GitHub Actions run | `DONE` | `d211ea9` | [`docs/reviews/micro/R5-1.md`](docs/reviews/micro/R5-1.md) |
+| [ ] | R5.2 | Clean-clone into temp directory and run `make setup`, `make test`, `make run` | `IN_PROGRESS` | - | `docs/reviews/micro/R5-2.md` |
 | [ ] | R5.3 | Bring up full compose stack (`db`, `api`, `web`, `n8n`), verify all 4 healthy + HTTP responses | `PENDING` | - | `docs/reviews/micro/R5-3.md` |
 | [ ] | R5.4 | Add `pytest-cov` test coverage reporting and record coverage | `PENDING` | - | `docs/reviews/micro/R5-4.md` |
 | [ ] | R6.1 | Rewrite `docs/reviews/stage-0.md` and `docs/reviews/stage-1.md` with "Corrections made" section | `PENDING` | - | `docs/reviews/micro/R6-1.md` |
