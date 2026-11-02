@@ -48,7 +48,9 @@ The following 6 pilot tanks are flagged as `needs_review` based on overlay audit
 - `TN-CGL-004` (Thaiyur Eri): Loose northern contour along highway.
 - `TN-CGL-006` (Vandalur Eri): Embankment boundary includes dry scrub along railway.
 - `TN-CGL-009` (Kelambakkam Eri): Loose boundary; water extends outside nominal polygon into southern feeder swamp.
-- `TN-CGL-010` (Siruseri Navalur Eri / Navalur Lake): Restored SIPCOT Eco-Park with circular aeration islands; water extends into southern park channels.
+- `TN-CGL-010` (Siruseri Navalur Eri / Navalur Lake):
+  - **Site Identity & Project Sources**: Corresponds to Navalur Periya Eri (~33.43 acres), situated within the SIPCOT IT Park in Siruseri, Thiruporur taluk, Chengalpattu district. Rejuvenated by the State Industries Promotion Corporation of Tamil Nadu (SIPCOT) at an estimated ₹30 crore as the "Navalur Lake Eco Park" (*Namma Navalur*, [nammanavalur.com](https://nammanavalur.com); covered in regional press regarding eco-restoration and local concerns over peripheral filling along original wetland margins).
+  - **Unverified Status**: Satellite imagery displays distinctive circular features and bright green reflectance. However, specific claims regarding "aeration islands" and "seasonal algal blooms" have no logged field sensor data and are formally marked **`unverified`** in both registry notes and this ADR. Water extends into southern drainage/park channels during post-monsoon passes. The polygon geometry is retained strictly unchanged.
 - `TN-CGL-011` (Thiruporur Periya Eri): Coastal low-gradient tank where water spills into western inflow marsh.
 
 ### 5. Geometry Integrity Standing Policy
