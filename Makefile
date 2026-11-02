@@ -1,4 +1,4 @@
-.PHONY: setup lint test test-network run db-up db-reset fetch-legal stack-up stack-down stack-status
+.PHONY: setup lint test test-network run db-up db-reset fetch-legal ocr-legal stack-up stack-down stack-status
 
 # NOTE (R5.2): `npm --prefix apps/web install` resolves package.json from the repo root on
 # Windows, which broke `make setup` on a clean clone. Always `cd` into apps/web instead.
@@ -9,6 +9,9 @@ setup:
 
 fetch-legal:
 	uv run python -m eriwatch_rag.corpus_manifest --download --verify
+
+ocr-legal:
+	uv run python -m eriwatch_rag.ocr_pipeline
 
 lint:
 	uv run ruff check .
