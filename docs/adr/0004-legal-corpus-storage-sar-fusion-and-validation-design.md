@@ -26,6 +26,9 @@ During the Stage R audit, four structural concerns were identified across EriWat
 - **Gitignore Raw PDFs**: All raw PDF binaries (`data/raw/legal/*.pdf`) are untracked and excluded from git tracking via `.gitignore`.
 - **Manifest as Canonical Record**: `data/raw/legal/manifest.json` is committed to git as the canonical cryptographic ledger. It records the ID, title, issuer, date, language, official source URL, page count, and SHA-256 digest for every document.
 - **Idempotent Automated Fetching**: A reproducible command `make fetch-legal` (backed by `eriwatch_rag.corpus_manifest --download --verify`) downloads the 30 PDFs from official sources on a fresh clone and verifies their SHA-256 digests against `manifest.json`. Any mismatch or banned hash fails the build.
+- **As-Enacted Secondary Source Notice (Mandatory Requirement)**:
+  The legal corpus compiles as-enacted statutory texts and secondary archival compilations (PRS India, IELRC, TNRD). Because statutory rules and orders may be subject to subsequent state amendments or subordinate notifications, all LLM-generated complaint drafts and cited petitions MUST carry a prominent statutory verification notice:
+  > *"NOTICE: This petition draft cites public statutory provisions as enacted and compiled from public archives. Ayacutdars, petitioners, and legal representatives must verify all cited clauses against the current Tamil Nadu Government Gazette text before formal submission to authorities."*
 
 ### 2. Sentinel-1 SAR Fusion for Stage 2 (A3)
 - **SAR Integration**: Sentinel-1 Radiometrically Terrain Corrected (RTC) C-Band SAR imagery from Microsoft Planetary Computer STAC (`sentinel-1-rtc`) IS an explicit component of the Stage 2 geospatial pipeline.
@@ -47,8 +50,16 @@ During the Stage R audit, four structural concerns were identified across EriWat
 
 ### 4. Historical Maximum Extent Methodology (A5)
 
-#### 4.1 Rationale & Problem Statement
+#### 4.1 Rationale, Problem Statement & Statutory Definition
 A single-date traced polygon reflects only the instantaneous water surface on that specific satellite overpass date. Depending on whether that pass occurred in a drought year, mid-monsoon, or post-monsoon, the traced area may represent as little as 30% or as much as 100% of the true hydrological water-spread capacity. Using instantaneous polygons as the benchmark for shrinkage or encroachment would yield severe false-positive or false-negative alarms. Therefore, an objective, multi-year historical maximum extent must be established for each tank.
+
+**Statutory Legal Boundary Definition**:
+Under the Tamil Nadu Protection of Tanks and Eviction of Encroachment Act, 2007 (Tamil Nadu Act 8 of 2007, Section 2(d), 2(e), and 2(o)):
+- **Full Tank Level (FTL)** (s.2(e)): *"the level of water in the tank when the water is stored up to the crest of the surplus weir"*.
+- **Water Spread Area** (s.2(o)): *"an area covered by water spread at full tank level"*.
+- **Foreshore Area** (s.2(d)): *"the land above full tank level and upstream of the tank bund"*.
+
+The legal statutory boundary for detecting tank shrinkage and identifying encroachment is the Full Tank Level (FTL) water spread area. In EriWatch's remote sensing pipeline, the multi-year historical maximum extent derived from satellite imagery is explicitly an **empirical remote-sensing proxy** for this statutory FTL boundary. All shrinkage calculations and encroachment grievance drafts must cite this statutory foundation and acknowledge historical maximum extent as its satellite-derived proxy.
 
 #### 4.2 Multi-Year Percentile Composite Method
 The baseline historical maximum extent is computed through a dual-source remote sensing fusion:
