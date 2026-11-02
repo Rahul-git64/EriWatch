@@ -9,8 +9,10 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import io
 import json
 import logging
+import tarfile
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Literal
@@ -22,6 +24,7 @@ from pypdf import PdfReader
 logging.getLogger("pypdf").setLevel(logging.ERROR)
 
 ExtractionMethod = Literal["text_layer", "ocr_needed"]
+DatePrecision = Literal["exact", "year_only", "approximate"]
 
 # Permanent blocklist of the 28 agent-generated PDFs from commit 859c32a (audited in R1.1).
 BANNED_GENERATED_SHA256S: frozenset[str] = frozenset(
@@ -57,6 +60,11 @@ BANNED_GENERATED_SHA256S: frozenset[str] = frozenset(
     }
 )
 
+DURABLE_ARCHIVE_URL: str = (
+    "https://github.com/Rahul-git64/EriWatch/releases/download/v0.1.0-legal-corpus/eriwatch-legal-corpus-v1.tar.gz"
+)
+DURABLE_ARCHIVE_SHA256: str = "ae1ae88aaafd0674e5214cfa39aa32307f1aff04d0d316838053dcf4496d08c4"
+
 
 class LegalCorpusEntry(BaseModel):
     """Required schema for each verified original document in `data/raw/legal/manifest.json`."""
@@ -74,6 +82,9 @@ class LegalCorpusEntry(BaseModel):
     page_count: int = Field(..., ge=1)
     licence_note: str
     extraction_method: ExtractionMethod
+    gazette_date: str | None = None
+    date_precision: DatePrecision = "exact"
+    metadata_verified: bool = True
 
 
 REAL_CORPUS_SOURCES: list[dict[str, str]] = [
@@ -84,6 +95,9 @@ REAL_CORPUS_SOURCES: list[dict[str, str]] = [
         "issuer": "Legislative Assembly of Tamil Nadu (Law Department Gazette Notification)",
         "document_type": "State Act",
         "date": "2007-05-22",
+        "gazette_date": "2007-05-23",
+        "date_precision": "exact",
+        "metadata_verified": True,
         "language": "en",
         "source_url": "https://prsindia.org/files/bills_acts/acts_states/tamil-nadu/2007/2007TN8.pdf",
         "licence_note": "Public statutory enactment under Section 52(1)(q) of the Indian Copyright Act, 1957.",
@@ -94,7 +108,10 @@ REAL_CORPUS_SOURCES: list[dict[str, str]] = [
         "title": "Tamil Nadu Farmers' Management of Irrigation Systems Act, 2000 (Tamil Nadu Act 7 of 2001)",
         "issuer": "Legislative Assembly of Tamil Nadu / Public Works Department (Water Resources Organization)",
         "document_type": "State Act",
-        "date": "2001-05-25",
+        "date": "2001-02-25",
+        "gazette_date": "2001-03-05",
+        "date_precision": "exact",
+        "metadata_verified": True,
         "language": "en",
         "source_url": "https://prsindia.org/files/bills_acts/acts_states/tamil-nadu/2001/2001TN7.pdf",
         "licence_note": "Public statutory enactment under Section 52(1)(q) of the Indian Copyright Act, 1957.",
@@ -102,13 +119,16 @@ REAL_CORPUS_SOURCES: list[dict[str, str]] = [
     {
         "id": "LEGAL-003",
         "filename": "LEGAL-003_TN_Farmers_Management_of_Irrigation_Systems_Rules_2002.pdf",
-        "title": "Tamil Nadu Farmers' Management of Irrigation Systems Rules, 2002 (G.O. Ms. No. 350, Public Works (W2) Department)",
+        "title": "Tamil Nadu Farmers' Management of Irrigation Systems Rules, 2002",
         "issuer": "Public Works Department (Water Resources Organization), Government of Tamil Nadu",
         "document_type": "WRD Rules / Government Order",
-        "date": "2002-09-18",
+        "date": "2002-01-01",
+        "gazette_date": None,
+        "date_precision": "year_only",
+        "metadata_verified": False,
         "language": "en",
         "source_url": "https://ielrc.org/content/e0233.pdf",
-        "licence_note": "Public statutory rules and Government Order under Section 52(1)(q) of the Indian Copyright Act, 1957.",
+        "licence_note": "Public statutory rules under Section 52(1)(q) of the Indian Copyright Act, 1957.",
     },
     {
         "id": "LEGAL-004",
@@ -234,10 +254,13 @@ REAL_CORPUS_SOURCES: list[dict[str, str]] = [
     {
         "id": "LEGAL-015",
         "filename": "LEGAL-015_TNRD_Report_Maintenance_of_Minor_Irrigation_Tanks_and_Water_Bodies.pdf",
-        "title": "Government of Tamil Nadu Report on Maintenance of Minor Irrigation Tanks, Ooranies and Village Water Bodies (Chapter 4.3)",
-        "issuer": "Rural Development and Panchayat Raj Department, Government of Tamil Nadu",
+        "title": "L.C. Jain High Level Committee Report on Devolution of Powers to Panchayat Raj Institutions — Chapter 4.3: Minor Irrigation and Water Management",
+        "issuer": "First High-Level Committee on Panchayat Raj, Rural Development Department, Government of Tamil Nadu",
         "document_type": "Official Government Report",
-        "date": "2001-01-01",
+        "date": "1997-04-01",
+        "gazette_date": None,
+        "date_precision": "approximate",
+        "metadata_verified": True,
         "language": "en",
         "source_url": "https://www.tnrd.tn.gov.in/reports/Jain_Report/english/index4_3.pdf",
         "licence_note": "Official Commission Report published on Tamil Nadu Rural Development portal (tnrd.tn.gov.in).",
@@ -427,11 +450,44 @@ def inspect_pdf_file(path: Path) -> tuple[int, ExtractionMethod]:
     return page_count, method
 
 
+_CACHED_ARCHIVE_TAR: tarfile.TarFile | None = None
+
+
+def extract_from_durable_archive(
+    legal_dir: Path,
+    filename: str,
+    client: httpx.Client,
+) -> Path:
+    """Extract a PDF from the durable GitHub Release archive if official source fails."""
+    global _CACHED_ARCHIVE_TAR
+    if _CACHED_ARCHIVE_TAR is None:
+        resp = client.get(DURABLE_ARCHIVE_URL)
+        resp.raise_for_status()
+        tar_bytes = resp.content
+        actual_sha = hashlib.sha256(tar_bytes).hexdigest()
+        if actual_sha != DURABLE_ARCHIVE_SHA256:
+            msg = (
+                f"Durable archive SHA-256 mismatch: "
+                f"expected {DURABLE_ARCHIVE_SHA256}, got {actual_sha}"
+            )
+            raise ValueError(msg)
+        _CACHED_ARCHIVE_TAR = tarfile.open(fileobj=io.BytesIO(tar_bytes), mode="r:gz")
+
+    member = _CACHED_ARCHIVE_TAR.getmember(filename)
+    f = _CACHED_ARCHIVE_TAR.extractfile(member)
+    if f is None:
+        msg = f"File {filename} not found in durable release archive"
+        raise ValueError(msg)
+    target_path = legal_dir / filename
+    target_path.write_bytes(f.read())
+    return target_path
+
+
 def download_and_build_manifest(
     legal_dir: Path = Path("data/raw/legal"),
     force_download: bool = False,
 ) -> list[LegalCorpusEntry]:
-    """Download real original PDFs from official sources and write `data/raw/legal/manifest.json`."""
+    """Download real original PDFs from official sources (with release archive fallback) and write manifest.json."""
     legal_dir.mkdir(parents=True, exist_ok=True)
     headers = {
         "User-Agent": (
@@ -446,13 +502,29 @@ def download_and_build_manifest(
         for spec in REAL_CORPUS_SOURCES:
             pdf_path = legal_dir / spec["filename"]
             if force_download or not pdf_path.exists():
-                resp = client.get(spec["source_url"])
-                resp.raise_for_status()
-                content = resp.content
-                if not content.startswith(b"%PDF-"):
-                    msg = f"URL {spec['source_url']} did not return a valid PDF header"
-                    raise ValueError(msg)
-                pdf_path.write_bytes(content)
+                download_success = False
+                try:
+                    resp = client.get(spec["source_url"])
+                    resp.raise_for_status()
+                    content = resp.content
+                    if content.startswith(b"%PDF-"):
+                        pdf_path.write_bytes(content)
+                        download_success = True
+                    else:
+                        logging.warning(
+                            "URL %s returned non-PDF header; falling back to release archive",
+                            spec["source_url"],
+                        )
+                except Exception as exc:
+                    logging.warning(
+                        "Error fetching %s from %s (%s); falling back to release archive",
+                        spec["id"],
+                        spec["source_url"],
+                        exc,
+                    )
+
+                if not download_success:
+                    extract_from_durable_archive(legal_dir, spec["filename"], client)
 
             digest = compute_file_sha256(pdf_path)
             if digest in BANNED_GENERATED_SHA256S:
@@ -474,13 +546,18 @@ def download_and_build_manifest(
                 page_count=page_count,
                 licence_note=spec["licence_note"],
                 extraction_method=extraction_method,
+                gazette_date=spec.get("gazette_date"),
+                date_precision=spec.get("date_precision", "exact"),
+                metadata_verified=spec.get("metadata_verified", True),
             )
             entries.append(entry)
 
     manifest_payload = {
-        "corpus_version": "2.0.0",
+        "corpus_version": "2.1.0",
         "document_count": len(entries),
         "jurisdiction": "Tamil Nadu & India (Original Downloaded Statutory, Government & Judicial Corpus)",
+        "archive_url": DURABLE_ARCHIVE_URL,
+        "archive_sha256": DURABLE_ARCHIVE_SHA256,
         "documents": [e.model_dump() for e in entries],
     }
     manifest_path = legal_dir / "manifest.json"
