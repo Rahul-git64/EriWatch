@@ -29,7 +29,8 @@
         "dictionary_word_ratio": 0.9363,
         "quality_gate": "PASS"
       },
-      "rag_role": "core"
+      "rag_role": "core",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-002",
@@ -57,7 +58,8 @@
         "dictionary_word_ratio": 0.7826,
         "quality_gate": "PASS"
       },
-      "rag_role": "supporting"
+      "rag_role": "supporting",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-003",
@@ -85,7 +87,8 @@
         "dictionary_word_ratio": 0.9889,
         "quality_gate": "PASS"
       },
-      "rag_role": "supporting"
+      "rag_role": "supporting",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-004",
@@ -113,7 +116,8 @@
         "dictionary_word_ratio": 0.9058,
         "quality_gate": "PASS"
       },
-      "rag_role": "core"
+      "rag_role": "core",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-005",
@@ -141,7 +145,8 @@
         "dictionary_word_ratio": 0.9676,
         "quality_gate": "PASS"
       },
-      "rag_role": "supporting"
+      "rag_role": "supporting",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-006",
@@ -169,7 +174,8 @@
         "dictionary_word_ratio": 0.9339,
         "quality_gate": "PASS"
       },
-      "rag_role": "supporting"
+      "rag_role": "supporting",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-007",
@@ -197,7 +203,8 @@
         "dictionary_word_ratio": 0.9086,
         "quality_gate": "PASS"
       },
-      "rag_role": "supporting"
+      "rag_role": "supporting",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-008",
@@ -225,7 +232,8 @@
         "dictionary_word_ratio": 0.991,
         "quality_gate": "PASS"
       },
-      "rag_role": "supporting"
+      "rag_role": "supporting",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-009",
@@ -253,7 +261,8 @@
         "dictionary_word_ratio": 0.9933,
         "quality_gate": "PASS"
       },
-      "rag_role": "supporting"
+      "rag_role": "supporting",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-010",
@@ -281,7 +290,8 @@
         "dictionary_word_ratio": 0.9741,
         "quality_gate": "PASS"
       },
-      "rag_role": "supporting"
+      "rag_role": "supporting",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-011",
@@ -309,7 +319,8 @@
         "dictionary_word_ratio": 0.978,
         "quality_gate": "PASS"
       },
-      "rag_role": "supporting"
+      "rag_role": "supporting",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-012",
@@ -337,7 +348,8 @@
         "dictionary_word_ratio": 0.9503,
         "quality_gate": "PASS"
       },
-      "rag_role": "core"
+      "rag_role": "core",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-013",
@@ -365,7 +377,8 @@
         "dictionary_word_ratio": 0.9429,
         "quality_gate": "PASS"
       },
-      "rag_role": "supporting"
+      "rag_role": "supporting",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-014",
@@ -393,7 +406,8 @@
         "dictionary_word_ratio": 0.9551,
         "quality_gate": "PASS"
       },
-      "rag_role": "supporting"
+      "rag_role": "supporting",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-015",
@@ -421,7 +435,8 @@
         "dictionary_word_ratio": 0.5703,
         "quality_gate": "FAIL"
       },
-      "rag_role": "supporting"
+      "rag_role": "supporting",
+      "rag_excluded": true
     },
     {
       "id": "LEGAL-016",
@@ -449,7 +464,8 @@
         "dictionary_word_ratio": 0.9487,
         "quality_gate": "PASS"
       },
-      "rag_role": "supporting"
+      "rag_role": "supporting",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-017",
@@ -477,7 +493,8 @@
         "dictionary_word_ratio": 0.932,
         "quality_gate": "PASS"
       },
-      "rag_role": "supporting"
+      "rag_role": "supporting",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-018",
@@ -505,7 +522,8 @@
         "dictionary_word_ratio": 0.956,
         "quality_gate": "PASS"
       },
-      "rag_role": "supporting"
+      "rag_role": "supporting",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-019",
@@ -533,7 +551,8 @@
         "dictionary_word_ratio": 0.9788,
         "quality_gate": "PASS"
       },
-      "rag_role": "supporting"
+      "rag_role": "supporting",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-020",
@@ -561,7 +580,8 @@
         "dictionary_word_ratio": 0.9751,
         "quality_gate": "PASS"
       },
-      "rag_role": "supporting"
+      "rag_role": "supporting",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-021",
@@ -589,7 +609,8 @@
         "dictionary_word_ratio": 0.9873,
         "quality_gate": "PASS"
       },
-      "rag_role": "supporting"
+      "rag_role": "supporting",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-022",
@@ -617,7 +638,8 @@
         "dictionary_word_ratio": 0.9712,
         "quality_gate": "PASS"
       },
-      "rag_role": "background"
+      "rag_role": "background",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-023",
@@ -645,7 +667,8 @@
         "dictionary_word_ratio": 0.9195,
         "quality_gate": "PASS"
       },
-      "rag_role": "background"
+      "rag_role": "background",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-024",
@@ -673,7 +696,8 @@
         "dictionary_word_ratio": 0.9642,
         "quality_gate": "PASS"
       },
-      "rag_role": "core"
+      "rag_role": "core",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-025",
@@ -701,7 +725,8 @@
         "dictionary_word_ratio": 0.9593,
         "quality_gate": "PASS"
       },
-      "rag_role": "core"
+      "rag_role": "core",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-026",
@@ -729,7 +754,8 @@
         "dictionary_word_ratio": 0.9732,
         "quality_gate": "PASS"
       },
-      "rag_role": "core"
+      "rag_role": "core",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-027",
@@ -757,7 +783,8 @@
         "dictionary_word_ratio": 0.9578,
         "quality_gate": "PASS"
       },
-      "rag_role": "core"
+      "rag_role": "core",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-028",
@@ -785,7 +812,8 @@
         "dictionary_word_ratio": 0.9672,
         "quality_gate": "PASS"
       },
-      "rag_role": "core"
+      "rag_role": "core",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-029",
@@ -813,7 +841,8 @@
         "dictionary_word_ratio": 0.94,
         "quality_gate": "PASS"
       },
-      "rag_role": "supporting"
+      "rag_role": "supporting",
+      "rag_excluded": false
     },
     {
       "id": "LEGAL-030",
@@ -841,7 +870,8 @@
         "dictionary_word_ratio": 0.9463,
         "quality_gate": "PASS"
       },
-      "rag_role": "core"
+      "rag_role": "core",
+      "rag_excluded": false
     }
   ],
   "archive_url": "https://github.com/Rahul-git64/EriWatch/releases/download/v0.1.0-legal-corpus/eriwatch-legal-corpus-v1.tar.gz",

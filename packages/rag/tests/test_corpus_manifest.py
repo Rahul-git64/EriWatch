@@ -50,6 +50,7 @@ REQUIRED_MANIFEST_FIELDS = {
     "is_extract",
     "as_enacted",
     "rag_role",
+    "rag_excluded",
 }
 
 
@@ -176,6 +177,12 @@ def test_specific_legal_metadata_corrections() -> None:
     assert entries["LEGAL-013"].rag_role == "supporting"
     assert entries["LEGAL-014"].rag_role == "supporting"
     assert entries["LEGAL-015"].rag_role == "supporting"
+
+    # LEGAL-015 excluded from RAG retrieval until transcribed
+    assert entries["LEGAL-015"].rag_excluded is True
+    for doc_id, entry in entries.items():
+        if doc_id != "LEGAL-015":
+            assert entry.rag_excluded is False, f"{doc_id} should not be excluded from RAG"
 
 
 def test_legal_corpus_text_quality_and_page_markers() -> None:

@@ -98,6 +98,7 @@ class LegalCorpusEntry(BaseModel):
     is_extract: bool = False
     as_enacted: bool = False
     rag_role: RagRole = "supporting"
+    rag_excluded: bool = False
     text_quality: TextQualityInfo | None = None
 
 
@@ -568,6 +569,7 @@ def download_and_build_manifest(
                 is_extract=bool(spec.get("is_extract", False)),
                 as_enacted=bool(spec.get("as_enacted", False)),
                 rag_role=cast(RagRole, spec.get("rag_role", "supporting")),
+                rag_excluded=bool(spec.get("rag_excluded", False)),
             )
             entries.append(entry)
 
