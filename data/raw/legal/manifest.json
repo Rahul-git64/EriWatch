@@ -19,7 +19,9 @@
       "extraction_method": "text_layer",
       "gazette_date": "2007-05-23",
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": true
     },
     {
       "id": "LEGAL-002",
@@ -37,7 +39,9 @@
       "extraction_method": "text_layer",
       "gazette_date": "2001-03-05",
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": true
     },
     {
       "id": "LEGAL-003",
@@ -55,7 +59,9 @@
       "extraction_method": "text_layer",
       "gazette_date": null,
       "date_precision": "year_only",
-      "metadata_verified": false
+      "metadata_verified": false,
+      "is_extract": false,
+      "as_enacted": true
     },
     {
       "id": "LEGAL-004",
@@ -73,12 +79,14 @@
       "extraction_method": "text_layer",
       "gazette_date": "1905-06-13",
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": true
     },
     {
       "id": "LEGAL-005",
       "filename": "LEGAL-005_TN_Panchayats_Act_1994_Water_and_Minor_Irrigation_Excerpts.pdf",
-      "title": "Tamil Nadu Panchayats Act, 1994 (Tamil Nadu Act 21 of 1994 — Public Watercourses, Minor Irrigation Tanks & Ooranies Provisions)",
+      "title": "The Tamil Nadu Panchayats Act, 1994 (Excerpts — Water Supply, Sanitation and Minor Irrigation Provisions)",
       "issuer": "Rural Development and Panchayat Raj Department, Government of Tamil Nadu",
       "document_type": "State Act",
       "date": "1994-04-22",
@@ -91,12 +99,14 @@
       "extraction_method": "text_layer",
       "gazette_date": "1994-04-22",
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": true,
+      "as_enacted": true
     },
     {
       "id": "LEGAL-006",
       "filename": "LEGAL-006_TN_State_Water_Policy_1994.pdf",
-      "title": "Tamil Nadu State Water Policy, 1994 (Surface Water, Tank Rehabilitation & Conjunctive Use Policy)",
+      "title": "Water Policy for Tamil Nadu, 1994 (Policy Statement Excerpts as published by PWD)",
       "issuer": "Public Works Department (Water Resources Organization), Government of Tamil Nadu",
       "document_type": "State Water Policy",
       "date": "1994-07-01",
@@ -109,7 +119,9 @@
       "extraction_method": "text_layer",
       "gazette_date": null,
       "date_precision": "year_only",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": true,
+      "as_enacted": false
     },
     {
       "id": "LEGAL-007",
@@ -127,7 +139,9 @@
       "extraction_method": "text_layer",
       "gazette_date": "1987-06-08",
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": true
     },
     {
       "id": "LEGAL-008",
@@ -145,7 +159,9 @@
       "extraction_method": "text_layer",
       "gazette_date": "2014-09-03",
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": true
     },
     {
       "id": "LEGAL-009",
@@ -163,7 +179,9 @@
       "extraction_method": "text_layer",
       "gazette_date": "2003-03-04",
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": true
     },
     {
       "id": "LEGAL-010",
@@ -181,12 +199,14 @@
       "extraction_method": "text_layer",
       "gazette_date": "1978-06-14",
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": true
     },
     {
       "id": "LEGAL-011",
       "filename": "LEGAL-011_TN_District_Municipalities_Act_1920_Water_Sources_Excerpts.pdf",
-      "title": "Tamil Nadu District Municipalities Act, 1920 (Tamil Nadu Act V of 1920 — Public Water Sources, Tanks & Drainage Excerpts)",
+      "title": "The Tamil Nadu District Municipalities Act, 1920 (Excerpts — Water Supply, Drainage and Public Water Sources)",
       "issuer": "Municipal Administration and Water Supply Department, Government of Tamil Nadu",
       "document_type": "State Act",
       "date": "1920-06-29",
@@ -199,7 +219,9 @@
       "extraction_method": "text_layer",
       "gazette_date": "1920-07-06",
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": true,
+      "as_enacted": true
     },
     {
       "id": "LEGAL-012",
@@ -217,7 +239,9 @@
       "extraction_method": "ocr_needed",
       "gazette_date": null,
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": false
     },
     {
       "id": "LEGAL-013",
@@ -235,7 +259,9 @@
       "extraction_method": "ocr_needed",
       "gazette_date": null,
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": false
     },
     {
       "id": "LEGAL-014",
@@ -253,12 +279,14 @@
       "extraction_method": "ocr_needed",
       "gazette_date": null,
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": false
     },
     {
       "id": "LEGAL-015",
       "filename": "LEGAL-015_TNRD_Report_Maintenance_of_Minor_Irrigation_Tanks_and_Water_Bodies.pdf",
-      "title": "L.C. Jain High Level Committee Report on Devolution of Powers to Panchayat Raj Institutions — Chapter 4.3: Minor Irrigation and Water Management",
+      "title": "L.C. Jain High Level Committee Report on Devolution of Powers to Panchayat Raj Institutions (Chapter 4.3: Minor Irrigation and Water Management Excerpts)",
       "issuer": "First High-Level Committee on Panchayat Raj, Rural Development Department, Government of Tamil Nadu",
       "document_type": "Official Government Report",
       "date": "1997-04-01",
@@ -271,7 +299,9 @@
       "extraction_method": "ocr_needed",
       "gazette_date": null,
       "date_precision": "approximate",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": true,
+      "as_enacted": false
     },
     {
       "id": "LEGAL-016",
@@ -289,7 +319,9 @@
       "extraction_method": "text_layer",
       "gazette_date": null,
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": false
     },
     {
       "id": "LEGAL-017",
@@ -307,7 +339,9 @@
       "extraction_method": "text_layer",
       "gazette_date": null,
       "date_precision": "approximate",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": false
     },
     {
       "id": "LEGAL-018",
@@ -325,7 +359,9 @@
       "extraction_method": "text_layer",
       "gazette_date": "2017-09-26",
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": true
     },
     {
       "id": "LEGAL-019",
@@ -343,7 +379,9 @@
       "extraction_method": "text_layer",
       "gazette_date": null,
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": false
     },
     {
       "id": "LEGAL-020",
@@ -361,7 +399,9 @@
       "extraction_method": "text_layer",
       "gazette_date": "1974-03-25",
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": true
     },
     {
       "id": "LEGAL-021",
@@ -379,12 +419,14 @@
       "extraction_method": "text_layer",
       "gazette_date": "1975-02-27",
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": true
     },
     {
       "id": "LEGAL-022",
       "filename": "LEGAL-022_Indian_Easements_Act_1882_Riparian_and_Tank_Water_Rights.pdf",
-      "title": "The Indian Easements Act, 1882 (Act V of 1882 — Surface Water, Customary Irrigation & Natural Stream Rights Excerpts)",
+      "title": "The Indian Easements Act, 1882 (Excerpts — Riparian and Surface Water Rights Provisions)",
       "issuer": "Legislative Department, Government of India",
       "document_type": "Central Act",
       "date": "1882-02-17",
@@ -397,7 +439,9 @@
       "extraction_method": "text_layer",
       "gazette_date": "1882-02-17",
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": true,
+      "as_enacted": true
     },
     {
       "id": "LEGAL-023",
@@ -415,7 +459,9 @@
       "extraction_method": "text_layer",
       "gazette_date": null,
       "date_precision": "approximate",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": false
     },
     {
       "id": "LEGAL-024",
@@ -433,7 +479,9 @@
       "extraction_method": "text_layer",
       "gazette_date": null,
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": false
     },
     {
       "id": "LEGAL-025",
@@ -451,7 +499,9 @@
       "extraction_method": "text_layer",
       "gazette_date": null,
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": false
     },
     {
       "id": "LEGAL-026",
@@ -469,7 +519,9 @@
       "extraction_method": "text_layer",
       "gazette_date": null,
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": false
     },
     {
       "id": "LEGAL-027",
@@ -487,7 +539,9 @@
       "extraction_method": "text_layer",
       "gazette_date": null,
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": false
     },
     {
       "id": "LEGAL-028",
@@ -505,7 +559,9 @@
       "extraction_method": "text_layer",
       "gazette_date": null,
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": false
     },
     {
       "id": "LEGAL-029",
@@ -523,7 +579,9 @@
       "extraction_method": "text_layer",
       "gazette_date": null,
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": false
     },
     {
       "id": "LEGAL-030",
@@ -541,7 +599,9 @@
       "extraction_method": "text_layer",
       "gazette_date": null,
       "date_precision": "exact",
-      "metadata_verified": true
+      "metadata_verified": true,
+      "is_extract": false,
+      "as_enacted": false
     }
   ],
   "archive_url": "https://github.com/Rahul-git64/EriWatch/releases/download/v0.1.0-legal-corpus/eriwatch-legal-corpus-v1.tar.gz",

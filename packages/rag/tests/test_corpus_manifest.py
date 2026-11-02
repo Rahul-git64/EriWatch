@@ -47,6 +47,8 @@ REQUIRED_MANIFEST_FIELDS = {
     "gazette_date",
     "date_precision",
     "metadata_verified",
+    "is_extract",
+    "as_enacted",
 }
 
 
@@ -136,6 +138,25 @@ def test_specific_legal_metadata_corrections() -> None:
     assert l015.date == "1997-04-01", f"LEGAL-015 expected 1997-04-01, got {l015.date}"
     assert l015.date_precision == "approximate"
     assert l015.metadata_verified is True
+    assert l015.is_extract is True
+
+    # LEGAL-005 and LEGAL-006: Excerpts correctly marked with updated titles
+    l005 = entries["LEGAL-005"]
+    assert l005.is_extract is True
+    assert "Excerpts" in l005.title
+
+    l006 = entries["LEGAL-006"]
+    assert l006.is_extract is True
+    assert "Excerpts" in l006.title
+
+    # Principal statutory acts marked as as_enacted
+    assert entries["LEGAL-001"].as_enacted is True
+    assert entries["LEGAL-002"].as_enacted is True
+    assert entries["LEGAL-004"].as_enacted is True
+    assert entries["LEGAL-020"].as_enacted is True
+    # Executive GOs and Judgments marked as not as_enacted
+    assert entries["LEGAL-012"].as_enacted is False
+    assert entries["LEGAL-026"].as_enacted is False
 
 
 @pytest.mark.network

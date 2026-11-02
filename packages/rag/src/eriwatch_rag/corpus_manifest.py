@@ -85,6 +85,8 @@ class LegalCorpusEntry(BaseModel):
     gazette_date: str | None = None
     date_precision: DatePrecision = "exact"
     metadata_verified: bool = True
+    is_extract: bool = False
+    as_enacted: bool = False
 
 
 REAL_CORPUS_SOURCES: list[dict[str, str]] = [
@@ -549,6 +551,8 @@ def download_and_build_manifest(
                 gazette_date=spec.get("gazette_date"),
                 date_precision=spec.get("date_precision", "exact"),
                 metadata_verified=spec.get("metadata_verified", True),
+                is_extract=spec.get("is_extract", False),
+                as_enacted=spec.get("as_enacted", False),
             )
             entries.append(entry)
 
