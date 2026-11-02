@@ -500,9 +500,9 @@
       "as_enacted": true,
       "text_quality": {
         "extraction_source": "native_text_layer",
-        "char_count": 57342,
-        "word_count": 3423,
-        "dictionary_word_ratio": 0.9483,
+        "char_count": 23188,
+        "word_count": 3157,
+        "dictionary_word_ratio": 0.956,
         "quality_gate": "PASS"
       },
       "rag_role": "supporting"
