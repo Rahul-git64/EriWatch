@@ -23,8 +23,19 @@ from pypdf import PdfReader
 
 logging.getLogger("pypdf").setLevel(logging.ERROR)
 
-ExtractionMethod = Literal["text_layer", "ocr_needed"]
+ExtractionMethod = Literal["text_layer", "ocr_needed", "ocr_300dpi", "native_text_layer"]
 DatePrecision = Literal["exact", "year_only", "approximate"]
+
+
+class TextQualityInfo(BaseModel):
+    """Quality metrics for extracted and verified legal text."""
+
+    extraction_source: str
+    char_count: int
+    word_count: int
+    dictionary_word_ratio: float
+    quality_gate: str
+
 
 # Permanent blocklist of the 28 agent-generated PDFs from commit 859c32a (audited in R1.1).
 BANNED_GENERATED_SHA256S: frozenset[str] = frozenset(
@@ -60,9 +71,7 @@ BANNED_GENERATED_SHA256S: frozenset[str] = frozenset(
     }
 )
 
-DURABLE_ARCHIVE_URL: str = (
-    "https://github.com/Rahul-git64/EriWatch/releases/download/v0.1.0-legal-corpus/eriwatch-legal-corpus-v1.tar.gz"
-)
+DURABLE_ARCHIVE_URL: str = "https://github.com/Rahul-git64/EriWatch/releases/download/v0.1.0-legal-corpus/eriwatch-legal-corpus-v1.tar.gz"
 DURABLE_ARCHIVE_SHA256: str = "ae1ae88aaafd0674e5214cfa39aa32307f1aff04d0d316838053dcf4496d08c4"
 
 
@@ -87,6 +96,7 @@ class LegalCorpusEntry(BaseModel):
     metadata_verified: bool = True
     is_extract: bool = False
     as_enacted: bool = False
+    text_quality: TextQualityInfo | None = None
 
 
 REAL_CORPUS_SOURCES: list[dict[str, str]] = [
@@ -452,7 +462,7 @@ def inspect_pdf_file(path: Path) -> tuple[int, ExtractionMethod]:
     return page_count, method
 
 
-_CACHED_ARCHIVE_TAR: tarfile.TarFile | None = None
+_CACHED_ARCHIVE_BYTES: bytes | None = None
 
 
 def extract_from_durable_archive(
@@ -461,8 +471,8 @@ def extract_from_durable_archive(
     client: httpx.Client,
 ) -> Path:
     """Extract a PDF from the durable GitHub Release archive if official source fails."""
-    global _CACHED_ARCHIVE_TAR
-    if _CACHED_ARCHIVE_TAR is None:
+    global _CACHED_ARCHIVE_BYTES
+    if _CACHED_ARCHIVE_BYTES is None:
         resp = client.get(DURABLE_ARCHIVE_URL)
         resp.raise_for_status()
         tar_bytes = resp.content
@@ -473,15 +483,17 @@ def extract_from_durable_archive(
                 f"expected {DURABLE_ARCHIVE_SHA256}, got {actual_sha}"
             )
             raise ValueError(msg)
-        _CACHED_ARCHIVE_TAR = tarfile.open(fileobj=io.BytesIO(tar_bytes), mode="r:gz")
+        _CACHED_ARCHIVE_BYTES = tar_bytes
 
-    member = _CACHED_ARCHIVE_TAR.getmember(filename)
-    f = _CACHED_ARCHIVE_TAR.extractfile(member)
-    if f is None:
-        msg = f"File {filename} not found in durable release archive"
-        raise ValueError(msg)
-    target_path = legal_dir / filename
-    target_path.write_bytes(f.read())
+    with tarfile.open(fileobj=io.BytesIO(_CACHED_ARCHIVE_BYTES), mode="r:gz") as tar:
+        member = tar.getmember(filename)
+        f = tar.extractfile(member)
+        if f is None:
+            msg = f"File {filename} not found in durable release archive"
+            raise ValueError(msg)
+        target_path = legal_dir / filename
+        target_path.write_bytes(f.read())
+        return target_path
     return target_path
 
 

@@ -121,7 +121,9 @@ def test_specific_legal_metadata_corrections() -> None:
     # LEGAL-002: Presidential assent date and Gazette date
     l002 = entries["LEGAL-002"]
     assert l002.date == "2001-02-25", f"LEGAL-002 expected assent 2001-02-25, got {l002.date}"
-    assert l002.gazette_date == "2001-03-05", f"LEGAL-002 expected gazette 2001-03-05, got {l002.gazette_date}"
+    assert l002.gazette_date == "2001-03-05", (
+        f"LEGAL-002 expected gazette 2001-03-05, got {l002.gazette_date}"
+    )
     assert l002.date_precision == "exact"
     assert l002.metadata_verified is True
 
@@ -157,6 +159,47 @@ def test_specific_legal_metadata_corrections() -> None:
     # Executive GOs and Judgments marked as not as_enacted
     assert entries["LEGAL-012"].as_enacted is False
     assert entries["LEGAL-026"].as_enacted is False
+
+
+def test_legal_corpus_text_quality_and_page_markers() -> None:
+    """Verify text quality metrics, page markers, and OCR resolution for garbled pages."""
+    manifest_path = Path("data/raw/legal/manifest.json")
+    text_dir = Path("data/processed/legal_text")
+    entries = {e.id: e for e in load_legal_manifest(manifest_path)}
+
+    assert len(entries) == 30
+
+    for doc_id, entry in entries.items():
+        assert entry.text_quality is not None, f"{doc_id} missing text_quality in manifest"
+        assert entry.text_quality.char_count > 0, f"{doc_id} char_count must be > 0"
+        assert entry.text_quality.word_count >= 50, f"{doc_id} word_count must be >= 50"
+        assert entry.text_quality.dictionary_word_ratio >= 0.50, (
+            f"{doc_id} dictionary_word_ratio suspiciously low: {entry.text_quality.dictionary_word_ratio}"
+        )
+        assert entry.extraction_method in {"ocr_300dpi", "native_text_layer"}
+
+        txt_file = text_dir / f"{doc_id}.txt"
+        assert txt_file.exists(), f"Missing processed text file for {doc_id}"
+        content = txt_file.read_text(encoding="utf-8")
+        assert "--- Page 1 ---" in content, f"{doc_id} text missing '--- Page 1 ---' marker"
+
+        # Gate pass expectations: 29 documents pass; LEGAL-015 fails due to degraded 1997 photostat
+        if doc_id == "LEGAL-015":
+            assert entry.text_quality.quality_gate == "FAIL"
+        else:
+            assert entry.text_quality.quality_gate == "PASS", (
+                f"{doc_id} expected PASS, got {entry.text_quality.quality_gate} "
+                f"({entry.text_quality.dictionary_word_ratio:.1%})"
+            )
+
+    # Specific check: LEGAL-001 Sections 4-8 and Section 2 FTL definitions cleanly resolved
+    legal_001_txt = (text_dir / "LEGAL-001.txt").read_text(encoding="utf-8")
+    assert "--- Page 3 ---" in legal_001_txt
+    assert "full tank" in legal_001_txt.lower()
+    assert "water spread" in legal_001_txt.lower()
+    assert "eviction of" in legal_001_txt.lower()
+    assert "encroach" in legal_001_txt.lower()
+    assert "survey" in legal_001_txt.lower()
 
 
 @pytest.mark.network

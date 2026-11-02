@@ -16,12 +16,19 @@
       "sha256": "225f1d36ba7a9d045b1f17b20ae764e4e4971ee1994bd234710380ef935a9fd6",
       "page_count": 4,
       "licence_note": "Public statutory enactment under Section 52(1)(q) of the Indian Copyright Act, 1957.",
-      "extraction_method": "text_layer",
+      "extraction_method": "ocr_300dpi",
       "gazette_date": "2007-05-23",
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": true
+      "as_enacted": true,
+      "text_quality": {
+        "extraction_source": "ocr_300dpi",
+        "char_count": 9463,
+        "word_count": 1445,
+        "dictionary_word_ratio": 0.9363,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-002",
@@ -36,12 +43,19 @@
       "sha256": "b69eccad6b16c21a77aaf13266369df1ccc2851add2f59789299f66247be5145",
       "page_count": 18,
       "licence_note": "Public statutory enactment under Section 52(1)(q) of the Indian Copyright Act, 1957.",
-      "extraction_method": "text_layer",
+      "extraction_method": "ocr_300dpi",
       "gazette_date": "2001-03-05",
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": true
+      "as_enacted": true,
+      "text_quality": {
+        "extraction_source": "ocr_300dpi",
+        "char_count": 45314,
+        "word_count": 6623,
+        "dictionary_word_ratio": 0.7826,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-003",
@@ -56,12 +70,19 @@
       "sha256": "05df59629ec7a5b981247497829ef7e45abdf7aeb443fc91e42303144ccbf091",
       "page_count": 50,
       "licence_note": "Public statutory rules and Government Order under Section 52(1)(q) of the Indian Copyright Act, 1957.",
-      "extraction_method": "text_layer",
+      "extraction_method": "native_text_layer",
       "gazette_date": null,
       "date_precision": "year_only",
       "metadata_verified": false,
       "is_extract": false,
-      "as_enacted": true
+      "as_enacted": true,
+      "text_quality": {
+        "extraction_source": "native_text_layer",
+        "char_count": 67881,
+        "word_count": 9386,
+        "dictionary_word_ratio": 0.9889,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-004",
@@ -76,17 +97,24 @@
       "sha256": "686f649c92438f828228debb3dc533403dc65b3a087d7982db85b9ad7019b67a",
       "page_count": 25,
       "licence_note": "Public statutory enactment under Section 52(1)(q) of the Indian Copyright Act, 1957.",
-      "extraction_method": "text_layer",
+      "extraction_method": "native_text_layer",
       "gazette_date": "1905-06-13",
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": true
+      "as_enacted": true,
+      "text_quality": {
+        "extraction_source": "native_text_layer",
+        "char_count": 44669,
+        "word_count": 6648,
+        "dictionary_word_ratio": 0.9058,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-005",
       "filename": "LEGAL-005_TN_Panchayats_Act_1994_Water_and_Minor_Irrigation_Excerpts.pdf",
-      "title": "The Tamil Nadu Panchayats Act, 1994 (Excerpts — Water Supply, Sanitation and Minor Irrigation Provisions)",
+      "title": "The Tamil Nadu Panchayats Act, 1994 (Excerpts â€” Water Supply, Sanitation and Minor Irrigation Provisions)",
       "issuer": "Rural Development and Panchayat Raj Department, Government of Tamil Nadu",
       "document_type": "State Act",
       "date": "1994-04-22",
@@ -96,12 +124,19 @@
       "sha256": "433b2fd0c6c6f6981ff63d5c51c62a712987bf55a803ab90e255116cb5e1a662",
       "page_count": 5,
       "licence_note": "Public statutory enactment under Section 52(1)(q) of the Indian Copyright Act, 1957.",
-      "extraction_method": "text_layer",
+      "extraction_method": "native_text_layer",
       "gazette_date": "1994-04-22",
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": true,
-      "as_enacted": true
+      "as_enacted": true,
+      "text_quality": {
+        "extraction_source": "native_text_layer",
+        "char_count": 10691,
+        "word_count": 1636,
+        "dictionary_word_ratio": 0.9676,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-006",
@@ -116,17 +151,24 @@
       "sha256": "f210a0086ca41bc5022b306ea9b66df11ac560a5a89492cae8bd573c56428477",
       "page_count": 5,
       "licence_note": "Public policy document of the Government of Tamil Nadu (archived by IELRC & FAOLEX IND215442).",
-      "extraction_method": "text_layer",
+      "extraction_method": "ocr_300dpi",
       "gazette_date": null,
       "date_precision": "year_only",
       "metadata_verified": true,
       "is_extract": true,
-      "as_enacted": false
+      "as_enacted": false,
+      "text_quality": {
+        "extraction_source": "ocr_300dpi",
+        "char_count": 8487,
+        "word_count": 1195,
+        "dictionary_word_ratio": 0.9339,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-007",
       "filename": "LEGAL-007_Chennai_Metropolitan_Area_Groundwater_Regulation_Act_1987.pdf",
-      "title": "Chennai Metropolitan Area Groundwater (Regulation) Act, 1987 (Tamil Nadu Act 27 of 1987 — Scheduled Kancheepuram & Chengalpattu Villages)",
+      "title": "Chennai Metropolitan Area Groundwater (Regulation) Act, 1987 (Tamil Nadu Act 27 of 1987 â€” Scheduled Kancheepuram & Chengalpattu Villages)",
       "issuer": "Legislative Assembly of Tamil Nadu / CMWSSB & Water Resources Department",
       "document_type": "State Act",
       "date": "1987-06-05",
@@ -136,12 +178,19 @@
       "sha256": "4cd3bf74ab6c695bdadf07292ecad66ea422037986487fa246012d5db83e2dd7",
       "page_count": 31,
       "licence_note": "Public statutory enactment under Section 52(1)(q) of the Indian Copyright Act, 1957.",
-      "extraction_method": "text_layer",
+      "extraction_method": "native_text_layer",
       "gazette_date": "1987-06-08",
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": true
+      "as_enacted": true,
+      "text_quality": {
+        "extraction_source": "native_text_layer",
+        "char_count": 43385,
+        "word_count": 5976,
+        "dictionary_word_ratio": 0.9086,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-008",
@@ -156,12 +205,19 @@
       "sha256": "df0b3f8d9c4fb2b80bdb110c5f44e6ffd690f513bc0869f1555ae80e78416341",
       "page_count": 7,
       "licence_note": "Public statutory enactment under Section 52(1)(q) of the Indian Copyright Act, 1957.",
-      "extraction_method": "text_layer",
+      "extraction_method": "native_text_layer",
       "gazette_date": "2014-09-03",
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": true
+      "as_enacted": true,
+      "text_quality": {
+        "extraction_source": "native_text_layer",
+        "char_count": 19324,
+        "word_count": 2889,
+        "dictionary_word_ratio": 0.991,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-009",
@@ -176,17 +232,24 @@
       "sha256": "1f6334d867e53a913c1b82a84ff6672869b65c8694286e10696bb5c7c79c3ccb",
       "page_count": 12,
       "licence_note": "Public statutory enactment under Section 52(1)(q) of the Indian Copyright Act, 1957.",
-      "extraction_method": "text_layer",
+      "extraction_method": "native_text_layer",
       "gazette_date": "2003-03-04",
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": true
+      "as_enacted": true,
+      "text_quality": {
+        "extraction_source": "native_text_layer",
+        "char_count": 31224,
+        "word_count": 4934,
+        "dictionary_word_ratio": 0.9933,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-010",
       "filename": "LEGAL-010_Chennai_Metropolitan_Water_Supply_and_Sewerage_Act_1978.pdf",
-      "title": "Chennai Metropolitan Water Supply and Sewerage Act, 1978 (Tamil Nadu Act 28 of 1978 — Catchment & Reservoir Protection)",
+      "title": "Chennai Metropolitan Water Supply and Sewerage Act, 1978 (Tamil Nadu Act 28 of 1978 â€” Catchment & Reservoir Protection)",
       "issuer": "Legislative Assembly of Tamil Nadu",
       "document_type": "State Act",
       "date": "1978-06-08",
@@ -196,17 +259,24 @@
       "sha256": "c7e7e8f75b3b4b78d2978532db757e23ae8ef4b7ae789902e078e807c21b52eb",
       "page_count": 26,
       "licence_note": "Public statutory enactment under Section 52(1)(q) of the Indian Copyright Act, 1957.",
-      "extraction_method": "text_layer",
+      "extraction_method": "native_text_layer",
       "gazette_date": "1978-06-14",
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": true
+      "as_enacted": true,
+      "text_quality": {
+        "extraction_source": "native_text_layer",
+        "char_count": 122862,
+        "word_count": 19911,
+        "dictionary_word_ratio": 0.9741,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-011",
       "filename": "LEGAL-011_TN_District_Municipalities_Act_1920_Water_Sources_Excerpts.pdf",
-      "title": "The Tamil Nadu District Municipalities Act, 1920 (Excerpts — Water Supply, Drainage and Public Water Sources)",
+      "title": "The Tamil Nadu District Municipalities Act, 1920 (Excerpts â€” Water Supply, Drainage and Public Water Sources)",
       "issuer": "Municipal Administration and Water Supply Department, Government of Tamil Nadu",
       "document_type": "State Act",
       "date": "1920-06-29",
@@ -216,17 +286,24 @@
       "sha256": "76ea481fe442e54223fd5c10f3e2b2d276d2bc74837230aea52127f89bec1fbc",
       "page_count": 10,
       "licence_note": "Public statutory enactment under Section 52(1)(q) of the Indian Copyright Act, 1957.",
-      "extraction_method": "text_layer",
+      "extraction_method": "native_text_layer",
       "gazette_date": "1920-07-06",
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": true,
-      "as_enacted": true
+      "as_enacted": true,
+      "text_quality": {
+        "extraction_source": "native_text_layer",
+        "char_count": 26652,
+        "word_count": 4131,
+        "dictionary_word_ratio": 0.978,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-012",
       "filename": "LEGAL-012_GO_Ms_96_RDPR_2019_Kudimaramath_Minor_Irrigation_Tanks.pdf",
-      "title": "G.O. (Ms) No. 96, Rural Development and Panchayat Raj (CGS.1) Department — Rejuvenation of Minor Irrigation Tanks, Ponds and Ooranies under Kudimaramath Concept",
+      "title": "G.O. (Ms) No. 96, Rural Development and Panchayat Raj (CGS.1) Department â€” Rejuvenation of Minor Irrigation Tanks, Ponds and Ooranies under Kudimaramath Concept",
       "issuer": "Rural Development and Panchayat Raj Department, Government of Tamil Nadu",
       "document_type": "Kudimaramath Government Order",
       "date": "2019-07-26",
@@ -236,17 +313,24 @@
       "sha256": "b97124a18a9b962e4dd4aaf330a89a39bcf85af10a4688a4c1b50777fd5c41e5",
       "page_count": 4,
       "licence_note": "Official Government Order published on Tamil Nadu Rural Development portal (tnrd.tn.gov.in).",
-      "extraction_method": "ocr_needed",
+      "extraction_method": "ocr_300dpi",
       "gazette_date": null,
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": false
+      "as_enacted": false,
+      "text_quality": {
+        "extraction_source": "ocr_300dpi",
+        "char_count": 7853,
+        "word_count": 1106,
+        "dictionary_word_ratio": 0.9503,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-013",
       "filename": "LEGAL-013_GO_Ms_97_RDPR_2016_MGNREGS_Minor_Irrigation_Tank_Desilting.pdf",
-      "title": "G.O. (Ms) No. 97, Rural Development and Panchayat Raj (CGS.1) Department — MGNREGS Guidelines for Desilting Minor Irrigation Tanks, Supply Channels and Ponds",
+      "title": "G.O. (Ms) No. 97, Rural Development and Panchayat Raj (CGS.1) Department â€” MGNREGS Guidelines for Desilting Minor Irrigation Tanks, Supply Channels and Ponds",
       "issuer": "Rural Development and Panchayat Raj Department, Government of Tamil Nadu",
       "document_type": "Government Order",
       "date": "2016-08-29",
@@ -256,17 +340,24 @@
       "sha256": "fc875efb2967518c871efc9953385f7db18dddb25eca2fc9609ea11a0737747a",
       "page_count": 14,
       "licence_note": "Official Government Order published on Tamil Nadu Rural Development portal (tnrd.tn.gov.in).",
-      "extraction_method": "ocr_needed",
+      "extraction_method": "ocr_300dpi",
       "gazette_date": null,
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": false
+      "as_enacted": false,
+      "text_quality": {
+        "extraction_source": "ocr_300dpi",
+        "char_count": 28479,
+        "word_count": 4101,
+        "dictionary_word_ratio": 0.9429,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-014",
       "filename": "LEGAL-014_GO_Ms_23_RDPR_2024_Rural_Water_Bodies_and_Infrastructure_Guidelines.pdf",
-      "title": "G.O. (Ms) No. 23, Rural Development and Panchayat Raj (SGS.2) Department — Guidelines for Rural Water Bodies, Minor Irrigation Tanks and Panchayat Works",
+      "title": "G.O. (Ms) No. 23, Rural Development and Panchayat Raj (SGS.2) Department â€” Guidelines for Rural Water Bodies, Minor Irrigation Tanks and Panchayat Works",
       "issuer": "Rural Development and Panchayat Raj Department, Government of Tamil Nadu",
       "document_type": "Government Order",
       "date": "2024-02-02",
@@ -276,12 +367,19 @@
       "sha256": "46c0948b1de1e12fef657dedc03d73c552974f13d73e2250bac6d2e24ef7da19",
       "page_count": 19,
       "licence_note": "Official Government Order published on Tamil Nadu Rural Development portal (tnrd.tn.gov.in).",
-      "extraction_method": "ocr_needed",
+      "extraction_method": "ocr_300dpi",
       "gazette_date": null,
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": false
+      "as_enacted": false,
+      "text_quality": {
+        "extraction_source": "ocr_300dpi",
+        "char_count": 32839,
+        "word_count": 4539,
+        "dictionary_word_ratio": 0.9551,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-015",
@@ -296,17 +394,24 @@
       "sha256": "91b59cebd1f14079c1a7fa8336897f0079c9217d393edc39363a0332d7247a7b",
       "page_count": 5,
       "licence_note": "Official Commission Report published on Tamil Nadu Rural Development portal (tnrd.tn.gov.in).",
-      "extraction_method": "ocr_needed",
+      "extraction_method": "ocr_300dpi",
       "gazette_date": null,
       "date_precision": "approximate",
       "metadata_verified": true,
       "is_extract": true,
-      "as_enacted": false
+      "as_enacted": false,
+      "text_quality": {
+        "extraction_source": "ocr_300dpi",
+        "char_count": 11521,
+        "word_count": 782,
+        "dictionary_word_ratio": 0.5703,
+        "quality_gate": "FAIL"
+      }
     },
     {
       "id": "LEGAL-016",
       "filename": "LEGAL-016_TN_Natural_Resources_Policy_Note_2024_25_Tank_Silt_Removal_Rules.pdf",
-      "title": "Government of Tamil Nadu Natural Resources Department Policy Note 2024–2025 (Rule 12(2-A) Desilting & Removal of Silt/Savudu from PWD/WRD & Rural Development Tanks)",
+      "title": "Government of Tamil Nadu Natural Resources Department Policy Note 2024â€“2025 (Rule 12(2-A) Desilting & Removal of Silt/Savudu from PWD/WRD & Rural Development Tanks)",
       "issuer": "Natural Resources Department, Government of Tamil Nadu",
       "document_type": "Departmental Policy Note",
       "date": "2024-06-24",
@@ -316,12 +421,19 @@
       "sha256": "d821f1e2e663660684a15cdd09cc5916a3a8ae677c02178c9b9ef9e242cedd37",
       "page_count": 75,
       "licence_note": "Official Policy Note published on Government of Tamil Nadu CMS portal (cms.tn.gov.in).",
-      "extraction_method": "text_layer",
+      "extraction_method": "native_text_layer",
       "gazette_date": null,
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": false
+      "as_enacted": false,
+      "text_quality": {
+        "extraction_source": "native_text_layer",
+        "char_count": 42228,
+        "word_count": 5167,
+        "dictionary_word_ratio": 0.9487,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-017",
@@ -336,12 +448,19 @@
       "sha256": "a7ba58bcf3860048802a493a0d8cab5356f6eb49125d3d30d50d1ddb56f61b11",
       "page_count": 25,
       "licence_note": "Official Central Water Commission guideline published on cwc.gov.in.",
-      "extraction_method": "text_layer",
+      "extraction_method": "native_text_layer",
       "gazette_date": null,
       "date_precision": "approximate",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": false
+      "as_enacted": false,
+      "text_quality": {
+        "extraction_source": "native_text_layer",
+        "char_count": 39717,
+        "word_count": 5650,
+        "dictionary_word_ratio": 0.932,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-018",
@@ -356,12 +475,19 @@
       "sha256": "75ec4f94d45b7fdd851ecc510baa0f3cd73f81959d1993e0a64fd617d35930b7",
       "page_count": 14,
       "licence_note": "Official Gazette Notification published on MoEFCC Indian Wetlands Portal (indianwetlands.in).",
-      "extraction_method": "text_layer",
+      "extraction_method": "native_text_layer",
       "gazette_date": "2017-09-26",
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": true
+      "as_enacted": true,
+      "text_quality": {
+        "extraction_source": "native_text_layer",
+        "char_count": 57342,
+        "word_count": 3423,
+        "dictionary_word_ratio": 0.9483,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-019",
@@ -376,12 +502,19 @@
       "sha256": "c0d7f0adcb4e0244245773242ae457e70d63d50f7110b1859b8fbb5b55dabef2",
       "page_count": 52,
       "licence_note": "Official MoEFCC Operational Guidelines published on indianwetlands.in.",
-      "extraction_method": "text_layer",
+      "extraction_method": "native_text_layer",
       "gazette_date": null,
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": false
+      "as_enacted": false,
+      "text_quality": {
+        "extraction_source": "native_text_layer",
+        "char_count": 106088,
+        "word_count": 13839,
+        "dictionary_word_ratio": 0.9788,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-020",
@@ -396,12 +529,19 @@
       "sha256": "ccb1075df0379c1306372a120e0f450f2477347658b5288781cbb777d90470a3",
       "page_count": 32,
       "licence_note": "Public Central Statute under Section 52(1)(q) of the Indian Copyright Act, 1957.",
-      "extraction_method": "text_layer",
+      "extraction_method": "native_text_layer",
       "gazette_date": "1974-03-25",
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": true
+      "as_enacted": true,
+      "text_quality": {
+        "extraction_source": "native_text_layer",
+        "char_count": 98563,
+        "word_count": 15890,
+        "dictionary_word_ratio": 0.9751,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-021",
@@ -416,17 +556,24 @@
       "sha256": "83ca21497be94c8316f533813140f1a964f5c5332e3d54d30ecb021fc670a401",
       "page_count": 36,
       "licence_note": "Public Central Statutory Rules under Section 52(1)(q) of the Indian Copyright Act, 1957.",
-      "extraction_method": "text_layer",
+      "extraction_method": "native_text_layer",
       "gazette_date": "1975-02-27",
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": true
+      "as_enacted": true,
+      "text_quality": {
+        "extraction_source": "native_text_layer",
+        "char_count": 61360,
+        "word_count": 8098,
+        "dictionary_word_ratio": 0.9873,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-022",
       "filename": "LEGAL-022_Indian_Easements_Act_1882_Riparian_and_Tank_Water_Rights.pdf",
-      "title": "The Indian Easements Act, 1882 (Excerpts — Riparian and Surface Water Rights Provisions)",
+      "title": "The Indian Easements Act, 1882 (Excerpts â€” Riparian and Surface Water Rights Provisions)",
       "issuer": "Legislative Department, Government of India",
       "document_type": "Central Act",
       "date": "1882-02-17",
@@ -436,17 +583,24 @@
       "sha256": "5352d19be774e1992d43be10d95eb5ee564da4ff821aae7ec6277d6306c88654",
       "page_count": 2,
       "licence_note": "Public Central Statute under Section 52(1)(q) of the Indian Copyright Act, 1957.",
-      "extraction_method": "text_layer",
+      "extraction_method": "native_text_layer",
       "gazette_date": "1882-02-17",
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": true,
-      "as_enacted": true
+      "as_enacted": true,
+      "text_quality": {
+        "extraction_source": "native_text_layer",
+        "char_count": 3287,
+        "word_count": 521,
+        "dictionary_word_ratio": 0.9712,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-023",
       "filename": "LEGAL-023_CGWB_Kancheepuram_District_Ground_Water_and_Tanks_Brochure.pdf",
-      "title": "Central Ground Water Board (CGWB) District Ground Water Brochure — Kancheepuram District, Tamil Nadu (Surface Tanks, Palar Basin & Recharge)",
+      "title": "Central Ground Water Board (CGWB) District Ground Water Brochure â€” Kancheepuram District, Tamil Nadu (Surface Tanks, Palar Basin & Recharge)",
       "issuer": "Central Ground Water Board (South Eastern Coastal Region, Chennai), Ministry of Water Resources",
       "document_type": "Hydrogeological Technical Report",
       "date": "2007-11-01",
@@ -456,17 +610,24 @@
       "sha256": "31b3eba1af5e2305654efaf7e70dd73fe5d0d30ce1d44990198c298e9a6b5438",
       "page_count": 23,
       "licence_note": "Official Government of India CGWB publication (cgwb.gov.in).",
-      "extraction_method": "text_layer",
+      "extraction_method": "native_text_layer",
       "gazette_date": null,
       "date_precision": "approximate",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": false
+      "as_enacted": false,
+      "text_quality": {
+        "extraction_source": "native_text_layer",
+        "char_count": 25814,
+        "word_count": 3303,
+        "dictionary_word_ratio": 0.9195,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-024",
       "filename": "LEGAL-024_Madras_HC_A_Narayanan_v_Chief_Secretary_Govt_of_TN_2008.pdf",
-      "title": "A. Narayanan v. Chief Secretary, Government of Tamil Nadu & Ors. (Madras High Court W.P. No. 23544 of 2008 — Protection of Water Bodies & Channels)",
+      "title": "A. Narayanan v. Chief Secretary, Government of Tamil Nadu & Ors. (Madras High Court W.P. No. 23544 of 2008 â€” Protection of Water Bodies & Channels)",
       "issuer": "High Court of Judicature at Madras",
       "document_type": "Madras High Court Judgment",
       "date": "2008-09-29",
@@ -476,17 +637,24 @@
       "sha256": "41254bdedca9959baace0ad05fd0e47901267e16d08841129b0a3d147d861128",
       "page_count": 13,
       "licence_note": "Public judicial pronouncement under Section 52(1)(q)(iv) of the Indian Copyright Act, 1957.",
-      "extraction_method": "text_layer",
+      "extraction_method": "native_text_layer",
       "gazette_date": null,
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": false
+      "as_enacted": false,
+      "text_quality": {
+        "extraction_source": "native_text_layer",
+        "char_count": 37534,
+        "word_count": 5699,
+        "dictionary_word_ratio": 0.9642,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-025",
       "filename": "LEGAL-025_Madras_HC_Vellore_District_Environment_Monitoring_Committee_v_Collector_2010.pdf",
-      "title": "Vellore District Environment Monitoring Committee v. The District Collector & Ors. (Madras High Court W.P. No. 15244 of 2009 — Palar Basin Water Resources Protection)",
+      "title": "Vellore District Environment Monitoring Committee v. The District Collector & Ors. (Madras High Court W.P. No. 15244 of 2009 â€” Palar Basin Water Resources Protection)",
       "issuer": "High Court of Judicature at Madras",
       "document_type": "Madras High Court Judgment",
       "date": "2010-01-29",
@@ -496,17 +664,24 @@
       "sha256": "631f7ce77c40f92be7ba6703faf45c2bacce116caced1c6b7ba7c751a5c4e3ae",
       "page_count": 8,
       "licence_note": "Public judicial pronouncement under Section 52(1)(q)(iv) of the Indian Copyright Act, 1957.",
-      "extraction_method": "text_layer",
+      "extraction_method": "native_text_layer",
       "gazette_date": null,
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": false
+      "as_enacted": false,
+      "text_quality": {
+        "extraction_source": "native_text_layer",
+        "char_count": 27363,
+        "word_count": 4270,
+        "dictionary_word_ratio": 0.9593,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-026",
       "filename": "LEGAL-026_Supreme_Court_Susetha_v_State_of_Tamil_Nadu_2006_Tank_Protection.pdf",
-      "title": "Mrs. Susetha v. State of Tamil Nadu & Ors. (Supreme Court of India Appeal (Civil) 3418 of 2006 — Protection and Restoration of Tanks and Water Bodies in Tamil Nadu)",
+      "title": "Mrs. Susetha v. State of Tamil Nadu & Ors. (Supreme Court of India Appeal (Civil) 3418 of 2006 â€” Protection and Restoration of Tanks and Water Bodies in Tamil Nadu)",
       "issuer": "Supreme Court of India",
       "document_type": "Supreme Court Judgment",
       "date": "2006-08-08",
@@ -516,17 +691,24 @@
       "sha256": "9500662e1b59e540d9c95d81cc1c5aba285c515349c33096f772349ad6bf7ddf",
       "page_count": 5,
       "licence_note": "Public judicial pronouncement under Section 52(1)(q)(iv) of the Indian Copyright Act, 1957.",
-      "extraction_method": "text_layer",
+      "extraction_method": "native_text_layer",
       "gazette_date": null,
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": false
+      "as_enacted": false,
+      "text_quality": {
+        "extraction_source": "native_text_layer",
+        "char_count": 13223,
+        "word_count": 2012,
+        "dictionary_word_ratio": 0.9732,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-027",
       "filename": "LEGAL-027_Supreme_Court_Intellectuals_Forum_Tirupathi_v_State_of_AP_2006_Tanks.pdf",
-      "title": "Intellectuals Forum, Tirupathi v. State of A.P. & Ors. (Supreme Court of India Appeal (Civil) 1251 of 2006 — Public Trust Doctrine on Historical Irrigation Tanks)",
+      "title": "Intellectuals Forum, Tirupathi v. State of A.P. & Ors. (Supreme Court of India Appeal (Civil) 1251 of 2006 â€” Public Trust Doctrine on Historical Irrigation Tanks)",
       "issuer": "Supreme Court of India",
       "document_type": "Supreme Court Judgment",
       "date": "2006-02-23",
@@ -536,17 +718,24 @@
       "sha256": "6ddcafe09d38ec4199d30d0e8b5d6a62d0b713e0db418cb154fc979aed90cf23",
       "page_count": 25,
       "licence_note": "Public judicial pronouncement under Section 52(1)(q)(iv) of the Indian Copyright Act, 1957.",
-      "extraction_method": "text_layer",
+      "extraction_method": "native_text_layer",
       "gazette_date": null,
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": false
+      "as_enacted": false,
+      "text_quality": {
+        "extraction_source": "native_text_layer",
+        "char_count": 76562,
+        "word_count": 11850,
+        "dictionary_word_ratio": 0.9578,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-028",
       "filename": "LEGAL-028_Supreme_Court_Vellore_Citizens_Welfare_Forum_v_Union_of_India_1996_Palar_Basin.pdf",
-      "title": "Vellore Citizens Welfare Forum v. Union of India & Ors. (Supreme Court of India W.P. (C) No. 914 of 1991 — Palar Basin Water Pollution, Precautionary & Polluter Pays Principles in Tamil Nadu)",
+      "title": "Vellore Citizens Welfare Forum v. Union of India & Ors. (Supreme Court of India W.P. (C) No. 914 of 1991 â€” Palar Basin Water Pollution, Precautionary & Polluter Pays Principles in Tamil Nadu)",
       "issuer": "Supreme Court of India",
       "document_type": "Supreme Court Judgment",
       "date": "1996-08-28",
@@ -556,17 +745,24 @@
       "sha256": "5f5ebedc86a6c390057545dfa0580b120b5e060f6180e0b99bbac71082631003",
       "page_count": 20,
       "licence_note": "Public judicial pronouncement under Section 52(1)(q)(iv) of the Indian Copyright Act, 1957.",
-      "extraction_method": "text_layer",
+      "extraction_method": "native_text_layer",
       "gazette_date": null,
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": false
+      "as_enacted": false,
+      "text_quality": {
+        "extraction_source": "native_text_layer",
+        "char_count": 60699,
+        "word_count": 9296,
+        "dictionary_word_ratio": 0.9672,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-029",
       "filename": "LEGAL-029_Supreme_Court_Tirupur_Dyeing_v_Noyyal_River_Ayacutdars_2009.pdf",
-      "title": "Tirupur Dyeing Factory Owners Association v. Noyyal River Ayacutdars Protection Association & Ors. (Supreme Court Civil Appeal No. 6776 of 2009 — Protection of Irrigation Ayacutdars & Reservoirs)",
+      "title": "Tirupur Dyeing Factory Owners Association v. Noyyal River Ayacutdars Protection Association & Ors. (Supreme Court Civil Appeal No. 6776 of 2009 â€” Protection of Irrigation Ayacutdars & Reservoirs)",
       "issuer": "Supreme Court of India",
       "document_type": "Supreme Court Judgment",
       "date": "2009-10-06",
@@ -576,17 +772,24 @@
       "sha256": "4c4ca27f4cf0613f8f2d9e53af5f8536267053a588914a6df65b6539e1be1b5e",
       "page_count": 12,
       "licence_note": "Public judicial pronouncement under Section 52(1)(q)(iv) of the Indian Copyright Act, 1957.",
-      "extraction_method": "text_layer",
+      "extraction_method": "native_text_layer",
       "gazette_date": null,
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": false
+      "as_enacted": false,
+      "text_quality": {
+        "extraction_source": "native_text_layer",
+        "char_count": 36710,
+        "word_count": 5531,
+        "dictionary_word_ratio": 0.94,
+        "quality_gate": "PASS"
+      }
     },
     {
       "id": "LEGAL-030",
       "filename": "LEGAL-030_NGT_Subhash_C_Pandey_v_Municipal_Corporation_2014_Lake_FTL_Encroachment.pdf",
-      "title": "Dr. Subhash C. Pandey v. Municipal Corporation & Ors. (National Green Tribunal O.A. No. 17 of 2013 — Lake Full Tank Level Demarcation, Buffer Zone & Encroachment Removal)",
+      "title": "Dr. Subhash C. Pandey v. Municipal Corporation & Ors. (National Green Tribunal O.A. No. 17 of 2013 â€” Lake Full Tank Level Demarcation, Buffer Zone & Encroachment Removal)",
       "issuer": "National Green Tribunal",
       "document_type": "National Green Tribunal Judgment",
       "date": "2014-09-19",
@@ -596,12 +799,19 @@
       "sha256": "39fc6c1c8a2ac8c81a892a9c3ee48b59ed152106ce94045697bf9e6013eb79a0",
       "page_count": 16,
       "licence_note": "Public judicial pronouncement under Section 52(1)(q)(iv) of the Indian Copyright Act, 1957.",
-      "extraction_method": "text_layer",
+      "extraction_method": "native_text_layer",
       "gazette_date": null,
       "date_precision": "exact",
       "metadata_verified": true,
       "is_extract": false,
-      "as_enacted": false
+      "as_enacted": false,
+      "text_quality": {
+        "extraction_source": "native_text_layer",
+        "char_count": 27925,
+        "word_count": 4136,
+        "dictionary_word_ratio": 0.9463,
+        "quality_gate": "PASS"
+      }
     }
   ],
   "archive_url": "https://github.com/Rahul-git64/EriWatch/releases/download/v0.1.0-legal-corpus/eriwatch-legal-corpus-v1.tar.gz",

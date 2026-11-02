@@ -1,0 +1,2760 @@
+--- Page 1 ---
+2020 
+ 
+Guidelines for implementing  
+Wetlands (Conservation and Management) Rules, 2017 
+ MINISTRY OF ENVIRONMENT, FOREST AND CLIMATE CHANGE 
+GOVERNMENT OF INDIA
+
+--- Page 2 ---
+1 
+ 
+Contents  
+ 
+I. Guidelines Purpose and Scope 2 
+II. Wetlands to be regulated 2 
+III. Wetlands Authorities 5 
+IV. Preparing a list of wetlands 8 
+V. Delineating wetlands 9 
+VI. Delineating zone of influence 10 
+VII. Wetlands wise use and ecological character 11 
+VIII. Prohibited activities in a notified wetland 13 
+IX. Developing a list of activities, to be regulated in a notified wetland: 13 
+X. Developing a list of activities permitted in a notified wetland 15 
+XI. Registration of wetlands 15 
+XII. Account of pre-existing rights and privileges in a notified wetland 15 
+XIII. Notifying wetlands 16 
+XIV. Integrated Management Plan 17 
+XV. Violations and penal provisions 20 
+XVI. Portal for information sharing 21 
+Annexes   
+Annex 1:  Format for compiling list of wetlands 22 
+Annex 2:  Format for preparing Brief Document 23 
+Annex 3:  Format for draft notification of wetlands under Wetlands (Conservation and Management) Rules, 
+2017 31 
+Annex 4:  Steps and format for developing Integrated Management Plan 35 
+Annex 5: Format for reporting status of notified wetlands 51
+
+--- Page 3 ---
+2 
+ 
+I. Guidelines Purpose and Scope 
+1. The Ministry of Environment, Forest and Climate Change (MoEF&CC) has notified Wetlands 
+(Conservation and Management) Rules, 2017 (hereinafter Wetlands Rules) under the provisions 
+of the Environment (Protection) Act, 1986 as regulatory framework for conservation and 
+management of wetlands in India. These guidelines have been drafted to support the State 
+Governments / Union Territory (UT) Administrations in the implementation of the Rules by 
+providing guidance on: 
+a) Preparing a list of wetlands in the State / UT 
+b) Identifying wetlands for notification under Wetlands (Conservation and Management) Rules, 
+2017   
+c) Delineating  wetlands, wetlands complexes and zone of influence 
+d) Preparation of Brief Document 
+e) Determining ‘wise use’ and ecological character  
+f) Developing a list of activities to be regulated and permitted 
+g) Developing an Integrated Management Plan  
+h) Constitution and operational matters of the Wetlands Authorities 
+i) Overlapping provisions. 
+ 
+2. These guidelines were drafted by a committee constituted by the MoEF&CC vide OM dated 
+August 10, 2018. The committee comprised Mr U.A.Vora (former CCF Wildlife, Government 
+of Gujarat), Dr Arvind Kumar (President, India Water Foundation), Dr B.C. Jha (Former 
+Director (Wetlands), Central Inland Fisheries Research Institute), Dr P. S. N. Rao (Director, 
+School of Planning and Architecture), Dr A froz Ahmad (Member, Environment and 
+Rehabilitation, Narmada Control Authority) and Dr Ritesh Kumar (Director, Wetlands 
+International South Asia). The committee met on five occasions at MoEF&CC, New Delhi for 
+the said purpose, and submitted final version of the guidelines to the Ministry on December 5, 
+2018. The draft guidelines were subsequently sent for comments to all State Governments / UT 
+Administrations, and have been finalized after due consideration of the comments received. The 
+Committee immensely benefitted from the discussions held with Ms Manju Pandey (Joint 
+Secretary). The Committee also acknowledges the support received from Ms Rita Khanna 
+(Scientist ‘F’), Dr M. Ramesh (Scientist ‘E’), Mr Chandan Singh (Scientist ‘D’), Dr Anu Chetal 
+(Research Assistant) and Ms Pallavi Mukherjee (Research Assistant) during the guidelines 
+preparation process.     
+II. Wetlands to be regulated  
+3. The provisions of Wetlands Rules apply to: 
+a) Wetlands designated by the Government of India to the List of Wetlands of International 
+Importance under the provisions of the Convention on Wetlands (Ramsar Convention). 
+[Ref. Rule 3 (a) of Wetlands Rule] 
+b) Wetlands notified under the rules by the Central Government, State Government and UT 
+Administration. [Ref. Rule 3 (b) of Wetlands Rule]
+
+--- Page 4 ---
+3 
+ 
+4. All wetlands, irrespective of their location, size, ownership, biodiversity, or ecosystem services 
+values, can be notified under the Wetlands Rules, except: 
+a) River channels; 
+b) Paddy fields; 
+c) Human-made waterbodies specifically constructed for drinking water purposes; 
+d) Human-made waterbodies specifically constructed for aquaculture purposes; 
+e) Human-made waterbodies specifically constructed for salt production purposes; 
+f) Human-made waterbodies specifically constructed for recreation purposes; 
+g) Human-made waterbodies specifically constructed for irrigation purposes; 
+h) Wetlands falling within areas covered under the Indian Forest Act, 1927; Forest 
+(Conservation) Act, 1980; State Forest Acts and amendments thereof; 
+i) Wetlands falling within areas covered under the  Wildlife (Protection) Act, 1972 and 
+amendments thereof; 
+j) Wetlands falling within areas covered under the Coastal Regulation Zone Notification, 2011 
+and amendments thereof.  
+[Ref. Rule 2 (g) and Rule 3 of Wetlands Rules]       
+  
+5. Human-made wetlands are defined as wetlands that are planned, designed and operated to meet 
+a specific purpose (such as providing water for irrigation, producing fish through culture 
+operations, producing salt, recreation, preventing salinity intrusion, flood control etc.). Only 
+those human-made wetlands that have been built for purposes, mentioned at paras 4c) – 4g) 
+above, are excluded from notification under these Rules.  
+ 
+6. Natural wetlands, partly or wholly used for purposes as mentioned at 4c) – 4g), attract the 
+provisions of the Wetlands Rules. 
+ 
+7. Wetlands designated as Ramsar Sites may be notified under the Rules as per the process 
+mentioned in paragraphs 57-65, even when partly or wholly overlapping with areas covered under 
+the Indian Forest Act, 1927; Forest (Conservation) Act, 1980; State Forest Acts and amendments 
+thereof; Wildlife (Protection) Act, 1972 and amendments thereof; Coastal Regulation Zone 
+Notification, 2011 and amendments thereof. Regulations for parts of wetlands overlapping with 
+4h-4j (supra) will, however, be as per the corresponding regulatory framework. Ramsar site areas, 
+not covered under any of the overlapping laws and rules, will attract the provisions of the 
+Wetlands Rules (Refer illustration 1 below).
+
+--- Page 5 ---
+4 
+ 
+ 
+Illustration 1: Using the Wetlands Rules to fill in the gaps in situations of multiple regulations in a Ramsar 
+Site. In the situation above, wildlife sanctuary (indicated as a) and a reserved forest (indicated as b) partly 
+overlap with the Ramsar Site boundary. Being a coastal wetland, a part (indicated as c) also falls under 
+Coastal Regulation Zone. In such cases, it is recommended that the entire Ramsar Site, inclusive of 
+overlapping areas, is delineated and notified under the Wetlands Rules. The overlapping areas shall 
+continue to be regulated as per respective Acts and Rules, and the remaining area may be regulated as per 
+the provisions contained in Wetlands Rules.   Similar approach can be taken even for wetlands that have 
+not been designated as Ramsar Site. 
+ 
+8. For wetlands falling within the criteria 3 (b) (supra), the exclusions mentioned at para 4 a) – 4j) 
+shall apply only in cases wherein the entire wetland falls under the said category. In cases wherein 
+areas falling within para 4 a) – 4 j) form a part of larger wetland or wetlands complex, and 
+exclusion may result in impeded ecological contiguity and connectivity, su ch areas may be 
+included within the boundary of wetland being notified. Regulations within the boundaries of 
+areas mentioned at para 4 h) – 4 j) will, however, be as per the corresponding regulatory 
+frameworks (Refer Illustration 1 and 2). 
+ 
+9. Though Protected Areas and areas falling within the purview of Coastal Zone Regulation have 
+been excluded from notification under the Wetlands Rules, management of such wetlands may 
+benefit through the application of ‘wise use’ approach (within the framework of existing laws and 
+rules) as outlined in Section VII of these guidelines.
+
+--- Page 6 ---
+5 
+ 
+ 
+Illustration 2: Considering river stretch and human-made wetlands for notification. In situations when the 
+entire wetland, to be notified, is a river stretch [indicated as (a)], paddy fields [indicated as (b)], human-
+made wetland waterbodies for irrigation [indicated as (c)], and human-made waterbodies created for 
+aquaculture purposes [indicated as (d)], these may not be notified under the Wetlands Rules. However, in 
+cases as in (e), wherein river channels, paddy fields, and human-made wetlands such as aquaculture areas 
+form a part of a larger wetland or wetland complex, and excluding such area may fragment the wetland 
+regime, the area to be notified may include river channels, paddy fields or any other human-made wetland.  
+ 
+10. Should the State Governments/UT Administrations be desirous, any wetland, even if included 
+within the list of wetlands excluded from notification under Wetlands Rules, may be notified 
+under the relevant state laws. In this regard, the approach/mechanism outlined in Wetlands Rules 
+and these guidelines may be suitably adopted.   
+III. Wetlands Authorities 
+11. As per Rule 5 of Wetlands Rules, 2017 the Wetlands Authorities within States and UTs are 
+deemed as constituted with the following members: 
+a) Minister In-charge of the Department of Environment/Forests of the State Government or 
+Minister In charge of the Department handling wetlands - Chairperson;(Administrator or 
+Chief Secretary of the UT – Chairperson in the case of UT); 
+b) Chief Secretary of the State or Additional Chief Secretary equivalent - Vice Chairperson;  
+c) Secretary in-charge of the Department of Environment - Member ex-officio; (Vice-
+Chairperson in the case of UT) 
+d) Secretary in-charge of the Department of Forests - Member ex-officio;  
+e) Secretary in-charge of the Department of Urban Development - Member ex-officio;
+
+--- Page 7 ---
+6 
+ 
+f) Secretary in-charge of the Department of Rural Development - Member ex-officio;  
+g) Secretary in-charge of the Department of Water Resources - Member ex-officio; 
+h) Secretary in-charge of the Department of Fisheries - Member ex-officio;  
+i) Secretary in-charge of the Department of Irrigation and Flood Control - Member ex-officio;  
+j) Secretary in-charge of the Department of Tourism - Member ex-officio; 
+k) Secretary in-charge of the Department of Revenue - Member ex-officio; 
+l) Director, State Remote Sensing Centre - Member ex-officio;  
+m) Chief Wildlife Warden - Member ex-officio;  
+n) Member Secretary, State/UT Biodiversity Board - Member ex-officio;  
+o) Member Secretary, State Pollution Control Board/UT Pollution Control Committee - 
+Member ex-officio;  
+p) Additional Principal Chief Conservator of Forests of the Regional Office of Ministry of 
+Environment, Forest and Climate Change - Member ex-officio;  
+q) One expert each in the fields of wetland ecology, hydrology, fisheries, landscape planning 
+and socioeconomics to be nominated by the State Government / UT Administration 
+r) Additional Secretary/Joint Secretary/Director in the Department of Environment/Forests or 
+Department handling wetlands - Member Secretary 
+ 
+12. The Department of Environment / Forests or Department handling wetlands shall designate one 
+expert each in the following fields for a period not exceeding three years: [Ref. Rule 5 (2) (xvi) of 
+Wetlands Rules] 
+a) Wetlands ecology 
+b) Hydrology 
+c) Fisheries 
+d) Landscape planning 
+e) Socioeconomics 
+ 
+13. The Wetlands Authority may co-opt other members, not exceeding three in number. It is 
+recommended that at least one member may be drawn from civil society to enable stakeholder 
+representation.        
+ 
+14. The Authority shall exercise following powers and perform the following functions: 
+a) Prepare a list of all wetlands of the State or UT within three months from the date  of 
+publication of these rules;  
+b) Prepare a list of wetlands to be notified, within six months from the date of publication of 
+these Rules, taking into cognizance any existing list of wetlands prepared/notified under other 
+relevant State Acts;  
+c) Recommend identified wetlands, based on their Brief Documents, for regulation under these 
+rules;  
+d) Prepare a comprehensive digital inventory of all wetlands within one year from the date of 
+publication of these rules and upload the same on a dedicated web portal, to be developed 
+by the Central Government for the said purpose; the inventory ought to be updated every 
+ten years;  
+e) Develop a comprehensive list of activities, to be regulated and permitted within the notified 
+wetlands and their zone of influence;  
+f) Recommend additions, if any, to the list of prohibited activities for specific wetlands;  
+g) Define strategies for conservation and wise use of wetlands within their jurisdiction;  
+h) Review Integrated Management Plan for each of the notified wetlands (including trans -
+boundary wetlands in coordination with Central Government), and within these plans to
+
+--- Page 8 ---
+7 
+ 
+consider continuation and support to traditional uses of wetlands that are harmonized with 
+ecological character;  
+i) Recommend mechanisms for maintenance of ecological character through promotional 
+activities for land within the boundary of notified wetlands or wetlands complex have private 
+tenancy rights,;  
+j) Identify mechanisms for convergence of implementation of the management plan with the 
+existing State/UT level development plans and programmes;  
+k) Ensure enforcement of these rules and other relevant Acts, rules and regulations and on a 
+half-yearly basis (June and December of each calendar year) inform the concerned State 
+Government or UT Administration or Central Government on the status of such notified 
+wetlands through a reporting mechanism; 
+l) Coordinate implementation of Integrated Management Plans based on wise use principle 
+through various line departments and other concerned agencies;  
+m) Function as a nodal authority for all wetland-specific authorities within the State or UT 
+Administration;  
+n) Issue necessary directions for the conservation and sustainable management of wetlands to 
+the respective implementing agencies. 
+o) Undertake measures for enhancing awareness within stakeholders and local communities on 
+values and functions of wetlands; and 
+p) Advise on any other matter suo-motu, or as referred by the State Government/UT 
+Administration. 
+[Ref. Rule 5 (4) of Wetlands Rules] 
+ 
+15. The State Government or UT Administration shall designate a department as nodal department 
+for wetlands. Such department shall provide all necessary support and act as Secretariat to the 
+Authority. The State Governments / UT Administrations may allocate sufficient budget and 
+human resources to ensure smooth functioning of the Authority and conduct of its various 
+activities. The Authority and the nodal department may identify a professional 
+institute(s)/organization(s) that would assist them in their various functions such as preparing a 
+list of wetlands, Brief Documents for notification etc.  
+ 
+16. The Authority shall meet at least thrice in a year. State Government / UT Administration may 
+decide an appropriate quorum, not less than half of the members. Minutes of meetings of the 
+Authority may be placed in the public domain within a period not exceeding two weeks from the 
+day on which meeting has been convened. [Ref. Rule 5 (2) (8) of Wetlands Rules]  
+ 
+17. Each Wetlands Authority shall constitute: 
+a) Technical Committee to review Brief Documents, Management Plans and advise on any 
+technical matter referred by the Wetlands Authority; and,  
+b) Grievance Committee, consisting of four members, to provide a mechanism for hearing and 
+forwarding the grievances raised by the public to the Authority.  
+[Ref. Rule 5 (6)(b) of Wetlands Rules] 
+ 
+18. The composition of these committees may be decided by the concerned State / UT Wetlands 
+Authority. Meetings of these committees shall be held at least once every quarter, and 
+proceedings presented in the next meeting of the Authority. 
+ 
+19. The Wetlands Authority may empower the Grievance Committee to redress grievances at the 
+local level and to recommend to the Authority for the finality of decisions. The State Government
+
+--- Page 9 ---
+8 
+ 
+/ UT Administration may consider appointing at least one member with a legal background in 
+the Grievance Committee.  [Ref. Rule 5(6)(b) of Wetlands Rules] 
+ 
+20. State or UT level Wetlands Authorities constituted before notification of Wetlands Rules, shall 
+be deemed dissolved for the purpose of these Rules.   
+ 
+21. State / UT Wetlands Authorities shall serve as nodal authority for authorities / agencies created 
+for specific wetlands. Management plans and notifications pertaining to the specific wetland shall 
+be subject to approval and endorsement of the State / UT Wetlands Authority. Administrative 
+matters, however, may continue to be dealt by the nodal department specified within the 
+constitution of the wetlands specific authority. 
+IV. Preparing a list of wetlands 
+22. The State / UT Wetlands Authorities are expected to prepare a list of wetlands within the 
+boundaries of their respective States / UTs. This list should be comprehensive, and not just focus 
+on wetlands that qualify for notification under these Rules. Therefore, it is recommended that 
+the list is developed based on wetlands definition of the Ramsar Convention (to which India is a 
+Contracting Party).  
+ 
+22.1 The Convention, ratified by Government of India, defines wetlands as ‘areas of marsh, fen, 
+peatland or water, whether natural or artificial, permanent or temporary, with water that is 
+static or flowing, fresh, brackish or salt, including areas of marine water the depth of which, 
+at low tides, does not exceed six meters’. In addition, to protect coherent sites, Article 2.1 
+of the Convention provides that ‘wetlands may include riparian and coastal zones adjacent 
+to the wetlands, and islands or bodies of marine water deeper than six meters at low tide 
+lying within the wetlands.’ 
+ 
+23. The National Wetlands Atlas prepared by Space Application Center under the National 
+Wetlands Inventory and Assessment project, and available at 
+https://vedas.sac.gov.in/vedas/downloads/atlas/Wetlands/NWIA_National_atlas.pdf has spatial 
+data on wetlands for each State and UT.  
+23.1 The GIS data has already been made available by the Wetlands Division of the MoEF&CC 
+to the representatives of the State Governments / UT Administrations during the regional 
+consultation workshops held during 2016-18.  
+23.2 Wetlands Authority may seek the assistance of District Administration to validate the 
+information provided in the Atlas. Existing land records may also be considered while 
+developing the list of wetlands.  
+23.3 The final list of wetlands/wetland complexes may be prepared under the following heading: 
+a) Wetland Name 
+b) Geographical coordinates (latitude  and longitude of the centre of the wetland) 
+c) Wetland type (inland and coastal) and sub-type (natural or human-made)  
+d) District(s) within which the wetland is located 
+e) Approximate area of the wetland  
+f) Whether the wetland falls within the category of regulated wetlands as per Wetlands 
+Rules.
+
+--- Page 10 ---
+9 
+ 
+A format for compiling the list of wetlands is at Annex 1. This list may also contain trans-
+boundary wetlands (at the end) with additional details such as the bordering State/UT under 
+which wetland is falling along with corresponding area.  
+24. In addition to the National Wetlands Atlas, it may also be helpful to consider the list of wetlands 
+studied and described by various agencies, including revenue records (particularly areas recorded 
+as any of the wetlands types such as ponds, lake, talab, sarovar etc.). The States/UTs may seek 
+the assistance of State Remote Sensing Agencies and local experts for preparing such wetland 
+inventory expeditiously. State Governments/ UT Administrations are also encouraged to make 
+use of satellite images available at National Remote Sensing Center’s Geo-platform Bhuvan, 
+accessible at http://bhuvan.nrsc.gov.in/data /download/index.php.  
+V. Delineating wetlands  
+25. After the wetlands have been identified for notifications under the Wetlands Rules, the next step 
+involves delineation of each of these wetlands (or wetlands complexes) and their zone of 
+influence. 
+ 
+26. For delineating wetlands, it is essential to be aware of the distinguishing characteristics of these 
+ecosystems. Wetlands arise when inundation by water produces soil dominated by anaerobic 
+processes, which in turn forces the biota, particularly rooted plants to adapt to flooding . 
+Wetlands, thus, have the following general distinguishing characteristics: 
+a) Permanent or periodic inundation or saturated soils throughout the year or during parts of 
+the year 
+b) Presence of macrophytes adapted to wet conditions (also known as hydrophytes) 
+c) Soil that are saturated or flooded long enough favouring development of anaerobic 
+conditions 
+ 
+27. Water creates wetlands. The biological composition of wetlands, from fish to migrating 
+waterbirds, depends on the ways water moves within a wetland. The amplitude and frequency of 
+water level fluctuations are probably the most critical factors affecting the composition and 
+functioning of wetlands. Hydrological regimes may, therefore, be used as the primary delineation 
+characteristics for defining wetland boundary. 
+ 
+28. Wetlands boundary can be derived as the outer envelope of the maximum area under 
+inundation, the area covered by hydrophytes, or saturation of soil near the surface during a 
+normal monsoon year. The boundary should be such that during a normal monsoon year, the 
+entire area is inundated for at least 15 days, or the soil is saturated roughly within one foot from 
+the surface.  It may be pertinent to exclude areas that are only intermittently inundated in the 
+case of high floods (such as one in 100-year floods) or extreme events (such as storm surges of 
+extreme intensity).    
+ 
+29. Where two or more wetlands exist with a high degree on hydrological connectivity (for example, 
+wetlands connected during monsoon), or ecological connectivity (sharing waterbird habitats or 
+located on migratory fish pathways), these can be delineated as a single complex. In such cases, 
+non-wetland areas may be included within the boundary of the complex to ensure connectivity 
+and continuity. The connotation of wetland throughout this document includes wetlands 
+complex, as may be the case.
+
+--- Page 11 ---
+10 
+ 
+30. For each wetland and wetlands complex, a map should be prepared using a Geographical 
+Information System (WGS84 datum and UTM (Universal Transverse Mercator) projection) and 
+adopting professional cartographic standards. Essential features to be included in the map are as 
+follows: 
+a) Wetland boundary 
+b) The boundary of settlements located within and around the wetland  
+c) Connecting drainages, inflows and outflows  
+d) Main roads and railway (if any)  
+e) Major landmarks   
+31. Recommended scale for producing the wetlands maps is as follows: 
+Wetland / Wetlands complex area Recommended scale 
+Below 100 ha 1: 4000 
+Between 100 – 500 ha 1: 10,000 
+Between 500- 4000 ha 1: 25,000 
+4000 ha and above 1: 50,000 
+These scales have been recommended on the basis of spatial data available for preparing wetlands maps 
+and details that may be extracted for management planning and monitoring decisions. Resources at 2 LISS 
+IV data that may be used for preparing map of wetlands below 100 ha renders an approximate scale of 
+1:4000. Even larger wetlands can be mapped using finer resolution data.  However, for expedience and 
+cost effectiveness, a lower scale may be sufficient for meeting management needs.    
+VI. Delineating zone of influence 
+32. For each wetland to be notified, a zone of influence is to be defined. The zone of influence of a 
+wetland is an area, developmental activities wherein are likely to induce adverse changes in 
+wetland ecosystem structure and (ecological) functioning.  
+  
+33. The boundary of the zone of influence may be defined with due consideration to local hydrology 
+and nature of land use. For wetlands with a well-defined surface drainage system, its directly and 
+freely draining basin should be delineated as the zone of influence. This can be done using a 
+suitable digital elevation model data and validated using toposheets. The basin should encompass 
+all direct inflow as well as outflow areas. The river basin atlas of India (available at 
+http://www.india-wris.nrsc.gov.in/wrpinfo/ index.php?title=WRIS_Publications) may be used to 
+support the delineation.  
+ 
+34. For wetlands with diffused drainage and where the slope is too gentle leading to large basin area, 
+the zone of influence can be delineated on the basis of features that are likely to influence wetland 
+functioning adversely. These could be based on the outer periphery of adjoining settlements, or 
+peripheral agricultural fields that drain directly into the wetland.  
+ 
+35. A map should be prepared to indicate the following elements  in a Geographical Information 
+System (WGS84 datum and UTM projection) and adopting professional cartographic standards: 
+ 
+a) Zone of influence 
+b) Wetland boundary
+
+--- Page 12 ---
+11 
+ 
+c) Connecting drainages, inflows and outflows  
+d) Main roads and railway (if any)  
+e) Major landmarks 
+36. The recommended scale at which the map of the zone of influence is to be produced is as follows: 
+Area of zone of influence  Recommended mapping scale  
+Below 100 ha 1: 4000 
+Between 100 and 500 ha 1: 10,000 
+More than 500 ha 1: 50,000 
+VII. Wetlands wise use and ecological character  
+37. Management of notified wetlands is recommended to be based on ‘wise use’ approach. Human 
+beings and their use of resources form an essential component of wetland ecosystem dynamics. 
+The ‘wise use’ approach recognises that restricting wetland loss and degradation requires 
+incorporation of linkages between people and wetlands.  The wise use principle emphasises that 
+human use of these ecosystems on a sustainable basis is compatible with conservation.  
+ 
+38. Ramsar Convention defines the ‘wise use’ of wetlands as “the maintenance of their ecological 
+character, achieved through the implementation of ecosystem approaches, within the context of 
+sustainable development”. Ecosystem approach requires consideration of the complex 
+relationship between various ecosystem elements and promotion of integrated management of 
+land, water and living resources. Wise use, through an emphasis on sustainable development, 
+calls for resource use patterns which can ensure that human dependence on wetlands can be 
+maintained not only in the present but also in the future. Seen in totality, wise use is about 
+maintaining and enhancing wetland values and functions to ensure the maintenance of the flow 
+of benefits from wetlands (their ecosystem services) from an inter-generational equity point of 
+view. 
+ 
+39. Ecological character is “the combination of ecosystem components, processes and services that 
+typify the wetland at a given point in time”. Ecosystem components are living (biotic) and non-
+living (abiotic) constituents of the wetland ecosystem. These include:  
+a. Geomorphic setting (landscape, catchment, river basin);  
+b. Climate (precipitation, wind, temperature, evaporation, humidity);  
+c. Physical setting (area, boundaries, topography, shape, bathymetry, habitat type and 
+connectivity);  
+d. Water regime (inflow, outflow, balance, surface-groundwater interactions, inundation 
+regime, tidal regime, quality);  
+e. Wetland Soil (texture, chemical and biological properties);  
+f. Biota (Plant and animal communities) 
+ 
+40. Ecosystem processes occur between organisms and within and between pop ulations and 
+communities, including interactions with the non-living environment that result in an existing 
+ecosystem state and bring about changes in ecosystems over time. These include: Physical 
+processes (water stratification, mixing, sedimentation, erosion); Energy – nutrient dynamics 
+(primary production, nutrient cycling, carbon cycling, decomposition, oxidation-reduction);
+
+--- Page 13 ---
+12 
+ 
+Processes that maintain animal and plant population (recruitment, migration); and Species 
+interaction (Competition, predation, succession, herbivory). 
+ 
+41. Ecosystem services are benefits obtained by humans from ecosystems, categorized as: 
+Provisioning (fisheries, use of aquatic vegetation for economic propose, wetland agriculture, 
+biochemical products); Regulating (maintenance of hydrol ogical regimes) and Cultural 
+(recreation and tourism, spiritual, scientific and educational value). Supporting services are 
+included within ecosystem processes.  
+ 
+42. A wetland use is not ‘wise-use’ if: 
+ 
+a. The intervention leads to adverse changes in ecosystem components and processes, such as: 
+i. Reduction in water flowing into the wetlands 
+ii. Reduction in the area under inundation, or changes in inundation regime  
+iii. Reduction and alteration of natural shoreline 
+iv. Fragmentation of wetlands into small patches of water 
+v. Reduction in water holding capacity 
+vi. Degradation of water quality  
+vii. Reduction in diversity of native species 
+viii. Introduction or emergence of invasive species  
+ix. Decline in wetlands resources, such as fish, aquatic plants, and water 
+ 
+b. The intervention enhances some ecosystem services (such as food production values) while 
+diminishing other ecosystem services (such as the ability of wetlands to moderate wetlands 
+regime). 
+ 
+43. Some examples of wetlands uses that may not be ‘wise-use’ are as follows:  
+ 
+Type of 
+wetland 
+Intervention  Ecosystem services likely 
+to be enhanced 
+Ecosystem services 
+likely to be diminished  
+Lagoon Prawn aquaculture by 
+creating enclosures within 
+the lagoon area   
+• Food provision 
+• Livelihoods for 
+wetlands dependent 
+communities  
+• Water regime 
+moderation 
+• Flood buffering 
+Lake  Impounding water by 
+regulating outflows  
+Increased water 
+availability for human use 
+• Ability to moderate 
+floods 
+Marsh Construction of road 
+connecting settlements 
+located on the periphery 
+Transport • Hydrological 
+regime moderation 
+• Flood buffering 
+• Aesthetics 
+Urban 
+lake 
+Concretization of shoreline 
+for beatification  
+• Aesthetic value 
+• Tourism and 
+recreational benefits 
+• Ability to 
+accommodate 
+monsoon flows 
+• Habitat values 
+ 
+44. In several cases, the impact on ecosystem structure and functions, or tradeoffs in ecosystem 
+services may not be immediately apparent. It is, therefore, recommended that the ‘precautionary
+
+--- Page 14 ---
+13 
+ 
+approach’ is adopted to ensure that wetlands conservation is prioritized in the case of information 
+uncertainty.   
+VIII. Prohibited activities in a notified wetland 
+45. The following activities are prohibited within notified wetlands: 
+a. Conversion for non-wetland uses including encroachment of any kind; 
+b. Setting up of any industry and expansion of existing industries; 
+c. Manufacture or handling or storage or disposal of construction and demolition waste covered 
+under the Construction and Demolition Waste Management Rules, 2016; hazardous 
+substances covered under the Manufacture, Storage and Import of Hazardous Chemical 
+Rules, 1989 or the Rules for the Manufacture, Use, Import, Export and Storage of 
+Hazardous Microorganisms/Genetically Engineered Organisms or cells, 1989 or the 
+Hazardous Wastes (Management, Handling and Transboundary Movement) Rules, 2008; 
+electronic waste covered under the E-Waste (Management) Rules, 2016; 
+d. Solid waste dumping; 
+e. Discharge of untreated wastes and effluents from industries, cities, towns, villages and other 
+human settlements; 
+f. Any construction of a permanent nature except for boat jetties within fifty metres from the 
+mean high flood level observed in the past ten years calculated from the date of 
+commencement of these rules; and, 
+g. Poaching. 
+[Ref. Rule 4 (2) of Wetlands Rules] 
+46. State/UT Wetlands Authority, based on consideration of site-specific conditions, may consider 
+expanding the list of prohibited activities for a notified wetland (or wetlands complex). This 
+should be specified as such within the notification for specific wetland (or wetlands complex).   
+ 
+47. Permission for carrying out any activity included within the list of prohibited activities [as per 
+Rule 4(2) of Wetlands Rules], within a notified wetland can only be given by the MoEF&CC. A 
+specific request needs to be made by the State Government based on the recommendation of 
+Wetlands Authority specifying: 
+a) Activity for which permission is sought; 
+b) Justification thereof;  
+c) The premise on which the activity is not considered detrimental to the wetland’s ecological 
+character; & 
+d) Supporting evidence-base (such as an expert report, EIA, mitigating measures proposed to 
+be undertaken etc.)  
+IX. Developing a list of activities, to be regulated in a notified wetland: 
+48. Activities within a notified wetland and its zone of influence, which when contained within a 
+specific threshold or area, are not likely to induce an adverse change in wetlands ecological 
+character may be placed under the ‘regulated’ category. Such activities should be notified within 
+the notification for a specific wetland (wetlands complex). 
+ 
+49. Following activities, when regulated, are not likely to induce an adverse change in wetlands: 
+a) Subsistence level biomass harvesting (including traditional practices);
+
+--- Page 15 ---
+14 
+ 
+b) Sustainable culture fisheries practices (in private lands);  
+c) Plying of non-motorized boats;  
+d) Desilting, in case where wetlands inflow regimes and water-holding capacity are impacted by 
+siltation (note that ‘deepening’ activities are not the same as ‘desilting’); & 
+e) Construction of temporary nature 
+ 
+50. Each activity, however, would need to be considered on a case to case basis keeping in mind the 
+ecological character of wetland or wetlands complex. A generic listing of a set of activities for all 
+wetlands of the State / UT may not be feasible or desirable. For example, releasing treated sewage 
+may not be advisable for high altitude wetlands that have slow decomposition rates. 
+ 
+51. For each regulated activity, it may be desirable to set a threshold limit beyond which the activity 
+may be prohibited. The thresholds can be in the form of a spatial limit (such as areas wherein 
+capture fishing may be carried), temporal limits (such as observing closed season), ecological 
+condition (such as maintenance of a water quality parameter within a prescribed range), number 
+of people (such as number of tourists permitted to visit the wetland on a given day), land use 
+(such as prohibiting use of intermittently inundated area for permanent agriculture, or 
+construction of enclosure), or any relevant dimension. Some examples of thresholds are: 
+Activity (Indicative List) Aspect on which threshold can be specified 
+a) Subsistence level biomass harvesting 
+(including traditional practices) 
+• Number of people that can be permitted to 
+harvest biomass within the wetlands 
+• Type of harvesting gears (mesh size) and crafts 
+• Area wherein harvesting is permitted  
+b) Releasing of treated sewage  
+ 
+Water quality parameters (such as):  
+• Dissolved Oxygen,  
+• Biological Oxygen Demand 
+• Chemical Oxygen Demand 
+• Concentration of heavy metals 
+• Coliforms  
+c) Sustainable culture-based fisheries 
+practices 
+ 
+• Area wherein culture-based fisheries is 
+permitted  
+• Stocking density  
+• Water quality   
+d) Plying of non-motorized boats   
+ 
+• Area wherein plying is permitted 
+• Number of boats  
+e) Desilting, in cases where wetlands 
+inflow regimes and water holding 
+capacity are impacted by siltation 
+• Area wherein desilting can be carried out 
+f) Noise Pollution • Limiting below level suited for waterbird 
+habitat  
+g) Washing and bathing activities  • Use of detergent  
+h) Construction of temporary nature 
+ 
+• Area wherein temporary constructions can be 
+carried out
+
+--- Page 16 ---
+15 
+ 
+• The period for which such structure can be 
+maintained inside the notified wetlands  
+i) Change in landuse pattern within the 
+zone of influence  
+• Land use does not alter the hydrological 
+regime or interrupt species interactions (such 
+as bird migration pathways) 
+ 
+52. The Wetlands Authority shall be responsible for enforcing the regulations, through enforcement 
+machinery of the concerned State Government / UT Administration.  
+X. Developing a list of activities permitted in a notified wetland 
+53. Activities aligned with the ‘wise use’ of wetland may be permitted within the wetland (wetlands 
+complex) or its zone of influence. The following activities are likely to be aligned with the ‘wise 
+use’ approach: 
+a) Ecological rehabilitation and rewilding of nature ;  
+b) Wetlands inventory, assessment and monitoring; 
+c) Research; 
+d) Communication, environmental education and participation activities;  
+e) Management planning;  
+f) Habitat management and conservation of wetland-dependent species;  
+g) Community-based ecotourism (with minimum construction activities); 
+h) Harvesting of wetlands products within regenerative capacity; and,  
+i) Integrating wetlands as nature-based solutions for climate change mitigation and adaptation.  
+ 
+54. Permitted activities may need to be identified considering the ecological character of each 
+wetland to be notified. It is likely that an activity may be benign for one wetland, yet would need 
+regulation for others. For example, ecotourism may not be desirable for all wetlands.  
+XI. Registration of wetlands 
+55. It is advised that the State/UT governments may ascertain whether the respective wetland has 
+been registered appropriately in the land revenue records.  If the wetland has not been registered 
+as yet, necessary steps may be taken early.  This would help in ensuring that the usage of wetland 
+is not altered in future through encroachment, illegal claim of ownership etc. 
+XII. Account of pre-existing rights and privileges in a notified wetland 
+56. Each wetland is likely to be associated with a range of pre-existing rights and privileges, and it 
+must be ensured that such rights and privileges are aligned with the ‘wise use’ approach. ‘Privilege’ 
+is defined here as a special entitlement granted to restricted group or persons, on a conditional 
+basis and can be revoked. ‘Rights’, on the other hand, may be irrevocable and inherently held by 
+a human being. Thus, a fish lease granted in certain wetlands by the Department of Fisheries can 
+be considered as a privilege. Privilege can also be customary and traditional (for example, the use 
+of traditional fishing techniques, buffalo wallowing, elephant bathing, the source of drinking water 
+for bovines, etc.). Parking a houseboat against a lease right to clean environment are examples of 
+rights.
+
+--- Page 17 ---
+16 
+ 
+ 
+57. For assessing the consequence of a pre-existing right or privilege on a wetland, it may be 
+important to consider their implication on wetland ecological character. The privilege of fishing 
+granted along a migratory route can lead to an adverse change in fish stocks. Similarly, the 
+disposal of untreated sewage by houseboat in a wetland can lead to pollution. Thus, such 
+privileges are not aligned with ‘wise use’. On the other hand, in many cases, the subsistence level 
+harvest of macrophytes may help in keeping species invasion in check and therefore aligned with 
+ecosystem health. Such considerations may need to be made while deciding whether a wetland 
+use is to be regulated or permitted.  
+XIII. Notifying wetlands 
+58. For each wetland proposed to be notified, a ‘Brief Document’ containing the following 
+information needs to be prepared: 
+a) Demarcation of wetland boundary, supported by accurate digital maps with coordinates and 
+validated by ground truthing;  
+b) Demarcation of its zone of influence alongwith land use and land cover thereof indicated in 
+a digital map;  
+c) Ecological character description;  
+d) Account of pre-existing rights and privileges;  
+e) List of site-specific activities, to be permitted within the wetland and its zone of influence;  
+f) List of site-specific activities, to be regulated within the wetland and its zone of influence; and,  
+g) Modalities for enforcement of regulation.  
+A format for preparing the Brief Document is at Annex 2.  
+ 
+59. The nodal department, designated by the State Government/UT Administration for wetlands, 
+shall be responsible for preparing the Brief Documents. 
+  
+60. In the case of transboundary wetlands, the respective State Governments/UT Administration 
+may initiate the process of preparation of a common Brief Document and submit the same to 
+MoEF&CC. If required, MoEF&CC shall coordinate with the concerned State Governments/UT 
+Administrations for preparation of the Brief Document and addressing relevant issues. The 
+Ministry will further process Brief Document as per process laid under Rule 7(4) of Wetlands 
+Rules, 2017.    
+ 
+61. All Brief Documents shall be placed for approval of the Wetlands Authority. The Authority may 
+endorse the Brief Document for notification to the concerned State Government / UT 
+Administration.  
+ 
+62. The State Government / UT Administration shall issue a draft notification indicating the wetland 
+(wetlands complex) to be covered under the Wetlands Rules. The notification should contain: 
+a) Description of the wetland (wetlands complex) boundary along with its map 
+b) Description of the zone of influence along with a map 
+c) List of activities prohibited within the wetland (wetlands complex) and its zone of influence 
+d) List of activities regulated within the wetland (wetlands complex) and its zone of influence 
+e) List of activities permitted within the wetland (wetlands complex) and its zone of influence 
+f) Name and contact details of the nodal person, who is to be contacted for seeking permission 
+to undertake regulated activities.
+
+--- Page 18 ---
+17 
+ 
+A format for notification is at Annex 3.  
+ 
+63. Each draft notification shall be placed for public consultation for sixty days.  
+ 
+64. The State Government after considering objections from the concerned and affected persons 
+shall publish the final notification within a period not exceeding 240 days from the date of draft 
+notification. 
+ 
+65. MoEF&CC shall issue the draft and final notification for transboundary wetlands. 
+ 
+66. All Ramsar Sites, deemed covered under these Rules, shall also be notified as per the process 
+laid out in paragraphs 57-64. This is proposed to ensure that the site boundaries are properly 
+delineated and the knowledge about the same is available in public domain. It is adused that the 
+information in the ‘Brief Document’ may be consistent with Ramsar Site Information Sheet 
+(RSIS), submitted to the Ramsar Convention during site designation or RSIS updated thereafter.   
+XIV. Integrated Management Plan 
+67. Wetlands are one of the most embedded and interlinked ecosystems with human livelihoods 
+and well-being. A balanced management approach, addressing biodiversity conservation values 
+while providing for sustainable utilisation in a way compatible with the maintenance of natural 
+properties of the ecosystem, needs to be adopted for these ecosystems. It is, therefore, 
+recommended that management of each notified wetland (is guided by an “Integrated 
+Management Plan”. The plan refers to a document which describes strategies and actions for 
+achieving ‘wise use’ of the wetland and includes objectives of site management; management 
+actions required to achieve the objectives; factors that affect, or may affect, various site features; 
+monitoring requirements for detecting changes in ecological character and for measuring the 
+effectiveness of management; and resources for management implementation.  Besides 
+identifying resources, a management plan serves several important functions including generating 
+baseline information, communication with stakeholders and ensuring compliance with regulatory 
+frameworks and policy commitments. 
+ 
+68. While it is recognized that each wetland has its own distinctive ecological and hydrological 
+features and thereby distinctive management needs, the following broad planning principles need 
+to be kept in mind while formulating integrated management plans:    
+• Integrated planning: Aquatic and terrestrial ecosystems are intimately linked by the process 
+of the water flowing through them. Every land use decision has a consequence on water 
+availability. Delineating a basin or a coastal zone enables demarcation of a distinct 
+hydrological unit which is the natural integration of all hydrological processes within its 
+boundary and therefore an ideal and rational unit for soil, water and bio-resources 
+conservation and management.Thus, management planning for wetlands should not be 
+restricted to a defined administrative boundary, but rather take into account wider planning 
+and management context of the basin or coastal zone within which the site is located.  
+ 
+The process of development and implementation of management plans for wetlands often 
+needs to be accompanied by governance improvements at basin and coastal zone level. 
+Such an approach underpins Integrated Lake Basin Management framework that calls for
+
+--- Page 19 ---
+18 
+ 
+achieving ‘sustainable management of wetlands through gradual, continuous and holistic 
+improvement of basin governance, including sustained efforts for integration of institutional 
+responsibilities, policy directions, stakeholder participation, scientific an d traditional 
+knowledge, technological possibilities, and funding prospects and constraints.   
+Achieving close relationship between planning and governance is critical, considering 
+multiple stakeholder and sectoral interests which underlie and, to a large extent, structure 
+wetland biodiversity and ecosystem service values, and the need to secure people’s 
+involvement and participation in basin-scale management for considerably long periods of 
+time.  
+ 
+Reflection upon the following six pillars of basin-scale governance may thus be useful:  
+• Institutions: Development of effective organisations and governance frameworks 
+• Policies: Setting broad directions and specific rules 
+• Participation: Expanding the circle of involvement 
+• Technology: Possibilities and limitations 
+• Information: Pursuing sources of knowledge and wisdom, and  
+• Finance: Seeking sustainable sources at the appropriate level    
+• Use of diagnostic approaches for defining management approach and actions: Given the 
+uniqueness associated with each wetland, it is important that ‘one size fit all’ approach is 
+replaced with a diagnostic approach, wherein the ecological, hydrological, socioeconomic 
+and institutional features are comprehensively assessed and trends therein determined to 
+be able to spell out management objectives and actions clearly.  
+• Adaptable management: Wetlands are influenced by a range of drivers and pressures that 
+act at multiple spatial, temporal and political scales. Their management plan, therefore, 
+needs to be accommodative of uncertainties and challenges. This can be achieved by using 
+an adaptable management approach that allows for suitable modification of management 
+based on continuous site monitoring and assessment of new information.  
+• Stakeholder participation: The condition of any wetland is an outcome of actions by a range 
+of stakeholders, which are linked to the ecosystem in a number of ways. Management 
+planning, therefore, needs to recognise these linkages, and build a mechanism for 
+participation of stakeholders in design, review and implementation processes.  
+• Governance: Being located at the interface of land and water, wetlands are influenced by a 
+range of developmental activities that take place within their direct and indirect basins and 
+coastal zones. Institutional arrangements for managing wetlands need to be such that they 
+are capable of integrating activities across multiple sectors (such as agriculture, water 
+resources, forests, rural development, urban development, forests and wildlife and others), 
+and balancing the needs of a group of diverse stakeholders while ensuring that ecological 
+integrity of these fragile ecosystems is not adversely affected.  
+In the above context, association of entities or individuals as ‘Wetland Mitras’ can 
+encourage stakeholder participation and overall governance. 
+ 
+69. An integrated wetlands management plan can be developed in the following steps, thus enabling 
+a systematic diagnosis of wetlands features and their governing factors to arrive at management 
+objectives and activities.
+
+--- Page 20 ---
+19 
+ 
+ 
+Step 1 Preamble Concise policy statement describing the rationale for the 
+application of human, technical and financial resources for the 
+wetland management  
+Step 2 Description of 
+wetland features 
+Collation and synthesis of data to describe: wetland location and 
+extent, catchment, hydrological regimes, biodiversity, ecosystem 
+services, socioeconomic and livelihoods 
+Step 3 Evaluation of  
+wetland features 
+Based on the description of features, identification of priority 
+wetland features that need to be maintained, and key threats that 
+adversely affect these features   
+Step 4 Institutional 
+arrangements  
+• Provide an overview of the current institutional 
+arrangements in the context of wetlands management;  
+• Discuss why the current institutional arrangements are 
+insufficient in ensuring wetlands conservation and wise use;  
+• Propose institutional arrangement for wetland management, 
+with  specific focus on: 
+a) Nodal Agency 
+b) Role of various departments and agencies and 
+coordination mechanism, and  
+c) Role of civil society and communities. 
+• Develop an organogram for management plan 
+implementation.  
+• Regulatory regime specifying  activities prohibited within 
+wetlands, activities to be regulated within wetlands and zone 
+of influence and regulation thresholds and activities 
+permitted 
+Step 5 Setting 
+Management 
+Objectives 
+• Provide a statement of the overall goal that the management 
+plan seeks to achieve;  
+• Summarize the ecological and economic benefits that are 
+expected from management plan implementation;  
+• Enlist specific objectives;  
+• Describe strategy(ies) for achieving each of the management 
+objectives;  
+• Provide a strategy for implementing regulatory regime – 
+including list of activities liable to be prohibited, regulated 
+and permitted within the wetland (wetlands complex)    
+Step 6 Monitoring and 
+Evaluation Plan 
+• Present an overview of monitoring the wetland, and 
+management plan implementation;  
+• Describe monitoring parameters, the frequency of 
+monitoring and the agency that will be responsible for 
+monitoring;  
+• Describe how coordination between different monitoring 
+agencies will be achieved;  
+• Discuss the infrastructure and human resource requirement 
+for implementing the management plan. (As far as possible, 
+include local universities, research organizations and NGOs 
+in wetlands monitoring);  
+• Discuss the frequency in which reporting shall be done and 
+the responsible agency; Discuss how the monitoring 
+outcomes will be used to adapt management 
+Step 7 Action Plan Listing of management components and specific activities to 
+achieve management objectives. For each activity,
+
+--- Page 21 ---
+20 
+ 
+implementation location, prioritisation, implementing agency 
+and timeline should be specified.  
+Step 8 Budget Assessment of financial resources required for implementing the 
+management plan and sources of funds. 
+ 
+A description of each step and format for the compilation of integrated management plan is at 
+Annex 4. 
+70. The management plans should be presented to the Wetlands Authority. The implementation 
+shall begin only after receiving their endorsement. Management plans for Ramsar Sites and 
+transboundary wetlands shall also be reviewed and endorsed by the MoEF&CC. 
+ 
+71. The diagnostic management planning process, as described above, may also be used to guide 
+management of wetlands excluded from notification under Wetlands Rules. 
+XV. Violations and penal provisions  
+72. The Wetlands Authorities are entrusted with the responsibility of ensuring enforcement of 
+Wetlands Rules and other relevant Acts, Rules and Regulations. Provisions of the relevant 
+Central and State Government Acts are applicable.  
+ 
+73. All prohibited and regulated activities beyond their thresholds, if taken up within the wetlands 
+and its zone of influence, shall be deemed violations under the Wetlands Rules. 
+ 
+74. The violations of the Wetlands Rules shall attract the penal provisions as per the Environment 
+(Protection) Act, 1986.  
+ 
+75. Complaints may need to be filed in the case of violations. In exercise of powers conferred under 
+clause (a) of section l9, the Central-Government has authorised the officers and authorities listed, 
+in the Table (p. 238) vide S.O. 394 (E) published in the Gazette No. 185 dated 16-4-87, S.O. 
+237(E) published in Gazette No. 171 dated 29-3-89 and S.O. 656(E) published in the Gazette 
+No. 519 dated 21-8-89, and amendments thereafter, if any.  
+ 
+76. The Authority should evolve a mechanism for continuous watch and ward of wetlands within 
+their jurisdiction. At the local level, the concerned Gram Panchayat and Urban Local Body may 
+be entrusted with watch and ward in association with any body constituted by the State Wetlands 
+Authority, such as a Wetlands Management Unit for a specific Wetland. At District levels, the 
+responsibility may be entrusted to the DDO/CDO (District/Chief Development Officer)/CEO 
+(Chief Executive Officer)/ Chief Programme Officer of the Wetland level body, such as a 
+Wetlands Management Unit.  
+ 
+77. The State Governments should proactively ensure incorporation of wetlands within land records.    
+ 
+78. The Wetlands Authority shall report the status of notified wetlands on half yearly basis to the 
+State Government/UT Administration and Central Government (recommended proforma at 
+Annex 5).
+
+--- Page 22 ---
+21 
+ 
+XVI. Portal for information sharing 
+79. The MoEF&CC has created a web-portal for sharing information regarding implementation of 
+Wetlands Rules. The portal may be accessed at MoEFCC website. The Central Government, 
+State Government and UT Administration are required to upload all relevant information and 
+documents pertaining to wetlands in their jurisdiction. State Governments / UT Administrations 
+are encouraged to develop their own portals and hyperlink the same to the national portal. The 
+State Governments and UT Administrations are also encouraged to upload other project 
+documents and publications to enable sharing and exchanging good practices related to wetlands 
+management in general, and implementation of regulatory framework in particular.
+
+--- Page 23 ---
+22 
+ 
+Annexes 
+ 
+Annex 1: Format for compiling list of wetlands  
+ 
+S. 
+No. 
+Wetland 
+Name 
+ 
+Geographical 
+coordinates 
+ 
+District (s) 
+in which 
+the wetland 
+is located 
+Village Wetlands 
+type 
+Wetlands 
+sub-type 
+Area 
+(ha) 
+ 
+Khasra 
+or 
+Survey 
+numbers 
+Whether falls 
+within category 
+of regulated 
+wetlands as per 
+Wetlands 
+Rules 
+  (latitude  and 
+longitude of 
+the centre of 
+the wetlands) 
+  (inland or 
+coastal) 
+(natural or 
+human-
+made) 
+   
+          
+          
+          
+          
+          
+          
+          
+          
+          
+Total no. of wetlands:  
+Total no. of wetlands to be regulated/notified under Wetlands Rules:
+
+--- Page 24 ---
+23 
+ 
+Annex 2: Format for preparing Brief Document 
+ 
+State / Union Territory:      ___________________________________ 
+Name and address of person(s) compiling this information___________________________________ 
+ 
+Section 1: Identification, Location and Jurisdiction 
+1.1 Name of the Wetland (Alternative names, including in local language should be given in 
+parenthesis after official name)   
+ 
+____________________________________________________________________________ 
+ 
+1.2 Name of the Village(s) , Tehsil(s), Municipal area (s) 
+ 
+____________________________________________________________________________ 
+ 
+1.3 Name of the District(s) in which wetland complex is located  
+ 
+____________________________________________________________________________ 
+ 
+1.4 Geographical coordinates (Latitude and Longitude, to degree, minutes and second) 
+Latitude: From ______________________________ to _______________________________ 
+Longitude: From _____________________________ to _______________________________ 
+1.5 Name of the Department / Agency which has jurisdiction over the wetland / wetlands complex 
+ 
+____________________________________________________________________________ 
+ 
+Section 2: Site Characteristics  
+2.1 Area of wetland / wetlands category (ha)  ___________________________________ 
+ 
+2.2 Wetland type (Please tick appropriate categories and sub-categories) 
+Category  Subcategory 
+r Natural (Inland) r Permanent lakes  
+r Seasonal/ intermittent lakes  
+r Permanent streams/ creeks 
+r Seasonal/ intermittent streams/ creeks 
+r Oxbow 
+r River floodplain 
+r Permanent freshwater marshes 
+r Seasonal/ intermittent freshwater marshes  
+r Shrub-dominated wetlands  
+r Tree-dominated wetlands  
+r Geothermal wetlands 
+r Karst and other subterranean hydrological systems
+
+--- Page 25 ---
+24 
+ 
+ 
+r Natural (Coastal) r Coastal lagoon  
+r Estuary 
+r Intertidal mud, sand or salt flats 
+r Mangroves 
+r Coral reefs  
+ 
+r Human-made r Aquaculture pond 
+r Tank 
+r Saltpan 
+r Dam / Reservoir  
+ 
+ 
+2.3 Depth (m) Average ________________________ Maximum ______________________ 
+ 
+2.4 Elevation (m above mean sea level) ______________________ m 
+ 
+2.5 Water regimes 
+ 
+a) Main source of water (tick all applicable) 
+ 
+r Rainfall     r Groundwater     r Catchment runoff     r Direct / indirect inflow from river 
+r Others, please specify_____________________________  
+ 
+b) Water permanence  
+r Mostly permanent r Mostly intermittent 
+c) Destination of water from wetland  
+ 
+r Feeds groundwater r To downstream catchment r To river r To sea 
+ 
+d) Water pH 
+r Acid (< 5.5)  r Circumneutral (5.5 – 7.4) r Alkaline (> 7.4)   
+r Not known 
+e) Water salinity 
+r Fresh (< 0.5 g/l) r Brackish (0.5 – 30 g/l)) r Euhaline (30- 40 g/l)   
+r Hypersaline (>40g/l) r Not known 
+f) Nutrient in water 
+r Eutrophic  r Mesotrophic   r Oligotrophic    
+r Not known 
+2.6 Climatic setting
+
+--- Page 26 ---
+25 
+ 
+a) Annual Rainfall /Snowfall(mm) __________________________ 
+ 
+b) Temperature (oC)   Minimum ____________ Maximum _______________ 
+ 
+c) Humidity (%)    Minimum ___________ Maximum ____________ 
+ 
+ 
+2.7 Area of zone of influence (in ha)  _________________________ [Ref. paras 32-34 of 
+the guidelines on wetlands] 
+ 
+2.8 Major land use within zone of influence  (provide as approximate % of catchment area)  
+ 
+Forests   ____________% 
+ 
+Plantation   ____________% 
+ 
+Agriculture   ____________% 
+ 
+Settlements (Rural)  ____________% 
+ 
+Settlements (Urban)  ____________% 
+ 
+Industrial    ____________% 
+ 
+2.9 Map of wetland complex and zone of influence   
+ 
+(To be enclosed as Annex I and II to this proposal) 
+ 
+Section 3: Biodiversity  
+3.1    Notable plant species present in wetland 
+____________________________________________________________________________ 
+3.2    Notable animal species present in wetland  
+____________________________________________________________________________ 
+3.3  Species of conservation significance (rare, endangered, threatened, endemic species) 
+____________________________________________________________________________ 
+3.4  Major plant invasive alien species 
+____________________________________________________________________________ 
+3.5 Major animal invasive alien species 
+____________________________________________________________________________
+
+--- Page 27 ---
+26 
+ 
+ 
+Section 4: Ecosystem services   
+ 
+  
+Importance Relevant for the site 
+(please tick yes or 
+no) 
+If Yes, Details  (upto 50 words for 
+each category)   
+Source of drinking water for people living 
+and around 
+rYes      rNo  
+Source of water for agriculture rYes      rNo   
+Fisheries  
+ 
+rYes      rNo  
+Cultivation of aquatic food plants  
+ 
+rYes      rNo  
+For buffalo wallowing and use of 
+domesticated animals  
+rYes      rNo  
+Medicinal plants 
+ 
+rYes      rNo  
+Is a recreational site 
+ 
+rYes      rNo  
+Buffering communities from extreme 
+events as floods and storms  
+rYes      rNo  
+Groundwater recharge  
+ 
+rYes      rNo  
+Water purification 
+ 
+rYes      rNo  
+Acts as a sink for sediments  
+ 
+rYes      rNo  
+Has significant cultural and religious values  
+ 
+rYes      rNo  
+Is a site for recreation and tourism  
+ 
+rYes      rNo  
+Supports noteworthy plants species 
+ 
+rYes      rNo  
+Supports noteworthy animal species 
+ 
+rYes      rNo  
+Site of high congregation of migratory 
+water birds   
+ 
+rYes      rNo  
+Supports life cycle of fish or amphibians  
+ 
+rYes      rNo  
+Mining  
+ 
+rYes      rNo  
+Any other, please list
+
+--- Page 28 ---
+27 
+ 
+Section 5: Pre-Existing Rights and Privileges 
+Nature of right and privilege  Relevant for the 
+site (please tick 
+yes or no) 
+Does this negatively 
+impact the wetland’s 
+ecological health? 
+Brief description (upto 50 
+words for each category)   
+Community Fishing (without any 
+lease or permission from 
+government department) 
+rYes      rNo rYes      rNo 
+ 
+rNot assessed 
+ 
+Fishing under lease from 
+government department  
+ 
+rYes      rNo rYes      rNo 
+ 
+rNot assessed 
+ 
+Harvest of plants (without any 
+lease or permission from 
+government department) 
+ 
+rYes      rNo rYes      rNo 
+ 
+rNot assessed 
+ 
+Harvest of plants under lease 
+from government department 
+ 
+rYes      rNo rYes      rNo 
+ 
+rNot assessed 
+ 
+Agriculture or horticulture within 
+wetland 
+ 
+rYes      rNo rYes      rNo 
+ 
+rNot assessed 
+ 
+Grazing  
+ 
+ 
+rYes      rNo rYes      rNo 
+ 
+rNot assessed 
+ 
+Religious practices  
+ 
+ 
+rYes      rNo rYes      rNo 
+ 
+rNot assessed 
+ 
+Withdrawal of water for 
+domestic use 
+ 
+rYes      rNo rYes      rNo 
+ 
+rNot assessed 
+ 
+Withdrawal of water for 
+agriculture or fisheries  
+ 
+rYes      rNo rYes      rNo 
+ 
+rNot assessed 
+ 
+Bathing or wallowing of domestic 
+animals  
+ 
+ 
+rYes      rNo rYes      rNo 
+ 
+rNot assessed 
+ 
+Plying of boats rYes      rNo rYes      rNo 
+ 
+rNot assessed 
+ 
+Any other, please list here  
+ 
+rYes      rNo rYes      rNo 
+ 
+rNot assessed
+
+--- Page 29 ---
+28 
+ 
+Section 6: Present and Potential Threats  
+Threat Degree Present or Potential  Additional 
+information, if any 
+Changes in water inflow 
+and outflow 
+ 
+rHighrMedium rLow rPresent  
+rPotential 
+ 
+Pollution 
+ 
+rHigh      rMedium rLow rPresent  
+rPotential 
+ 
+Unsustainable harvest of 
+biological resources 
+ 
+rHigh      rMedium rLow rPresent  
+rPotential 
+ 
+Mining  
+ 
+rHigh      rMedium rLow rPresent  
+rPotential 
+ 
+Siltation 
+ 
+rHigh      rMedium rLow rPresent  
+rPotential 
+ 
+Encroachment 
+ 
+rHigh      rMedium rLow rPresent  
+rPotential 
+ 
+Spread of invasive 
+species  
+ 
+rHigh      rMedium rLow rPresent  
+rPotential 
+ 
+Any other, please list 
+ 
+rHigh      rMedium rLow rPresent  
+rPotential 
+ 
+ 
+Section 7: Activities Proposed to be Prohibited (other than those listed in Rule 4(2) of Wetland Rules 
+and Regulated  
+Activity Whether 
+prohibited 
+or 
+regulated  
+Regulation within 
+wetlands or zone of 
+influence  
+If regulated, 
+indicate the level 
+of regulation (in 
+terms of people, 
+restricted area or 
+any other) 
+Name of 
+department / 
+agency 
+responsible 
+for regulation 
+/ prohibition 
+Additional 
+information, if 
+any 
+Withdrawal of water / 
+impoundment/diversion 
+or any other 
+hydrological 
+intervention 
+ 
+r Wetland / 
+Wetlands complex 
+boundary 
+r Zone of influence  
+   
+Harvesting of resources 
+(living / non-living) 
+ 
+ 
+r Wetland / 
+Wetlands complex 
+boundary 
+r Zone of influence  
+ 
+   
+Grazing 
+ 
+ 
+r Wetland / 
+Wetlands complex 
+boundary 
+r Zone of influence  
+ 
+   
+Discharge of treated 
+sewage/ effluent / 
+wastewater 
+ 
+ 
+r Wetland / 
+Wetlands complex 
+boundary 
+r Zone of influence
+
+--- Page 30 ---
+29 
+ 
+Construction of boat 
+jetties, and facilities for 
+temporary use , as 
+pontoon bridges 
+ 
+r Wetland / 
+Wetlands complex 
+boundary 
+r Zone of influence  
+   
+Aquaculture, agriculture 
+and horticulture 
+activities within the 
+wetland boundaries. 
+ 
+r Wetland / 
+Wetlands complex 
+boundary 
+r Zone of influence  
+   
+Any other, please list 
+ 
+ r Wetland / 
+Wetlands complex 
+boundary 
+r Zone of influence  
+   
+ 
+Section 8: Activities Proposed to be permitted  
+Activity Place a tick 
+mark if 
+relevant  
+Within wetlands or zone of 
+influence  
+Additional information, if any 
+ r r Wetland / Wetlands complex 
+boundary 
+r Zone of influence  
+ 
+ r r Wetland / Wetlands complex 
+boundary 
+r Zone of influence  
+ 
+ r r Wetland / Wetlands complex 
+boundary 
+r Zone of influence  
+ 
+ r r Wetland / Wetlands complex 
+boundary 
+r Zone of influence  
+ 
+ r r Wetland / Wetlands complex 
+boundary 
+r Zone of influence  
+ 
+ r r Wetland / Wetlands complex 
+boundary 
+r Zone of influence  
+ 
+  r Wetland / Wetlands complex 
+boundary 
+r Zone of influence  
+ 
+ 
+ 
+Section 9: Listing of Available Scientific Resources Used  
+_________________________________________________________________________________ 
+_________________________________________________________________________________ 
+_________________________________________________________________________________ 
+_________________________________________________________________________________
+
+--- Page 31 ---
+30 
+ 
+CHECKLIST  
+r Responsible agency has been clearly identified and details of contact person included 
+r Wetland/ wetlands complex boundary has been delineated using GIS and firmed up by 
+adequate ground truthing 
+r Wetland/ wetlands complex map has been provided at required scale   
+r Zone of influence has been delineated and included in wetland map or a separate map  
+r Wetland zone of influence is sufficient to manage all activities  
+r Site’s importance have been listed, and for major categories, justification is provided 
+r Site’s biodiversity values are listed, and for major categories, justification is provided 
+r List of pre-existing rights and privileges is provided 
+r Consistency or inconsistency of pre-existing rights and privileges is indicated to be best of 
+available knowledge  
+r Threats to site are listed, and for major categories details are provided  
+r Activities prohibited, other than those listed in Rule 4(2) have been mentioned  
+r List of activities to be regulated within wetlands and zone of influence is provided 
+r List of activities to be permitted is provided
+
+--- Page 32 ---
+31 
+ 
+Annex 3: Format for draft notification of wetlands under Wetlands (Conservation and Management) 
+Rules, 2017  
+ 
+Government of [State / Union Territory / India]  
+ 
+ 
+[Date] 
+ 
+S.O.______ The draft of the notification, which the [name of the issuing entity]  proposes to issue in 
+exercise of the powers conferred under rule 7 of the Wetlands (Conservation and Management) Rules 
+2017 read with Environment (Protection) Act, 1986 (29 of 1986), is hereby published for the 
+information of the persons likely to be concerned or affected thereby; and notice is hereby given that 
+the said draft notification shall be taken into consideration on or after the expiry of a period of sixty  days 
+from  the  date  on  which copies of the Gazette of ............ containing this notification are made available 
+to the public; 
+ 
+Any person interested in making any  objection  or suggestion  on  the  proposals  contained in the draft 
+notification may forward the same in writing, for consideration of the [State Government / UT 
+Administration / MoEFCC, GoI], within the period so specified to the [insert designation and address], 
+or at email address,………………………………………. 
+ 
+Draft Notification 
+ 
+ 
+1. WHEREAS, the …………………… wetland / wetland complex, situated in ………………… village(s), 
+tehsil(s), district(s) of state of …………………. , is considered to be critically significant for its ecosystem 
+services and biodiversity values for the local communities and society at large; 
+ 
+2. AND WHEREAS, it is considered that for sustaining these values, the ecological character of wetland 
+ecosystem needs to be maintained by regulating developmental activities within the wetland as well 
+as within its zone of influence; 
+ 
+3. NOW THEREFORE, the [State Government, UT Administration / Government of India] declares 
+that the said wetlands shall be covered under the provisions of Wetlands (Conservation and 
+Management) Rules, 2017.
+
+--- Page 33 ---
+32 
+ 
+4. The extent of the wetland /wetland complex and its zone of influence is described in Schedule I of 
+this notification; 
+ 
+5. Activities prohibited within the wetland and its zone of influence are listed in Schedule II of this 
+notification. Such prohibitions shall not apply for areas designated under other Acts and Rules, and 
+listed at para 1.2 (a), (b) and (c) of Schedule I. Relevant provisions of respective Acts and Rules shall 
+apply in such areas.  
+ 
+6. Activities regulated within the wetland and its zone of influence, i.e. permitted only with permission 
+of [State Government, UT Administration / Government of India] are listed in Schedule III of this 
+notification. Request for permissions can be made to the [Designation, contact address and email]. 
+Such regulations shall not apply for areas designated under other Acts and Rules, and listed at para 
+1.2 a), b) and c) of Schedule I. Relevant provisions of respective Acts and Rules shall apply in such 
+areas.  
+ 
+7. Activities permitted within the wetland and its zone of influence are listed in Schedule IV of this 
+notification. Such permissions however shall not apply for areas designated under other Acts and 
+Rules, and listed at para 1.2 (a), (b) and (c) of Schedule 1. Relevant provisions of respective Acts and 
+Rules shall apply in such areas.  
+ 
+8. The [State / UT Wetlands Authority] and the Ministry of Environment, Forest and Climate Change 
+shall monitor the enforcement of the provisions of this notification. 
+ 
+          By order 
+ 
+            ....................
+
+--- Page 34 ---
+33 
+ 
+Schedule 1: Location and Extent of Wetland / Wetlands Complex and its Zone of Influence  
+1.1 Wetland / wetlands complex 
+ 
+The wetland / wetlands complex, as delineated, extends within an area of …………….ha within the 
+geographical coordinates as under: 
+Extremity North South West East 
+Latitude     
+Longitude     
+ 
+The map of wetland / wetlands complex boundary is at Map 1(a). 
+ 
+1.2 Boundary of area already designated under provisions of other Acts and Rules 
+ 
+The wetland / wetland complex boundary includes an area of …………………. ha designated under other 
+Acts and Rules, with the geographical coordinates as under: 
+ 
+1.2 (a) Area designated under Indian Forest Act, 1927; Forest (Conservation) Act, 1980; State Forest 
+Acts and amendments thereof 
+ 
+Extremity North South West East 
+Latitude     
+Longitude     
+ 
+1.2 (b) Area designated under Wildlife (Protection) Act, 1972 and amendments thereof 
+Extremity North South West East 
+Latitude     
+Longitude     
+ 
+1.2 (c) Area designated under the Coastal Regulation Zone Notification, 2011 and amendments 
+thereof. 
+Extremity North South West East 
+Latitude     
+Longitude     
+ 
+The above areas should be clearly demarcated on the map of wetland / wetlands complex boundary 
+i.e. Map 1(a). 
+ 
+1.3 Zone of influence  
+ 
+The geographical coordinates of the zone of influence span an area of ………………. ha within the 
+geographical coordinates as under: 
+Extremity North South West East 
+Latitude     
+Longitude     
+ 
+The map of zone of influence of the wetland is at Map 1(b). 
+ 
+1.4 List of revenue villages / municipal areas falling fully or partly within the wetland is as under:
+
+--- Page 35 ---
+34 
+ 
+[Insert list] 
+1.5 List of revenue villages / municipal areas falling fully or partly within the zone of influence is as under: 
+[Insert list] 
+ 
+Schedule II: List of activities prohibited within wetland/ wetlands complex boundary 
+ 
+a) Conversion for non-wetland uses including encroachment of any kind; 
+b) Setting up of any industry and expansion of existing industries; 
+c) Manufacture or/and handling or/and storage or/and disposal of construction and demolition waste 
+covered under the Construction and Demolition Waste Management Rules, 2016; hazardous 
+substances covered under the Manufacture, Storage and Import of Hazardous Chemical Rules, 1989 
+or the Rules for Manufacture, Use, Import, Export and Storage of Hazardous Micro -organisms 
+Genetically engineered organisms or cells, 1989 or the Hazardous Wastes (Management, Handling 
+and Transboundary Movement) Rules, 2008; electronic waste covered under the E -Waste 
+(Management) Rules, 2016; 
+d) Solid waste dumping; 
+e) Discharge of untreated wastes and effluents from industries, cities, towns, villages and other human 
+settlements; 
+f) Any construction of a permanent nature except for boat jetties within fifty metres from the mean high 
+flood level observed in the past ten years calculated from the date of commencement of these rules; 
+and, 
+g) Poaching. 
+[Other activities, likely to have an adverse impact on the ecosystem to be inse rted from the Brief 
+Document] 
+ 
+Schedule III: List of activities regulated within the boundary of wetlands / wetlands complex and its zone 
+of influence and for which prior approval of [State Government/ UT Administration/MoEF&CC] is 
+required to be obtained 
+ 
+Activity Restrictions 
+Within the boundary of 
+wetland / wetlands complex 
+Within the zone of influence  
+[Insert from brief document] [Insert from Brief Document] [Insert from Brief Document] 
+ 
+ 
+Schedule IV: List of activities permitted within the boundary of wetlands / wetlands complex and its zone 
+of influence  
+ 
+Activity Levels and types not requiring permission 
+Within the boundary of 
+wetland / wetlands complex 
+Within the zone of influence  
+[Insert from brief document] [Insert from Brief Document] [Insert from Brief Document]
+
+--- Page 36 ---
+35 
+ 
+Annex 4: Steps and format for developing Integrated Management Plan  
+ 
+1. Wetlands provide wide-ranging ecosystem services that support human well-being in a number of 
+ways. Numerous plant and animal species depend on wetlands during different parts of their life-
+cycle. In order to ensure that wetlands continue to provide their ecosystem services and support 
+biodiversity, it is essential that a well-defined strategy and actions are identified for their conservation 
+and wise use. An Integrated Management Plan reflects a common understanding between various 
+stakeholders on the management purpose, significant threats and constraints limiting conservation 
+and wise use, opportunities and specific actions for addressing these threats, and mainstreaming 
+wetlands within the wider developmental planning.      
+ 
+2. The Integrated Management Plan is formulated to serve the following purposes: 
+• Identify the objectives of wetland management; 
+• Identify the factors that affect or may affect the wetland; 
+• Resolve conflicts between various stakeholders having an interest in the wetland; 
+• Define monitoring requirements and research needs; 
+• Help obtain financial resources for managing the wetland; 
+• Enable communication between different wetland managers, organizations and stakeholders; 
+• Ensure compliance with extant laws and regulation; and, 
+• Demonstrate that management is effective and efficient 
+ 
+3. Systematic diagnosis of various wetlands features and factors influencing these features is essential to 
+arrive at management objectives and actions. The following eight steps are recommended for 
+developing an Integrated Management Plan: 
+ 
+Step 1: Preamble  
+ 
+4. The process for management planning must begin with an exercise of setting up an overarching 
+preamble describing the rationale for application of human, technical and financial resources for the 
+wetland. This is a concise policy statement that expresses the commitment of the State Government/ 
+UT Administration for integrated management. The preamble can be developed on the basis of: 
+• Importance of the wetland for the state / UT 
+• Ways in which the wetlands conservation and wise use will co ntribute to conservation and 
+developmental goals 
+• Alignment with sectoral policies, directives and planning frameworks
+
+--- Page 37 ---
+36 
+ 
+Step 2: Description of wetland features    
+5. This step entails collation and synthesis of existing information on various site features so as to 
+provide a basis for the identification of management objectives. A generic listing of management 
+information needs and data requirements are presented in Table 1.  
+ 
+Table 1: Information Required for Description of Wetlands Features 
+Wetland 
+feature 
+Management information needs Data requirement 
+Wetland type 
+and extent 
+§ Location  
+§ Wetland type 
+§ Wetland area  
+§ Significant  inter-annual changes in the 
+wetland 
+§ Major changes in the wetland extent in 
+the last 20 – 30 years (if available)  
+§ Geographical coordinates 
+§ Land use and land cover data for the 
+wetland (at least for two seasons, pre and 
+post-monsoon) 
+§ Historical map of the wetland ( can be 
+developed from the Survey of India 
+toposheets)  (if available) 
+Catchment/ 
+Drainage 
+Basin 
+§ Direct and indirect catchment of the 
+wetland 
+§ Geological and geomorphological 
+characteristics that have led to the 
+formation of the wetland  
+§ Present land use and land cover of the 
+catchment and their implication for 
+wetland   
+§ Major developmental activities in the  
+catchment and their impacts on the 
+wetland 
+§ Geology and geomorphology 
+§ Topography 
+§ Drainage pattern 
+§ Soil types 
+§ Climate setting 
+§ Land use and land cover change  
+Hydrological 
+regimes 
+§ Major sources of water inflow and 
+outflow from the wetland 
+§ Major sources of sediments into the 
+wetland 
+§ Inundation regime    
+§ Trends in water holding capacity and 
+factors for the decline 
+§ Water quality and pollution status 
+§ Water use pattern within the wetland 
+catchment and implication for wetland 
+§ Water inflow, outflow and balance  
+§ Inundation pattern  
+§ Sedimentation  
+§ Groundwater  
+§ Water quality  
+§ Water use within the basin 
+Biodiversity   § Species richness  
+§ Role of the wetland in the life-cycle of 
+migratory species 
+§ Invasive species and major contributing 
+factors  
+§ Major changes in species richness and 
+habitat and factors thereof 
+ 
+§ Species richness and diversity  
+§ Biological significance of habitats 
+§ Risk of species invasion
+
+--- Page 38 ---
+37 
+ 
+Ecosystem 
+Services 
+§ Key ecological and hydrological 
+characteristics required for the sustained 
+provision of ecosystem services 
+§ Ecosystem services trade-offs  
+§ Provisioning services(direct wetland 
+products, eg: food, fibre, water) 
+§ Regulating services (the ability of an 
+ecosystem to regulate hydrological 
+regimes, influence micro-climate, reduce 
+disaster risk, groundwater recharge) 
+§ Cultural services (recreational values, 
+cultural and religious norms and beliefs 
+related to wetlands) 
+§ Supporting services (Primary production 
+and other ecosystem functions which 
+enable wetlands to deliver all above 
+ecosystem services)  
+Socioeconomi
+cs and 
+livelihoods 
+§ Extent of dependence on wetlands for 
+livelihoods 
+§ Status of community infrastructure (such 
+as water and sanitation) and implication 
+for wetlands 
+§ Livelihood vulnerability and relationship 
+with changes in wetland resources  
+§ Resource use conflicts 
+§ Major shifts in livelihoods and 
+implications for wetlands 
+§ Demographic features of communities 
+living in and around 
+§ The contribution of wetland to income 
+and employment 
+§ Community resource use and 
+management practices  
+ 
+6. Attention should be paid to the robustness of data and associated uncertainties thereof. It is 
+recommended that the data on-site features and linked metadata are, to the extent possible, 
+maintained in a spatial format to enable updation at a later stage as more information becomes 
+available through monitoring programmes. The step should also include identification of data gaps. 
+ 
+Step 3: Evaluation of wetland features  
+ 
+7. This step entails an evaluation of information on status and trends on wetlands features (conducted 
+in the previous step) to identify: 
+a) Key wetland features that should be a priority for management planning 
+b) Natural variability within these features, including describing thresholds, if any 
+c) Threats that limit (or potentially limit) maintenance of wetlands features in the desirable state 
+ 
+8. Evaluation of wetland features can be done on the basis of criteria such as: 
+• Naturalness 
+• Rarity 
+• Criticality for ecosystem functioning 
+• Socioeconomic importance 
+• Requirement under the extant regulatory regime 
+ 
+9. The evaluation process will lead to narrowing down of the list of wetland features, for which threats 
+may be identified. The management plan is a response to these threats. Through this process, it is
+
+--- Page 39 ---
+38 
+ 
+ensured that the plan does not merely focus on symptoms (for example, poor water quality) but on 
+the root causes (in this case, ineffective sewage management in wetland catchments).  
+ 
+Step 4: Defining an institutional arrangement for wetland management 
+10. The purpose of this step is to evaluate whether existing institutional arrangements are sufficient and 
+effective in addressing the threats to wetlands. Based on the gaps identified, an institutional 
+arrangement for implementation of the management plan is developed.  
+ 
+11. This step includes: 
+a) Enlisting of government departments having programmes which impact (or have the potential to 
+impact) wetlands features or threats on these features; 
+b) An analysis of laws and regulation related to wetland, access and use of wetland resources, 
+biodiversity or any dimension;   
+c) Ownership, rights and privileges pertaining to wetlands; 
+d) Analysis of the role of CSOs and communities in wetlands management, with particular reference 
+to their views, rights and capacities; and,  
+e) Gaps and challenges. 
+ 
+12. Based on the analysis, an institutional arrangement for wetlands management should be developed, 
+clearly stating: 
+a) The nodal agency responsible for managing wetlands 
+b) Role of different government departments and mechanisms for inter-departmental coordination 
+c) Role of CSOs and communities 
+  
+13. In line with the requirements of Wetlands (Conservation and Management) Rules, 2017, the 
+following should be specified: 
+a) Activities prohibited within the boundary of wetlands;  
+b) Activities to be regulated within wetlands and zone of influence and regulation thresholds; and, 
+c) Activities permitted. 
+ 
+Step 5: Setting management objectives  
+ 
+14. This step involves the identification of site management objectives that need to be met so as to ensure 
+that site features are maintained or improved. The management objectives may address the threats 
+identified in the previous step, and issues relating to maintenance of wetland in a desired healthy 
+state.  
+ 
+15. While defining objectives, the following may be considered: 
+ 
+a) Measurability – The objectives must be measurable so as to enable reporting on progress towards 
+meeting them (for example, reducing silt load from the wetland catchment by xx %) 
+b) Achievability – The objectives must be achievable at least in the medium or long term. An 
+objective that cannot be achieved can lead to an overall loss of sense of direction and 
+misallocation of resources (for example, completely preventing nutrient enrichment in a wetland 
+located in the intensive agricultural landscape is an unachievable objective, a much better 
+proposition would be to reduce the current rate by xx%).
+
+--- Page 40 ---
+39 
+ 
+c) Indicative of purpose and not the process – The objectives should not be prescriptively stating 
+the way the objective should be achieved. It should ideally reflect the purpose of management 
+(for example – afforestation in xxx ha is not an objective but a way to reduce siltation. Focusing 
+just on afforestation then limits the use of other options for reducing siltation in a wetland).  
+ 
+Step 6: Developing a monitoring and evaluation plan 
+ 
+16. This section aims at outlining a monitoring and evaluation plan to enable assessment of overall 
+management effectiveness and identify needs for mid-term correction.  
+ 
+Performance indicators 
+17. For each of management objectives, a set of performance indicators should be identified.  
+ 
+Table 2: Performance Indicators 
+Wetland feature Management 
+objective 
+Performance Indicator Means of measurement 
+Area Maintain wetland 
+area 
+Wetland area which has 
+not been altered for non-
+wetland usages   
+Area estimated from analysis 
+of remote sensing images and 
+ground truthing  
+Catchments Reduction in silt 
+load from 
+catchment  
+Silt load  Monitoring pilot watersheds 
+Hydrological 
+regimes 
+Reduce pollution   Biological Oxygen 
+Demand, Chemical 
+Oxygen Demand or any 
+other water quality 
+parameter assessed 
+against a threshold 
+Water quality monitoring 
+Enhance 
+hydrological 
+connectivity within 
+wetlands complex  
+Area of wetland complex 
+inundated during high 
+floods period   
+Analysis of remote sensing 
+data, and hydrological surveys  
+Biodiversity Maintain and 
+enhance habitat of 
+waterbirds  
+Area of wetland used by 
+waterbirds 
+Physical survey 
+Reduce area under 
+invasive 
+macrophyte 
+Area under invasive 
+macrophyte  
+Analysis of remote sensing 
+images and ground truthing  
+Maintain fish 
+species richness     
+ 
+ 
+Fish species richness  Sampling
+
+--- Page 41 ---
+40 
+ 
+Socioeconomics Reduce use of 
+harmful fishing 
+practices 
+Number of destructive 
+fishing gear used in the 
+wetland   
+Survey  
+Reduce direct 
+dependence of 
+communities on 
+capture fisheries  
+Reduction in % of 
+income derived from 
+wetland 
+Socioeconomic surveys 
+ 
+18. For each performance indicator, a baseline value at the beginning of management plan 
+implementation may be specified. These values should be tracked over the course of management 
+plan implementation to assess whether management objectives are being met.  
+ 
+Monitoring mechanism 
+19. Besides setting up performance indicators for the management plan, it is also essential to set up a 
+monitoring system for the wetland to be able to assess changes in ecosystem condition over a period 
+of time.  
+ 
+20. A generic listing of monitoring parameter, method and frequency is presented in the Table 3 below.  
+Parameters marked with a single asterisk (*) sign are relevant for all wetlands and must from a part 
+of the monitoring system. In addition to these, parameters marked with a double asterisk (**) are 
+relevant for wetlands located in urban and peri-urban areas. Other parameters may be included based 
+on the assessment of relevance and wetland contexts.  
+ 
+21. Photographic documentation (before, during and after management intervention) may also be 
+maintained as part of monitoring process. Aquatic drones/ buoy- based sensor induced transmission 
+for online data updating may be used for large wetlands, which will further help in enriching the 
+management practices.  
+ 
+Table 3: Parameters for wetlands monitoring  
+Wetland feature Monitoring parameter Monitoring method Recommended 
+Frequency 
+Wetland extent • Wetland area* Remote sensing and 
+ground truthing 
+Once in a year 
+• Land use and land 
+cover within the 
+wetland area 
+Remote sensing and 
+ground truthing 
+Once in a year 
+• Connectivity with 
+other adjoining 
+wetlands, river / 
+streams, coastal 
+zone 
+ 
+ 
+Remote sensing and 
+ground truthing 
+Once in a year
+
+--- Page 42 ---
+41 
+ 
+Wetland Catchment • Climate Data from the nearest 
+weather station 
+Monthly  
+• Land use and Land 
+Cover*  
+Remote sensing and 
+ground truthing 
+Once in 3 years 
+• Total sediment 
+yield 
+Stream gauging station Monthly  
+• Total nutrient yield Stream gauging station Monthly  
+Hydrological regimes • Water inflow and 
+outflow*  
+Stream gauging station Monthly  
+• Waterholding 
+capacity 
+Bathymetric survey Once in 5 years 
+• Peak inundation  Remote sensing and 
+ground truthing 
+Once in 2 years 
+• Dissolved Oxygen, 
+Biological Oxygen 
+Demand * 
+Data from water 
+quality sampling 
+stations  
+Atleast monthly  
+• Chemical Oxygen 
+Demand ** 
+Data from water 
+quality sampling 
+stations 
+Atleast monthly 
+• Number of point 
+sources discharging 
+untreated sewage 
+into the wetland **  
+Surveys Once a year 
+Biodiversity and 
+Habitat 
+• Population of 
+major wetland 
+dependent species 
+groups (such as 
+waterbirds, 
+mammals etc.)* 
+Mid-winter counts Once a year 
+• Habitat use by key 
+species   
+Physical surveys Once a year 
+• Number of 
+migratory species 
+using the wetland as 
+a habitat  
+Physical surveys Once a year 
+• Area under invasive 
+macrophyte**   
+Physical surveys Once a year 
+Ecosystem Services • Annual Fish yield Sampling Monthly samples 
+collated into an annual 
+estimate
+
+--- Page 43 ---
+42 
+ 
+• Number of tourists Surveys Monthly samples 
+collated into an annual 
+estimate 
+• Volume of surface 
+water abstracted 
+from wetland 
+Hydrographic surveys  Monthly samples 
+collated into an annual 
+estimate 
+• Volume of 
+groundwater 
+recharged   
+Hydrographic surveys  Once a year 
+• Proportion of 
+floodwaters stored 
+in the wetland 
+Hydrographic surveys  Once a year 
+• Use of wetland for 
+research and 
+education 
+Surveys Annual estimate  
+Livelihoods • Population living 
+around the 
+wetland* 
+Surveys Once every three years 
+• Population 
+depending on 
+wetlands for 
+livelihoods 
+Surveys Once every three years 
+• Number of 
+households around 
+the wetland using 
+safe sanitation 
+practices  
+Surveys Once every three years 
+• Participation of 
+communities in 
+wetlands 
+management  
+Surveys Once every three years 
+Note:  (i) The frequency, as above, is advisable for wetlands above 100 ha and is indicative in 
+ nature.  The Wetland Authority may suitably modify based on logistics involved. 
+ (ii) For wetlands less than say 100 ha, the frequency may be appropriately divided.  
+Step 7 – Developing an action plan 
+22. The last stage of the management planning process includes defining the action plan, or specific 
+interventions that address the identified management objectives. A generic listing of activities is 
+presented in Table 4. The projects need to be defined very clearly to ensure good implementation. 
+While identifying activities for management of wetlands, the following must be kept in mind: 
+a) Ecosystem-based interventions should be promoted as far as possible 
+b) Engineering interventions in wetlands should be taken up in a limited manner, with impact 
+assessments conducted for all major works 
+c) Operations and maintenance of all structural works should be included in project design
+
+--- Page 44 ---
+43 
+ 
+d) Participation of local communities should be included to the extent possible  
+ 
+ 
+Table 4: Generic listing of activities for management of wetlands 
+Management 
+Plan component 
+Activities Key considerations 
+Boundary 
+delineation and 
+demarcation  
+Boundary mapping 
+and delineation  
+Site boundaries should be established with reference to 
+inundation regimes, soil conditions and vegetation types. 
+Landscape connectivity should also be taken into account when 
+wetlands exist in patches. All activities should be completed 
+within the first year.  
+Removal of 
+encroachments 
+Boundaries should be notified and legally protected wherever 
+possible. All activities should be completed within the first year.  
+Shoreline 
+management 
+Mostly required for wetlands in urban and peri-urban setting. For 
+stabilizing bunds of wetlands, naturalization of slopes using 
+vegetative measures should be preferred. Development of 
+promenade for urban lakes can be included based on an 
+evaluation of natural drainage and shoreline ecosystem niches.  
+Catchment 
+conservation 
+Afforestation and 
+aided regeneration  
+Catchment conservation plans should be developed at watershed 
+scales and based on Joint Forest Management approaches.  
+Native species should be used for forestry operations. 
+Pilot watershed should be periodically monitored to assess 
+changes in soil moisture regimes. 
+Livelihood interventions for catchment communities aimed at 
+reducing dependence on wood as an energy source should be 
+included as appropriate.  
+Small scale 
+engineering measures 
+(gully plugging, check 
+dams, gabion 
+structures etc.) 
+Community participation in design, implementation and post-
+project maintenance of structures should be ensured.  
+Water 
+management  
+Selective dredging 
+and desilting to 
+improve hydrological 
+connectivity  
+Dredging to be used only selectively, and be based on 
+assessments of bathymetric profile and species interactions. For 
+inflowing channels, dredging ca be used to improve water inflow.  
+Interception, 
+diversion and 
+Mostly recommended for wetlands in the urban and peri-urban 
+setting.
+
+--- Page 45 ---
+44 
+ 
+Management 
+Plan component 
+Activities Key considerations 
+treatment of point 
+sources of pollution 
+Provision of comprehensive sanitation and safe drinking water 
+coverage to communities living around the wetlands may be 
+ensured.  
+Engineering (STPs) as well as biological options (constructed 
+wetlands) should be evaluated for application. Planning for 
+Operation and Maintenance expenses should be included for all 
+engineering structures.   
+Construction and 
+operation of hydraulic 
+structures for 
+maintenance of water 
+regimes and flood 
+control  
+For each significant structure, environmental impact assessments 
+should be carried out prior to construction.  
+Balancing water 
+allocation for human 
+and ecological 
+purposes  
+Environmental flows for wetlands, hydrological regimes of which 
+are affected by hydraulic structures, should be assessed and 
+implemented in consultation in water managers   
+Biodiversity 
+conservation 
+Habitat evaluation 
+and improvement 
+Until specifically desired, plantation of terrestrial plant species in 
+wetlands should be avoided. 
+Improvement and 
+maintenance of 
+migratory routes 
+Community groups should be involved in habitat monitoring and 
+maintenance of migratory routes  
+Maintenance of 
+breeding and 
+spawning grounds for 
+key species   
+Community groups should be involved in the maintenance of 
+breeding and spawning grounds  
+Management of 
+invasive species  
+A mix of mechanical and biological methods for controlling 
+species invasion should be used. 
+For plant invasives, economic utilization along with physical 
+removal should be included. 
+Sustainable 
+resource 
+development 
+and livelihood 
+improvement  
+Microenterprise 
+development for 
+reducing dependence 
+on wetland resources 
+for livelihoods 
+Identification of micro-enterprise development options should be 
+based on an assessment of community livelihoods, capacities, 
+resources and market linkages.  
+Sustainable fisheries 
+development 
+Only capture based fisheries techniques should be promoted in 
+natural wetlands
+
+--- Page 46 ---
+45 
+ 
+Management 
+Plan component 
+Activities Key considerations 
+Options for improving culture fisheries in areas around wetlands 
+may be included to reduce dependence on capture fisheries 
+ 
+Sustainable 
+agriculture 
+development  
+Organic farming practices in immediate catchments should be 
+included to minimize nutrient enrichment in wetland. 
+Institutional 
+development  
+Setting regulatory 
+regimes 
+Site regulation should be harmonized with national and State level 
+regulations.  
+Local customary self-regulation which supports maintenance of 
+conservation values should be promoted    
+Development of 
+monitoring and 
+evaluation system 
+Comprehensive monitoring and evaluation mechanism for 
+hydrological, ecological, socio-economic and institutional features 
+should be made a part of the management system 
+Involvement of stakeholders in monitoring should be 
+encouraged. 
+Communication and 
+Outreach 
+Increasing awareness on values and functions of wetland should 
+be made an integral part of the management plan.  
+The use of television, print, electronic and social media for 
+awareness generation and outreach may be included as 
+appropriate. Developing and disseminating dos and donts in 
+wetlands for general public may also be considered.   
+Research  For each site, key research areas to support management needs 
+should be identified and included in the management plan 
+ 
+Step 8: Developing budget and financing plan 
+ 
+23. A complete costing of the Integrated Management Plan item wise may be done for the entire tenure 
+of the plan using the existing norms of the State and central government, as may be the case. Year 
+wise requirement of funds for various items of work/ activities, band PERT charts for the 
+works/activities should be prepared. Summary of Cost Estimates and year-wise breakup of the 
+requirement of funds may be presented in the formats given below: 
+ 
+Table 5: Summary of budget  
+S. No. Management Plan component Budget
+
+--- Page 47 ---
+46 
+ 
+   
+ 
+ 
+Table 6: Year wise breakup of requirement of funds 
+S. No. Activity Funds 
+Required 
+in Yr I 
+Funds 
+Required 
+in Yr II 
+Funds 
+Required 
+in Yr III 
+Funds 
+Required 
+in Yr IV 
+Funds 
+Required 
+in Yr V 
+Total 
+        
+        
+ 
+Table 7: year wise breakup of requirement of funds 
+ 
+S. 
+No
+. 
+Total 
+Budge
+t 
+Funds from 
+Central 
+Governmen
+t Scheme 
+(Scheme 
+Name) 
+Funds from 
+State 
+Governmen
+t (Scheme 
+Name) 
+Funds from 
+other 
+donors(Projec
+t and donor 
+name) 
+Funds from 
+private 
+sector(Nam
+e of the 
+agency) 
+Funds 
+available 
+from 
+convergenc
+e sources 
+Funds 
+require
+d to be 
+raised 
+ (a) (b) © (d) (e) (f)= (b) +(c) 
++(d) + (e) 
+(g) = (a)-
+(f) 
+        
+ 
+ 
+Format for compiling Integrated Management Plan  
+ 
+24. The management plan should have a cover sheet with the following information: 
+• Wetland Name 
+• Wetland Area (in ha) 
+• Location: (District(s), State / UT) 
+• Area of the direct catchment (in ha) 
+• Name of the nodal agency for management plan implementation 
+• Management plan period 
+• Date on which approval of State / UT Wetland Authority was obtained 
+• Total budget 
+• Total funds available from convergence sources
+
+--- Page 48 ---
+47 
+ 
+ 
+ 
+ 
+ 
+ 
+25. The management plan may be compiled in the following eight chapters: 
+Chapter heading Sub-headings  Explanation Reference to 
+Management 
+Planning Steps 
+1. Introduction  1.1 Rationale for 
+management planning 
+Describe the importance of 
+wetland, ways in which wetlands 
+conservation and wise use will 
+contribute to state conservation and 
+development goals and alignment 
+with state  and central government 
+policies, directives and planning 
+frameworks  
+Step 1 
+1.2 Terms of reference 
+ 
+Enlist the overall terms of reference 
+for the management plan 
+Step 1 
+1.3 Approach and Method  
+ 
+Provide an overview of approach 
+(ways in which the recommended 
+steps have been used) 
+Describe the data sources and 
+research carried out for 
+management planning if any 
+Step 1 
+2. Description of 
+wetlands features 
+ 
+ 
+  
+Description of wetland 
+features  
+• Location and extent  
+• Wetland catchments 
+• Hydrological regimes 
+• Biodiversity 
+• Ecosystem Services 
+• Socioeconomics and 
+livelihoods 
+Describe wetland features. As far as 
+possible, present the data in maps.     
+Step 2 
+3. Evaluation of  
+wetlands features 
+Evaluation 
+• Priority wetland features 
+that need to be 
+maintained and 
+thresholds thereof  
+• Threats 
+From the wetlands features 
+described in the previous section, 
+enlist the priority wetlands features. 
+ 
+Describe the threats that adversely 
+affect the priority wetland features.   
+Step 3
+
+--- Page 49 ---
+48 
+ 
+Chapter heading Sub-headings  Explanation Reference to 
+Management 
+Planning Steps 
+4. Institutional 
+arrangements  
+4.1 Review of existing 
+arrangements 
+• Key organizations and 
+programmes  
+• Rules and regulations 
+• Role of civil society and 
+community based 
+organizations  
+Provide an overview of the current 
+institutional arrangements in the 
+context of wetlands management   
+Step 4 
+4.2 Gaps 
+ 
+Discuss why the current 
+institutional arrangements are 
+insufficient in ensuring wetlands 
+conservation and wise use. 
+Step 4 
+4.3 Proposed arrangements 
+for wetland management 
+Propose institutional arrangement 
+for wetland management, which 
+specific focus on a) nodal agency, 
+b) role of various departments and 
+agencies and coordination 
+mechanism, and c) the role of civil 
+society and communities. 
+Develop an organogram for 
+management plan implementation.  
+Step 4 
+5. Setting 
+Management 
+Objectives 
+5.1 Goal and purpose Provide a statement of the overall 
+goal that the management plan 
+seeks to achieve  
+Step 5 
+5.2 Benefits (ecological as 
+well as societal) 
+ 
+Summarize the ecological and 
+economic benefits that are expected 
+from management plan 
+implementation  
+ 
+5.3 Management objectives Enlist the specific objectives  Step 5 
+5.4 Strategies Describe strategy(ies) for achieving 
+each of the management objectives     
+Step 5 
+6. Monitoring 
+and evaluation 
+plan 
+6.1 Monitoring strategy Present an overview of monitoring 
+the wetland, and management plan 
+implementation  
+Step 6 
+6.2 Monitoring parameters, 
+frequency and responsibility  
+Describe the monitoring 
+parameters, the frequency of 
+monitoring and the agency that will 
+be responsible for monitoring  
+Step 6
+
+--- Page 50 ---
+49 
+ 
+Chapter heading Sub-headings  Explanation Reference to 
+Management 
+Planning Steps 
+6.3 Institutional design Describe how coordination 
+between different monitoring 
+agencies will be achieved.  
+Step 6 
+6.4 Infrastructure and 
+human resources design 
+Discuss the infrastructure and 
+human resource requirement for 
+implementing the management 
+plan as far as possible, including 
+local universities, research 
+organizations and NGOs in 
+wetlands monitoring 
+Step 6 
+6.5 Reporting Discuss the frequency in which 
+reporting shall be done and the 
+responsible agency. 
+Step 6 
+6.6 Review and adaptation Discuss how the monitoring 
+outcomes will be used to adapt 
+management  
+Step 6 
+7. Developing an 
+Action Plan 
+7.1 Component wise 
+activities linked with 
+management objectives   
+Generic listing of activities 
+indicating: 
+• What will be done? 
+• Where will the activity be 
+done? 
+• What is the priority for the 
+activity?  
+Step 7.1 
+7.2 Components for 
+consideration for support 
+under National Plan for 
+Conservation of Aquatic 
+Ecosystems (NPCA)  
+For all activities eligible for support 
+under NPCA indicate: 
+• Why is the activity important? 
+• How will the activity be 
+• implemented? (include 
+intermediate steps, technical 
+specifications and relevant 
+drawings, as may be the case) 
+• Where will the activity be 
+implemented? 
+• Who will implement the 
+activity? 
+• What are the quantitative 
+targets to be met? 
+Step 7.2
+
+--- Page 51 ---
+50 
+ 
+Chapter heading Sub-headings  Explanation Reference to 
+Management 
+Planning Steps 
+8. Budget and 
+activity phasing  
+8.1 Activity linked budget  Present a summary budget in line 
+with Table 5 
+Provide details of funding available 
+from convergence sources in line 
+with Table 6 
+Provide detailed budget for NPCA 
+in line with Table 7 
+Step 8 
+8 2 Time planning Present a monthly Gantt Chart for 
+management plan implementation 
+Step 8 
+ 
+Checklist for submission of Integrated Management Plan 
+§ Approved by the State Govt./ UT Administration/ State Wetlands Authority/ UT Wetlands 
+Authority (minutes of meeting to be enclosed) 
+§ Forwarding letter states –commitment of the State Government/ UT for providing their share 
+of budget (supporting document indicating concurrence to be enclosed) 
+§ Integrated Management Plan has a cover sheet providing details on Wetland, catchment area, 
+implementing agency, total budget and fund requested from NPCA 
+§ Brief Document is enclosed with the management plan (as per Annex V) 
+§ Wetlands map is provided in a standard GIS format 
+§ Map of zone of influence in provided in a standard GIS format. 
+§ Management plan is aligned with recommended format of eight chapters 
+§ All activities proposed to be funded by the  NPCA fall within the list of core and non-core 
+activities 
+§ Necessary drawings and technical specification for major activities is provided. 
+§ Core activities have been allocated not less than 75% of the budget 
+§ Non- core activities have been allocated not more than 25% of the budget 
+§ Budget has been prepared with reference to an approved Schedule of Rates
+
+--- Page 52 ---
+51 
+ 
+Annex 5: Format for reporting status of notified wetlands 
+ 
+1. Wetlands / Wetlands Complex Name: Report Date: 
+Reporting Officer: 
+2. Wetlands status 
+2.1 Area: current-                              ; in notification - 
+2.2 Water inflow and outflow (attach data in an annex) 
+2.3 Water quality (attach data in an annex)  
+2.4 Status of major threats   
+(such as encroachment, linear infrastructure development, destructive fishing practices, untreated 
+sewage discharge, solid and liquid waste dumping, dumping of hazardous waste, invasive species, 
+habitat modification / destruction/alteration or any other that has or may induce an adverse change in 
+wetland ecological character)  
+3. Status of enforcement of the regulatory regime 
+Activity regulated Whether 
+regulation 
+complied with? 
+Violation if any? Where has the 
+violation been 
+reported? 
+Action taken 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+4. Implementation of the management plan 
+Management Plan 
+Component and 
+Activity Planned for 
+the period 
+Progress of 
+implementation during 
+the period 
+Nodal agency  Remarks (successes 
+and challenges)

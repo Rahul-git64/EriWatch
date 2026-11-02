@@ -67,6 +67,7 @@ data/processed/*
 !data/processed/tank_registry.geojson
 !data/processed/cloud_stats.parquet
 !data/processed/samples/
+!data/processed/legal_text/
 
 # Model artifacts (heavy binaries ignored; small metadata kept)
 *.pkl
@@ -89,4 +90,5 @@ data/processed/*
 *.swp
 *.swo
 .DS_Store
+scratch/
 Thumbs.db
