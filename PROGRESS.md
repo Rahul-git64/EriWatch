@@ -77,8 +77,15 @@
 | [x] | R5.2 | Clean-clone into temp directory and run `make setup`, `make test`, `make run` | `DONE` | `90c209c` | [`docs/reviews/micro/R5-2.md`](docs/reviews/micro/R5-2.md) |
 | [x] | R5.3 | Bring up full compose stack (`db`, `api`, `web`, `n8n`), verify all 4 healthy + HTTP responses | `DONE` | `88220a7` | [`docs/reviews/micro/R5-3.md`](docs/reviews/micro/R5-3.md) |
 | [x] | R5.4 | Add `pytest-cov` test coverage reporting and record coverage | `DONE` | `HEAD` | [`docs/reviews/micro/R5-4.md`](docs/reviews/micro/R5-4.md) |
-| [x] | R6.1 | Rewrite `docs/reviews/stage-0.md` and `docs/reviews/stage-1.md` with "Corrections made" section | `DONE` | `HEAD` | [`docs/reviews/micro/R6-1.md`](docs/reviews/micro/R6-1.md) |
-| [x] | R6.2 | Update `PROGRESS.md`, replace tags with `stage-0-pass-v2` and `stage-1-pass-v2`, write `docs/reviews/stage-R.md` | `DONE` | `HEAD` | [`docs/reviews/stage-R.md`](docs/reviews/stage-R.md) |
+| [x] | R6.1 | Rewrite `docs/reviews/stage-0.md` and `docs/reviews/stage-1.md` with "Corrections made" section | `DONE` | `0596321` | [`docs/reviews/micro/R6-1.md`](docs/reviews/micro/R6-1.md) |
+| [x] | R6.2 | Update `PROGRESS.md`, replace tags with `stage-0-pass-v2` and `stage-1-pass-v2`, write `docs/reviews/stage-R.md` | `DONE` | `90c209c` | [`docs/reviews/stage-R.md`](docs/reviews/stage-R.md) |
+| [x] | R7.1 | Fix LEGAL-002 assent (2001-02-25) & gazette date (2001-03-05); add `date_precision` across 30 entries; audit LEGAL-015 (April 1997) | `DONE` | `38d5ef0` | [`docs/reviews/micro/R-concern1-2.md`](docs/reviews/micro/R-concern1-2.md) |
+| [x] | R7.2 | Verify LEGAL-003: unverified G.O. title and date removed, `metadata_verified: false` | `DONE` | `38d5ef0` | [`docs/reviews/micro/R-concern1-2.md`](docs/reviews/micro/R-concern1-2.md) |
+| [x] | R7.3 | Add `text_quality` and quality gate; build 300 DPI RapidOCR pipeline; clean text with page markers under `data/processed/legal_text/`; resolve garbled LEGAL-001 | `DONE` | `7c818a1` | [`docs/reviews/micro/R-concern3.md`](docs/reviews/micro/R-concern3.md) |
+| [x] | R7.4 | Add `is_extract` and `as_enacted` fields to manifest; mark LEGAL-005, 006, 011, 015, 022 as extracts | `DONE` | `c61cb80` | [`docs/reviews/micro/R-concern4.md`](docs/reviews/micro/R-concern4.md) |
+| [x] | R7.5 | 100% 30-document spot-check in `docs/data/legal_corpus_spotcheck.md`, in-depth relevance audit for LEGAL-012..015, RAG role tiering (`core`/`supporting`/`background`) | `DONE` | `6e98622` | [`docs/reviews/micro/R-concern5.md`](docs/reviews/micro/R-concern5.md) |
+| [x] | R7.6 | Add mandatory Gazette text verification notice for petition drafts to ADR-0004 | `DONE` | `1c9a374` | [`docs/reviews/micro/R-concern6-7.md`](docs/reviews/micro/R-concern6-7.md) |
+| [x] | R7.7 | Formally define FTL as statutory shrinkage boundary (TN Act 8 of 2007 s.2(d),(e),(o)) with satellite historical max extent as proxy in ADR-0004/0005 | `DONE` | `1c9a374` | [`docs/reviews/micro/R-concern6-7.md`](docs/reviews/micro/R-concern6-7.md) |
 
 ---
 
