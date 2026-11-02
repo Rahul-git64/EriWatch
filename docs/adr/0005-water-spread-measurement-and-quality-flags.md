@@ -57,6 +57,16 @@ The following 6 pilot tanks are flagged as `needs_review` based on overlay audit
 **No polygon geometry in `data/processed/tank_registry.geojson` will be altered without explicit user review and approval.**
 During Stage 2, candidate polygon corrections will be generated as separate geo-layers (`data/interim/candidate_boundaries/`) and presented to the user with overlay comparison plots before any updates to the production registry are committed.
 
+### 6. Stage 2 Quantitative Performance Targets (Measurable Gates)
+To ensure the Stage 2 geospatial extraction pipeline is rigorous, defensible, and objectively verifiable, the following four quantitative criteria are formally established:
+
+| Metric | Target Specification | Measurement Method & Ground Truth |
+|---|---|---|
+| **Mean IoU (Intersection over Union)** | $\ge \mathbf{0.75}$ across all benchmark tanks ($\ge 0.70$ on small tanks $<20\text{ ha}$) | Evaluated pixel-by-pixel against the 10-tank independent manual validation dataset (`docs/data/manual_validation/`) and JRC Global Surface Water seasonal extent masks. |
+| **Mean Relative Area Error** | $\le \mathbf{15.0\%}$ ($|\text{Area}_{\text{pred}} - \text{Area}_{\text{true}}| / \text{Area}_{\text{true}}$) | Computed across all cloud-free validation passes against manual digitized benchmark extents. |
+| **Usable Observations per Tank per Season** | $\ge \mathbf{15}$ observations per tank during the Northeast Monsoon (Oct 15 – Jan 15); $\ge \mathbf{4}$ obs/month in dry season | Combined optical (Sentinel-2 L2A with SCL valid pixel fraction $\ge 80\%$) and Sentinel-1 SAR RTC backscatter observations. |
+| **Maximum Monsoon Observation Gap** | $\le \mathbf{12}$ calendar days | Maximum gap between consecutive valid water-spread measurements during peak monsoon (Oct–Dec), bridged by Sentinel-1 SAR 6-to-12 day repeat passes. |
+
 ---
 
 ## Consequences

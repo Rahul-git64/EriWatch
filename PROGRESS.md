@@ -86,6 +86,12 @@
 | [x] | R7.5 | 100% 30-document spot-check in `docs/data/legal_corpus_spotcheck.md`, in-depth relevance audit for LEGAL-012..015, RAG role tiering (`core`/`supporting`/`background`) | `DONE` | `6e98622` | [`docs/reviews/micro/R-concern5.md`](docs/reviews/micro/R-concern5.md) |
 | [x] | R7.6 | Add mandatory Gazette text verification notice for petition drafts to ADR-0004 | `DONE` | `1c9a374` | [`docs/reviews/micro/R-concern6-7.md`](docs/reviews/micro/R-concern6-7.md) |
 | [x] | R7.7 | Formally define FTL as statutory shrinkage boundary (TN Act 8 of 2007 s.2(d),(e),(o)) with satellite historical max extent as proxy in ADR-0004/0005 | `DONE` | `1c9a374` | [`docs/reviews/micro/R-concern6-7.md`](docs/reviews/micro/R-concern6-7.md) |
+| [x] | R8.1 | Audit TN-CGL-010 sources, mark aeration/algal assertions unverified in ADR-0005 & registry | `DONE` | `2612878` | [`docs/reviews/micro/R-item1-audit.md`](docs/reviews/micro/R-item1-audit.md) |
+| [x] | R8.2 | Rewrite legal corpus spotcheck with exact verbatim quotes and page numbers | `DONE` | `4d82531` | [`docs/reviews/micro/R-item2-spotcheck.md`](docs/reviews/micro/R-item2-spotcheck.md) |
+| [x] | R8.3 | Conduct 5-page OCR character agreement evaluation, justify dictionary threshold, score bilingual LEGAL-018 separately | `DONE` | `3539b21` | [`docs/reviews/micro/R-item3-quality.md`](docs/reviews/micro/R-item3-quality.md) |
+| [x] | R8.4 | Define LEGAL-015 corpus standing and flag `rag_excluded: true` in manifest | `DONE` | `3c145d8` | [`docs/reviews/micro/R-item4-rag-exclude.md`](docs/reviews/micro/R-item4-rag-exclude.md) |
+| [x] | R8.5 | Verify release archive fallback in `make fetch-legal`, document committed text files, add `make ocr-legal` | `DONE` | `828a97e` | [`docs/reviews/micro/R-item5-6-infra.md`](docs/reviews/micro/R-item5-6-infra.md) |
+| [x] | R8.6 | Propose Stage 2 measurable quantitative targets in ADR-0005 Section 6 | `DONE` | `HEAD` | [`docs/reviews/micro/R-item7-targets.md`](docs/reviews/micro/R-item7-targets.md) |
 
 ---
 
