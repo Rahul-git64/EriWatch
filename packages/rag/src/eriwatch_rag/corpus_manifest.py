@@ -15,7 +15,7 @@ import logging
 import tarfile
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any, Literal
+from typing import Any, Literal, cast
 
 import httpx
 from pydantic import BaseModel, Field
@@ -101,7 +101,7 @@ class LegalCorpusEntry(BaseModel):
     text_quality: TextQualityInfo | None = None
 
 
-REAL_CORPUS_SOURCES: list[dict[str, str]] = [
+REAL_CORPUS_SOURCES: list[dict[str, Any]] = [
     {
         "id": "LEGAL-001",
         "filename": "LEGAL-001_TN_Protection_of_Tanks_and_Eviction_of_Encroachment_Act_2007.pdf",
@@ -563,10 +563,11 @@ def download_and_build_manifest(
                 licence_note=spec["licence_note"],
                 extraction_method=extraction_method,
                 gazette_date=spec.get("gazette_date"),
-                date_precision=spec.get("date_precision", "exact"),
-                metadata_verified=spec.get("metadata_verified", True),
-                is_extract=spec.get("is_extract", False),
-                as_enacted=spec.get("as_enacted", False),
+                date_precision=cast(DatePrecision, spec.get("date_precision", "exact")),
+                metadata_verified=bool(spec.get("metadata_verified", True)),
+                is_extract=bool(spec.get("is_extract", False)),
+                as_enacted=bool(spec.get("as_enacted", False)),
+                rag_role=cast(RagRole, spec.get("rag_role", "supporting")),
             )
             entries.append(entry)
 

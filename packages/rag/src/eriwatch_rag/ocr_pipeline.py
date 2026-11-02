@@ -12,10 +12,10 @@ import re
 from pathlib import Path
 from typing import Any, Literal
 
-import pypdfium2 as pdfium
+import pypdfium2 as pdfium  # type: ignore[import-untyped]
 from pydantic import BaseModel, Field
 from pypdf import PdfReader
-from rapidocr_onnxruntime import RapidOCR
+from rapidocr_onnxruntime import RapidOCR  # type: ignore[import-untyped]
 
 logging.getLogger("pypdf").setLevel(logging.ERROR)
 
@@ -225,7 +225,7 @@ def run_pipeline(
         if text_file.exists() and not force_ocr:
             clean_text = text_file.read_text(encoding="utf-8")
             chars, words, ratio = compute_text_metrics(clean_text, dictionary_words)
-            source = (
+            source: ExtractionSource = (
                 "ocr_300dpi"
                 if doc_id
                 in {
