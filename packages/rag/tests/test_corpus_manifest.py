@@ -49,6 +49,7 @@ REQUIRED_MANIFEST_FIELDS = {
     "metadata_verified",
     "is_extract",
     "as_enacted",
+    "rag_role",
 }
 
 
@@ -159,6 +160,22 @@ def test_specific_legal_metadata_corrections() -> None:
     # Executive GOs and Judgments marked as not as_enacted
     assert entries["LEGAL-012"].as_enacted is False
     assert entries["LEGAL-026"].as_enacted is False
+
+    # RAG role tiering distribution
+    core_docs = [e for e in entries.values() if e.rag_role == "core"]
+    supporting_docs = [e for e in entries.values() if e.rag_role == "supporting"]
+    background_docs = [e for e in entries.values() if e.rag_role == "background"]
+    assert len(core_docs) == 9, f"Expected 9 core documents, got {len(core_docs)}"
+    assert len(supporting_docs) == 19, (
+        f"Expected 19 supporting documents, got {len(supporting_docs)}"
+    )
+    assert len(background_docs) == 2, f"Expected 2 background documents, got {len(background_docs)}"
+
+    # Specific audited documents
+    assert entries["LEGAL-012"].rag_role == "core"
+    assert entries["LEGAL-013"].rag_role == "supporting"
+    assert entries["LEGAL-014"].rag_role == "supporting"
+    assert entries["LEGAL-015"].rag_role == "supporting"
 
 
 def test_legal_corpus_text_quality_and_page_markers() -> None:

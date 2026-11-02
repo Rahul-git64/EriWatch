@@ -25,6 +25,7 @@ logging.getLogger("pypdf").setLevel(logging.ERROR)
 
 ExtractionMethod = Literal["text_layer", "ocr_needed", "ocr_300dpi", "native_text_layer"]
 DatePrecision = Literal["exact", "year_only", "approximate"]
+RagRole = Literal["core", "supporting", "background"]
 
 
 class TextQualityInfo(BaseModel):
@@ -96,6 +97,7 @@ class LegalCorpusEntry(BaseModel):
     metadata_verified: bool = True
     is_extract: bool = False
     as_enacted: bool = False
+    rag_role: RagRole = "supporting"
     text_quality: TextQualityInfo | None = None
 
 
